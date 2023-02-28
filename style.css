@@ -1,0 +1,438 @@
+/*!
+Theme Name: Volos Voyage
+Theme URI: http://underscores.me/
+Author: Christos TSM
+Author URI: https://github.com/christos-tsm
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: volos-voyage
+*/
+/** Theme Variables */
+/** Generic Styles */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	transition: all ease-in-out 250ms;
+}
+
+body {
+	font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	color: #333;
+}
+
+.icon {
+	display: flex;
+}
+
+.icon svg {
+	width: 100%;
+	height: 100%;
+}
+
+.icon--medium {
+	width: 28px;
+	height: 28px;
+}
+
+.icon--small {
+	width: 22px;
+	height: 22px;
+}
+
+.btn {
+	display: inline-flex;
+	padding: 4px 10px;
+	background-color: #00ceef;
+	align-items: center;
+	color: #333;
+	border-radius: 5px;
+	transition: all ease-in-out 250ms;
+}
+
+.site-main {
+	margin-top: 102px;
+}
+
+.container {
+	max-width: 100%;
+	margin: auto;
+}
+
+.container--medium {
+	width: 1430px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.cta {
+	position: relative;
+}
+
+.cta span {
+	position: relative;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.cta::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transition: all ease-in-out 250ms;
+	width: 100%;
+	height: 0%;
+	background-color: #00ceef;
+}
+
+.cta:hover::before {
+	height: 40%;
+}
+
+.message {
+	font-size: 14px;
+	text-align: center;
+	font-weight: 600;
+}
+
+.message--error {
+	color: #c92525;
+}
+
+.message--success {
+	color: #0f960f;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+/** Components */
+.site-header__container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 5;
+}
+
+.site-header__content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+}
+
+.site-header__logo {
+	display: flex;
+	width: 180px;
+}
+
+.site-header__icons {
+	display: flex;
+	gap: 40px;
+	width: 180px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.site-header__icons-burger {
+	padding: 20px;
+	background-color: #00ceef;
+}
+
+.site-header__icons a {
+	color: #333;
+}
+
+.site-header__menu {
+	border-top: 1px solid #f5f5f5;
+	padding: 8px 0;
+	border-bottom: 1px solid #f5f5f5;
+}
+
+.site-header__categories {
+	display: flex;
+	gap: 10px;
+	justify-content: space-between;
+}
+
+.site-header__categories-item a {
+	color: #333;
+	font-size: 14px;
+}
+
+.site-header__categories-item a:hover {
+	color: #00ceef;
+}
+
+.categories-cards {
+	display: flex;
+	gap: 20px;
+	padding: 20px 0;
+}
+
+.categories-cards__single {
+	flex: 1;
+}
+
+.categories-cards__title {
+	display: flex;
+	padding: 20px;
+	border: 2px solid #333;
+	color: #333;
+	border-radius: 15px;
+	font-weight: 700;
+	height: 80px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 14px;
+}
+
+.categories-cards__title:hover {
+	background-color: #00ceef;
+}
+
+.header-slider-progress {
+	background: #ccc;
+}
+
+.header-slider-progress-bar {
+	background: #00ceef;
+	height: 5px;
+	transition: width 400ms ease;
+	width: 0;
+}
+
+.header-slider__single {
+	position: relative;
+}
+
+.header-slider__single img {
+	width: 100%;
+	height: 700px;
+	object-fit: cover;
+}
+
+.header-slider__single-content {
+	position: absolute;
+	left: 80px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
+	max-width: 50%;
+}
+
+.header-slider__single-content-title {
+	font-size: 45px;
+	margin-bottom: 20px;
+}
+
+.header-slider__single-content-text {
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.header-slider__single .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.header-slider .splide__arrow {
+	background: #fff;
+	border-radius: 0;
+	width: 50px;
+	height: 50px;
+	opacity: 1;
+	transition: all ease-in-out 250ms;
+}
+
+.header-slider .splide__arrow:not(:disabled):hover {
+	background-color: #00ceef;
+}
+
+.header-slider .splide__arrow--prev {
+	left: 0;
+}
+
+.header-slider .splide__arrow--next {
+	right: 0;
+}
+
+.form {
+	max-width: 500px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.form--hidden {
+	display: none;
+}
+
+.form-row {
+	display: flex;
+	gap: 20px;
+}
+
+.form-row--col {
+	flex-direction: column;
+	gap: 10px;
+}
+
+.form-row--submit {
+	gap: 5px;
+	align-items: flex-start;
+}
+
+.input {
+	border: none;
+	box-shadow: none;
+	outline: none;
+	font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	padding: 10px 15px;
+	border: 1px solid #ddd;
+	font-weight: 600;
+	color: #333;
+	border-radius: 5px;
+	transition: all ease-in-out 250ms;
+}
+
+.input::placeholder {
+	opacity: 1;
+	color: #333;
+}
+
+.input:focus, .input:hover {
+	border-color: #00ceef;
+}
+
+@media screen and (min-width: 1280px) {
+	.input--search {
+		min-width: 300px;
+	}
+}
+
+.input--checkbox {
+	accent-color: #00ceef;
+	margin-top: 4px;
+}
+
+.label--checkbox {
+	font-size: 13px;
+}
+
+/** Pagess */
+.header-hero {
+	display: flex;
+	align-items: center;
+}
+
+.header-hero__content {
+	flex: 1;
+}
+
+.header-hero__title {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.header-hero__title span {
+	color: #00ceef;
+	font-weight: 700;
+}
+
+.header-hero__text {
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.header-hero__gallery {
+	flex: 1;
+	position: relative;
+	min-height: 700px;
+}
+
+.header-hero__gallery-single {
+	position: absolute;
+	border-radius: 10px;
+	border: 10px solid #fff;
+}
+
+.header-hero__gallery-single:nth-child(1) {
+	bottom: 0;
+	left: -45px;
+	z-index: 1;
+	width: 450px;
+	height: 230px;
+}
+
+.header-hero__gallery-single:nth-child(2) {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: 355px;
+}
+
+.header-hero__gallery-single:nth-child(2) img {
+	object-position: 75% 50%;
+}
+
+.header-hero__gallery-single:nth-child(3) {
+	bottom: 0;
+	width: 290px;
+	height: 400px;
+	right: 0;
+}
+
+.header-hero__gallery-single img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.tabs {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 50px 0;
+}
+
+.tab-header {
+	font-size: 20px;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.tab-header--active {
+	opacity: 1;
+}
+
+.tab-header--active::before {
+	height: 40%;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,26 @@
+/*!
+Theme Name: Volos Voyage
+Theme URI: http://underscores.me/
+Author: Christos TSM
+Author URI: https://github.com/christos-tsm
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: volos-voyage
+*/
+/** Theme Variables */
+@import "./variables/colors";
+/** Generic Styles */
+@import "./generic/reset";
+@import "./generic/utils";
+/** Components */
+@import "./components/header";
+@import "./components/categories-card";
+@import "./components/header-slider";
+@import "./components/forms";
+/** Pagess */
+@import "./pages/homepage";
+@import "./pages/account";

@@ -1,0 +1,18 @@
+.tabs {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 50px 0;
+}
+
+.tab-header {
+	font-size: 20px;
+	opacity: 0.5;
+	cursor: pointer;
+	&--active {
+		opacity: 1;
+		&::before {
+			height: 40%;
+		}
+	}
+}

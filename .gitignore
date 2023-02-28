@@ -1,0 +1,7 @@
+node_modules
+vendor
+.stylelintrc.json
+.eslintrc
+composer.lock
+phpcs.xml.dist
+yarn.lock
