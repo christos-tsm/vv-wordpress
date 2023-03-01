@@ -4,7 +4,8 @@
 		const tab = document.querySelectorAll(".tab-header");
 		tab.forEach((item) => {
 			item.addEventListener("click", (e) => {
-				document.querySelector(".message").innerHTML = "";
+				document.querySelector(".message--login").innerHTML = "";
+				document.querySelector(".message--register").innerHTML = "";
 				let target = e.target.getAttribute("data-target");
 				document.querySelectorAll(".tab-header").forEach((item) => item.classList.remove("tab-header--active"));
 				e.target.classList.add("tab-header--active");
@@ -15,6 +16,7 @@
 		/** Register Ajax */
 		var registrationForm = document.querySelector("form#register");
 		if (registrationForm) {
+			let messageRegister = document.querySelector(".message--register");
 			registrationForm.addEventListener("submit", function (e) {
 				e.preventDefault(); // Prevent the default form submission
 
@@ -30,17 +32,23 @@
 					registrationForm.elements["user_login"].value === "" ||
 					registrationForm.elements["user_email"].value === ""
 				) {
-					document.querySelector(".message--error").textContent = "Όλα τα πεδία της φόρμας είναι υποχρεωτικά";
+					messageRegister.classList.remove("message--success");
+					messageRegister.classList.add("message--error");
+					messageRegister.textContent = "Όλα τα πεδία της φόρμας είναι υποχρεωτικά";
 					return;
 				}
 
 				if (registrationForm.elements["user_pass"].value.length < 6) {
-					document.querySelector(".message--error").textContent = "Ο κωδικός πρέπει να έχει 6 ψηφία και άνω";
+					messageRegister.classList.remove("message--success");
+					messageRegister.classList.add("message--error");
+					messageRegister.textContent = "Ο κωδικός πρέπει να έχει 6 ψηφία και άνω";
 					return;
 				}
 
 				if (registrationForm.elements["user_pass"].value !== registrationForm.elements["confirm_password"].value) {
-					document.querySelector(".message--error").textContent = "Οι κωδικοί δεν ταιριάζουν";
+					messageRegister.classList.remove("message--success");
+					messageRegister.classList.add("message--error");
+					messageRegister.textContent = "Οι κωδικοί δεν ταιριάζουν";
 					return;
 				}
 				// Submit the form data using Ajax
@@ -54,27 +62,27 @@
 					.then(function (response) {
 						// Handle the Ajax response
 						const responseObject = JSON.parse(response);
-						console.log(responseObject);
 						if (responseObject.success) {
-							document.querySelector(".message").classList.remove("message--error");
-							document.querySelector(".message").classList.add("message--success");
-							document.querySelector(".message").innerHTML = responseObject.data;
+							messageRegister.classList.remove("message--error");
+							messageRegister.classList.add("message--success");
+							messageRegister.innerHTML = responseObject.data;
 							registrationForm.reset();
 						} else {
-							document.querySelector(".message").classList.remove("message--success");
-							document.querySelector(".message").classList.add("message--error");
-							document.querySelector(".message").innerHTML = responseObject.data;
+							messageRegister.classList.remove("message--success");
+							messageRegister.classList.add("message--error");
+							messageRegister.innerHTML = responseObject.data;
 						}
 					})
 					.catch(function (error) {
 						// Handle Ajax errors
-						console.log(error);
+						console.error(error);
 					});
 			});
 		}
 		/** Login Ajax */
 		const loginForm = document.querySelector("form#login");
 		if (loginForm) {
+			let messageLogin = document.querySelector(".message--login");
 			loginForm.addEventListener("submit", function (e) {
 				e.preventDefault(); // Prevent the default form submission
 
@@ -83,7 +91,9 @@
 				formData.append("action", "login_user");
 
 				if (loginForm.elements["user_pass"].value === "" || loginForm.elements["user_email"].value === "") {
-					document.querySelector(".message--error").textContent = "Όλα τα πεδία της φόρμας είναι υποχρεωτικά";
+					messageLogin.classList.remove("message--success");
+					messageLogin.classList.add("message--error");
+					messageLogin.textContent = "Όλα τα πεδία της φόρμας είναι υποχρεωτικά";
 					return;
 				}
 
@@ -93,25 +103,22 @@
 					body: formData,
 				})
 					.then(function (response) {
-						console.log(response);
 						return response.text();
 					})
 					.then(function (response) {
-						console.log(response);
 						// Handle the Ajax response
 						const responseObject = JSON.parse(response);
-						console.log(responseObject);
 						if (responseObject.success) {
 							location.reload(); // Reload the page on successful login
 						} else {
-							document.querySelector(".message").classList.remove("message--success");
-							document.querySelector(".message").classList.add("message--error");
-							document.querySelector(".message").innerHTML = responseObject.data;
+							messageLogin.classList.remove("message--success");
+							messageLogin.classList.add("message--error");
+							messageLogin.innerHTML = responseObject.data;
 						}
 					})
 					.catch(function (error) {
 						// Handle Ajax errors
-						console.log(error);
+						console.error(error);
 					});
 			});
 		}

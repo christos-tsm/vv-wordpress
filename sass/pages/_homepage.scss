@@ -3,6 +3,8 @@
 	align-items: center;
 	&__content {
 		flex: 1;
+		position: relative;
+		z-index: 2;
 	}
 
 	&__title {
@@ -22,11 +24,11 @@
 	&__gallery {
 		flex: 1;
 		position: relative;
-		min-height: 700px;
+		min-height: 580px;
 		&-single {
 			position: absolute;
 			border-radius: 10px;
-			border: 10px solid #fff;
+			border: 7px solid #fff;
 			&:nth-child(1) {
 				bottom: 0;
 				left: -45px;
@@ -36,9 +38,9 @@
 			}
 
 			&:nth-child(2) {
-				top: 50%;
+				top: 50px;
 				left: 50%;
-				transform: translate(-50%, -50%);
+				transform: translate(-50%, 0%);
 				width: 500px;
 				height: 355px;
 				img {
@@ -60,5 +62,33 @@
 				border-radius: 10px;
 			}
 		}
+	}
+}
+
+.featured--hotels {
+	margin: 50px auto;
+
+	.section-title {
+		margin-bottom: 35px;
+	}
+
+	// Featured Hotels Sliders Styles
+	.swiper-button-prev,
+	.swiper-button-next {
+		background-color: #fff;
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+	}
+	.swiper-button-prev:after,
+	.swiper-button-next:after {
+		font-size: 22px;
+		color: $text-dark;
+		margin-left: 5px;
+	}
+
+	.swiper-button-prev:after {
+		margin-left: 0;
+		margin-right: 2px;
 	}
 }

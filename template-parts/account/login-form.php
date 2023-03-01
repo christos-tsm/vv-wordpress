@@ -7,6 +7,7 @@
         <label for="password"><?php pll_e('Κωδικός') ?></label>
         <input type="password" class="input" name="user_pass">
     </div>
+    <p class="message message--login"></p>
     <div class="form-row form-row--submit">
         <input type="checkbox" name="rememberme" id="rememberme" class="input--checkbox">
         <label class="label--checkbox pointer" for="rememberme"><?php pll_e('Να μείνει ο λογαριασμός συνδεδεμένος'); ?></label>

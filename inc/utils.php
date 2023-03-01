@@ -38,3 +38,11 @@ function smartwp_remove_wp_block_library_css() {
     wp_dequeue_style('wc-blocks-style'); // Remove WooCommerce block CSS
 }
 add_action('wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100);
+
+//Remove admin bar from all users
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
+}

@@ -13,7 +13,8 @@ function create_hotels_post_type() {
             'rewrite' => array('slug' => 'hotels'),
             'show_in_rest' => false,
             'menu_icon'   => 'dashicons-building',
-            'menu_position' => 3
+            'menu_position' => 3,
+            'supports' => array('thumbnail', 'title', 'revisions', 'editor')
         )
     );
 }

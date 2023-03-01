@@ -35,6 +35,9 @@
 	color: $text-dark;
 	border-radius: 5px;
 	transition: all ease-in-out 250ms;
+	&:not(.btn) {
+		background-color: #fff;
+	}
 	&::placeholder {
 		opacity: 1;
 		color: $text-dark;

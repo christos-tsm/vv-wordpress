@@ -28,37 +28,18 @@ get_header();
             </section>
         <?php endwhile; ?>
     <?php endif; ?>
-    <!-- <section class="categories-cards container container--medium">
-        <div class="categories-cards__single categories-card__hotels">
-            <a class="categories-cards__title" href="#!">
-                <?php pll_e('Ξενοδοχεία') ?>
-            </a>
+    <?php if (have_rows('categories_cards')) : ?>
+        <div class="categories-cards categories-cards__homepage container container--medium">
+            <?php while (have_rows('categories_cards')) :  the_row(); ?>
+                <?php get_template_part('template-parts/cards/categories/category-card'); ?>
+            <?php endwhile; ?>
         </div>
-        <div class="categories-cards__single categories-card__restaurants">
-            <a class="categories-cards__title" href="#!">
-                <?php pll_e('Εστιατόρια') ?>
-            </a>
-        </div>
-        <div class="categories-cards__single categories-card__coffee-houses">
-            <a class="categories-cards__title" href="#!">
-                <?php pll_e('Καφετέριες') ?>
-            </a>
-        </div>
-        <div class="categories-cards__single categories-card__bars">
-            <a class="categories-cards__title" href="#!">
-                <?php pll_e('Μπάρ') ?>
-            </a>
-        </div>
-        <div class="categories-cards__single categories-card__museums">
-            <a class="categories-cards__title" href="#!">
-                <?php pll_e('Μουσεία') ?>
-            </a>
-        </div>
-        <div class="categories-cards__single categories-card__travel-agents">
-            <a class="categories-cards__title" href="#!">
-                <?php pll_e('Ταξιδιωτικά γραφεία') ?>
-            </a>
-        </div>
-    </section> -->
+    <?php endif; ?>
+    <?php if (have_rows('featured_hotels')) : ?>
+        <?php while (have_rows('featured_hotels')) : the_row(); ?>
+            <?php get_template_part('template-parts/sliders/hotels/featured-hotels.php'); ?>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 </main>
 <?php get_footer(); ?>

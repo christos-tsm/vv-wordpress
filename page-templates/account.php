@@ -18,7 +18,7 @@ get_header();
             </div>
         </section>
     <?php else : ?>
-        <?= do_shortcode('[user_registration_my_account]'); ?>
+        <?php get_template_part('template-parts/account/dashboard'); ?>
     <?php endif; ?>
 </main>
 <?php get_footer(); ?>

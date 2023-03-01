@@ -18,8 +18,8 @@ Text Domain: volos-voyage
 @import "./generic/utils";
 /** Components */
 @import "./components/header";
-@import "./components/categories-card";
-@import "./components/header-slider";
+@import "./components/cards/categories-card";
+@import "./components/cards/hotels-card";
 @import "./components/forms";
 /** Pagess */
 @import "./pages/homepage";

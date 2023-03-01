@@ -1,0 +1,42 @@
+.hotel-card {
+	&__header {
+		& > a {
+			display: flex;
+			overflow: hidden;
+			border-radius: 10px;
+		}
+	}
+	&__thumbnail {
+		width: 100%;
+		height: 250px;
+		object-fit: cover;
+		transition: all ease-in-out 250ms;
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 18px;
+		margin: 10px 0;
+		a {
+			color: $text-dark;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		gap: 40px;
+	}
+
+	&:hover {
+		.hotel-card__thumbnail {
+			transform: scale(1.05);
+		}
+	}
+}
+
+.hotel-details__item {
+	font-size: 14px;
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}

@@ -5,7 +5,7 @@ add_action('wp_ajax_nopriv_register_user', 'register_user');
 function register_user() {
     $username = $_POST['user_login'];
     $email = $_POST['user_email'];
-    $password = $_POST['user_password'];
+    $password = $_POST['user_pass'];
 
     $userdata = array(
         'user_login' => $username,
@@ -17,10 +17,8 @@ function register_user() {
 
     if (is_wp_error($user_id)) {
         $error_message = $user_id->get_error_message();
-        // echo $error_message;
         wp_send_json_error($error_message);
     } else {
-        // echo 'Ο λογαριασμός σας δημιουργήθηκε.';
         wp_send_json_success('Ο λογαριασμός σας δημιουργήθηκε.');
     }
     wp_die();
