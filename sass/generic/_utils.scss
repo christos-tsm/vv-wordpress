@@ -19,12 +19,18 @@ body {
 		width: 22px;
 		height: 22px;
 	}
+
+	&--x-small {
+		width: 15px;
+		height: 15px;
+	}
 }
 
 .btn {
 	display: inline-flex;
 	padding: 4px 10px;
 	background-color: $primary-color;
+	color: #fff !important;
 	align-items: center;
 	color: $text-dark;
 	border-radius: 5px;
@@ -50,10 +56,18 @@ body {
 
 .cta {
 	position: relative;
+	color: $text-dark;
+	padding: 0 5px;
 	span {
 		position: relative;
 		z-index: 2;
 		pointer-events: none;
+		transition: all ease-in-out 250ms;
+	}
+	svg {
+		path {
+			transition: all ease-in-out 250ms;
+		}
 	}
 	&::before {
 		content: "";
@@ -65,8 +79,18 @@ body {
 		height: 0%;
 		background-color: $primary-color;
 	}
-	&:hover::before {
-		height: 40%;
+	&:hover {
+		&::before {
+			height: 100%;
+		}
+		span {
+			color: #fff;
+			svg {
+				path {
+					fill: #fff;
+				}
+			}
+		}
 	}
 }
 
@@ -95,7 +119,16 @@ body {
 	margin-left: auto;
 }
 
+.grid {
+	display: grid;
+}
+
 .section-title {
 	font-size: 25px;
 	font-weight: 600;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }

@@ -14,22 +14,22 @@
     </header>
     <footer class="hotel-card__footer">
         <p class="hotel-details__item">
-            <span class="icon icon--small">
+            <span class="icon icon--x-small">
                 <?= file_get_contents(get_stylesheet_directory() . '/assets/images/star.svg'); ?>
             </span>
             <?php the_field('reviews'); ?>
         </p>
         <p class="hotel-details__item"">
-            <span class=" icon icon--small">
+            <span class=" icon icon--x-small">
             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/credit-card.svg'); ?>
             </span>
-            <?php the_field('average_price_per_night'); ?>
+            <?php the_field('average_price_per_night'); ?> &euro;
         </p>
         <p class="hotel-details__item"">
-            <span class=" icon icon--small">
+            <span class=" icon icon--x-small">
             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg'); ?>
             </span>
-            <?php the_field('distance_from_city_center'); ?>
+            <?php the_field('address'); ?>
         </p>
     </footer>
 </article>

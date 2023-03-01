@@ -52,10 +52,16 @@ body {
 	height: 22px;
 }
 
+.icon--x-small {
+	width: 15px;
+	height: 15px;
+}
+
 .btn {
 	display: inline-flex;
 	padding: 4px 10px;
 	background-color: #00ceef;
+	color: #fff !important;
 	align-items: center;
 	color: #454056;
 	border-radius: 5px;
@@ -81,12 +87,19 @@ body {
 
 .cta {
 	position: relative;
+	color: #454056;
+	padding: 0 5px;
 }
 
 .cta span {
 	position: relative;
 	z-index: 2;
 	pointer-events: none;
+	transition: all ease-in-out 250ms;
+}
+
+.cta svg path {
+	transition: all ease-in-out 250ms;
 }
 
 .cta::before {
@@ -101,7 +114,15 @@ body {
 }
 
 .cta:hover::before {
-	height: 40%;
+	height: 100%;
+}
+
+.cta:hover span {
+	color: #fff;
+}
+
+.cta:hover span svg path {
+	fill: #fff;
 }
 
 .message {
@@ -130,9 +151,19 @@ body {
 	margin-left: auto;
 }
 
+.grid {
+	display: grid;
+}
+
 .section-title {
 	font-size: 25px;
 	font-weight: 600;
+}
+
+.section-title__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 /** Components */
@@ -243,6 +274,7 @@ body {
 
 .hotel-card__title a {
 	color: #454056;
+	transition: all ease-in-out 250ms;
 }
 
 .hotel-card__footer {
@@ -254,11 +286,89 @@ body {
 	transform: scale(1.05);
 }
 
+.hotel-card:hover .hotel-card__title a {
+	color: #00ceef;
+}
+
 .hotel-details__item {
-	font-size: 14px;
+	font-size: 13px;
+	font-weight: 500;
 	display: flex;
 	gap: 4px;
 	align-items: center;
+}
+
+.grid--restaurants {
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.grid--restaurants__title {
+	margin-bottom: 10px;
+}
+
+.grid--restaurants__title a {
+	color: #454056;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.grid--restaurants__details {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.grid--restaurants__details-item {
+	display: flex;
+	gap: 5px;
+	font-size: 13px;
+	font-weight: 500;
+	align-items: center;
+}
+
+.grid--restaurants__logo {
+	background: #f5f5f5;
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+	align-items: center;
+	width: 100px;
+	max-width: 100%;
+}
+
+.grid--restaurants__logo > a {
+	display: flex;
+	width: 100%;
+}
+
+.grid--restaurants__logo img {
+	width: 100%;
+	object-fit: contain;
+}
+
+.grid--restaurants__single {
+	display: flex;
+	gap: 10px;
+}
+
+.grid--restaurants__single:hover .grid--restaurants__title a {
+	color: #00ceef;
+}
+
+.ad--homepage {
+	background: linear-gradient(92.95deg, #b3b3b326 -16.15%, #00ceef1a 60.29%);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	padding: 20px;
+}
+
+.ad__text {
+	max-width: 70%;
+	line-height: 30px;
+	font-weight: 500;
 }
 
 .form {
@@ -406,7 +516,7 @@ body {
 	margin: 50px auto;
 }
 
-.featured--hotels .section-title {
+.featured--hotels .section-title__container {
 	margin-bottom: 35px;
 }
 
@@ -430,6 +540,20 @@ body {
 	margin-right: 2px;
 }
 
+.featured--restaurants {
+	display: flex;
+	gap: 50px;
+	margin: 70px auto;
+}
+
+.featured--restaurants .restaurants {
+	flex: 1;
+}
+
+.featured--restaurants .section-title__container {
+	margin-bottom: 35px;
+}
+
 .tabs {
 	display: flex;
 	justify-content: center;
@@ -448,7 +572,11 @@ body {
 }
 
 .tab-header--active::before {
-	height: 40%;
+	height: 100%;
+}
+
+.tab-header--active span {
+	color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,7 +6,7 @@ function create_museum_post_type() {
         array(
             'labels' => array(
                 'name' => __('Museums'),
-                'singular_name' => __('Restaurant')
+                'singular_name' => __('Museum')
             ),
             'public' => true,
             'has_archive' => true,

@@ -19,6 +19,7 @@
 		margin: 10px 0;
 		a {
 			color: $text-dark;
+			transition: all ease-in-out 250ms;
 		}
 	}
 
@@ -31,11 +32,17 @@
 		.hotel-card__thumbnail {
 			transform: scale(1.05);
 		}
+		.hotel-card__title {
+			a {
+				color: $primary-color;
+			}
+		}
 	}
 }
 
 .hotel-details__item {
-	font-size: 14px;
+	font-size: 13px;
+	font-weight: 500;
 	display: flex;
 	gap: 4px;
 	align-items: center;
