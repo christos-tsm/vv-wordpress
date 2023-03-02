@@ -29,7 +29,7 @@ get_header();
         <?php endwhile; ?>
     <?php endif; ?>
     <?php if (have_rows('categories_cards')) : ?>
-        <div class="categories-cards categories-cards__homepage container container--medium">
+        <div class="featured categories-cards categories-cards__homepage container container--medium">
             <?php while (have_rows('categories_cards')) :  the_row(); ?>
                 <?php get_template_part('template-parts/cards/categories/category-card'); ?>
             <?php endwhile; ?>
@@ -99,9 +99,21 @@ get_header();
             </section>
         <?php endwhile; ?>
     <?php endif; ?>
-    <?php if (have_rows('newest')) : ?>
-        <?php while (have_rows('newest')) : ?>
-
+    <?php if (have_rows('featured_destinations')) : ?>
+        <?php while (have_rows('featured_destinations')) : the_row(); ?>
+            <?php $link = get_sub_field('link'); ?>
+            <section class="featured featured--destinations container container--medium">
+                <div class="section-title__container">
+                    <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+                    <a class="cta cta--all" href="<?= esc_url($link['url']); ?>">
+                        <span>
+                            <?= esc_attr($link['title']); ?>
+                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/arrow-right.svg') ?>
+                        </span>
+                    </a>
+                </div>
+                <?php get_template_part('template-parts/sliders/destinations/featured-destinations'); ?>
+            </section>
         <?php endwhile; ?>
     <?php endif; ?>
 </main>

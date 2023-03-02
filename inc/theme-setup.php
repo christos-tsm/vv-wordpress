@@ -38,6 +38,8 @@ function volos_voyage_setup() {
     register_nav_menus(
         array(
             'primary-menu' => esc_html__('Primary Menu', 'volos-voyage'),
+            'footer-menu' => esc_html__('Footer Menu', 'volos-voyage'),
+            'footer-useful-menu' => esc_html__('Footer Menu Useful', 'volos-voyage'),
         )
     );
 

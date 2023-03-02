@@ -30,7 +30,11 @@ a {
 
 body {
 	font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	color: #454056;
+	color: #222;
+}
+
+.thumbnail {
+	width: 100%;
 }
 
 .icon {
@@ -60,10 +64,10 @@ body {
 .btn {
 	display: inline-flex;
 	padding: 4px 10px;
-	background-color: #00ceef;
+	background-color: #fd5631;
 	color: #fff !important;
 	align-items: center;
-	color: #454056;
+	color: #222;
 	border-radius: 5px;
 	transition: all ease-in-out 250ms;
 }
@@ -87,7 +91,7 @@ body {
 
 .cta {
 	position: relative;
-	color: #454056;
+	color: #222;
 	padding: 0 5px;
 }
 
@@ -110,7 +114,7 @@ body {
 	transition: all ease-in-out 250ms;
 	width: 100%;
 	height: 0%;
-	background-color: #00ceef;
+	background-color: #fd5631;
 }
 
 .cta:hover::before {
@@ -141,7 +145,7 @@ body {
 }
 
 .message a {
-	color: #00ceef;
+	color: #fd5631;
 	font-weight: 600;
 	display: flex;
 	justify-content: center;
@@ -183,9 +187,9 @@ address {
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-	font-size: 22px;
-	color: #454056;
-	margin-left: 5px;
+	font-size: 15px;
+	color: #222;
+	margin-left: 3px;
 }
 
 .swiper-button-prev:after {
@@ -225,11 +229,20 @@ address {
 
 .site-header__icons-burger {
 	padding: 20px;
-	background-color: #00ceef;
+	background-color: #fd5631;
 }
 
 .site-header__icons a {
-	color: #454056;
+	color: #222;
+	transition: all ease-in-out 250ms;
+}
+
+.site-header__icons a:hover {
+	color: #fd5631;
+}
+
+.site-header__icons-account--active {
+	color: #fd5631 !important;
 }
 
 .site-header__menu {
@@ -245,12 +258,71 @@ address {
 }
 
 .site-header__categories-item a {
-	color: #454056;
+	color: #222;
 	font-size: 14px;
 }
 
 .site-header__categories-item a:hover {
-	color: #00ceef;
+	color: #fd5631;
+}
+
+.site-footer {
+	background-color: #222;
+	padding: 50px 0 0;
+}
+
+.site-footer__content {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 50px;
+}
+
+.site-footer__header {
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.site-footer__menu ul li:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.site-footer__menu ul li a {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.site-footer__menu ul li a:hover {
+	opacity: 0.5;
+}
+
+.site-footer__social .social-media {
+	display: flex;
+	gap: 20px;
+}
+
+.site-footer__social .social-media a svg path {
+	fill: #fff;
+}
+
+.site-footer__social .social-media a:hover {
+	opacity: 0.5;
+}
+
+.site-footer__logo {
+	width: 180px;
+}
+
+.copyrights {
+	color: #fff;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 20px 0 20px;
+	margin-top: 100px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card {
@@ -277,7 +349,7 @@ address {
 }
 
 .card__title a {
-	color: #454056;
+	color: #222;
 	transition: all ease-in-out 250ms;
 }
 
@@ -318,7 +390,7 @@ address {
 }
 
 .card:hover .card__title a {
-	color: #00ceef;
+	color: #fd5631;
 }
 
 .categories-cards {
@@ -333,7 +405,7 @@ address {
 	font-size: 14px;
 	font-weight: 600;
 	align-items: center;
-	color: #454056;
+	color: #222;
 	padding: 20px;
 	border-radius: 20px;
 	box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -342,10 +414,6 @@ address {
 
 .categories-cards__title:hover {
 	transform: scale(1.06);
-}
-
-.categories-cards__homepage {
-	padding: 50px 0 20px;
 }
 
 .hotel-details__item {
@@ -365,7 +433,7 @@ address {
 
 .event-price {
 	margin-left: auto;
-	background-color: #00ceef;
+	background-color: #fd5631;
 	padding: 2px 5px;
 	border-radius: 5px;
 	font-size: 14px;
@@ -389,7 +457,7 @@ address {
 }
 
 .grid--restaurants__title a {
-	color: #454056;
+	color: #222;
 	font-size: 16px;
 	font-weight: 600;
 }
@@ -434,11 +502,44 @@ address {
 }
 
 .grid--restaurants__single:hover .grid--restaurants__title a {
-	color: #00ceef;
+	color: #fd5631;
+}
+
+.slide-destination {
+	display: flex;
+	gap: 20px;
+}
+
+.slide-destination__thumbnail {
+	border-radius: 10px;
+	height: 620px;
+	object-fit: cover;
+}
+
+.slide-destination__thumbnail-container {
+	max-width: 50%;
+	flex: 1;
+}
+
+.slide-destination__content {
+	flex: 1;
+	padding-bottom: 50px;
+}
+
+.slide-destination__subtitle {
+	font-size: 14px;
+	display: flex;
+	gap: 4px;
+	margin: 15px 0;
+}
+
+.slide-destination__text {
+	font-size: 16px;
+	line-height: 35px;
 }
 
 .ad--homepage {
-	background: linear-gradient(92.95deg, #b3b3b326 -16.15%, #00ceef1a 60.29%);
+	background: linear-gradient(92.95deg, #b3b3b326 -16.15%, #fd563133 60.29%);
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
@@ -487,7 +588,7 @@ address {
 	padding: 10px 15px;
 	border: 1px solid #ddd;
 	font-weight: 600;
-	color: #454056;
+	color: #222;
 	border-radius: 5px;
 	transition: all ease-in-out 250ms;
 }
@@ -498,11 +599,11 @@ address {
 
 .input::placeholder {
 	opacity: 1;
-	color: #454056;
+	color: #222;
 }
 
 .input:focus, .input:hover {
-	border-color: #00ceef;
+	border-color: #fd5631;
 }
 
 @media screen and (min-width: 1280px) {
@@ -512,7 +613,7 @@ address {
 }
 
 .input--checkbox {
-	accent-color: #00ceef;
+	accent-color: #fd5631;
 	margin-top: 4px;
 }
 
@@ -521,6 +622,10 @@ address {
 }
 
 /** Pagess */
+.featured {
+	margin: 80px auto;
+}
+
 .header-hero {
 	display: flex;
 	align-items: center;
@@ -538,13 +643,13 @@ address {
 }
 
 .header-hero__title span {
-	color: #00ceef;
+	color: #fd5631;
 	font-weight: 700;
 }
 
 .header-hero__text {
 	font-size: 16px;
-	line-height: 30px;
+	line-height: 35px;
 }
 
 .header-hero__gallery {
@@ -593,14 +698,9 @@ address {
 	border-radius: 10px;
 }
 
-.featured--hotels {
-	margin: 50px auto;
-}
-
 .featured--restaurants {
 	display: flex;
 	gap: 50px;
-	margin: 70px auto;
 }
 
 .featured--restaurants .restaurants {
@@ -609,6 +709,29 @@ address {
 
 .featured--restaurants .section-title__container {
 	margin-bottom: 35px;
+}
+
+.featured--destinations .swiper-button-prev,
+.featured--destinations .swiper-button-next {
+	left: auto;
+	bottom: 0;
+	top: auto;
+}
+
+.featured--destinations .swiper-button-prev {
+	right: 50px;
+}
+
+.featured--destinations .swiper-button-next {
+	right: 0px;
+}
+
+.site-main--auth {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100vh - 370px);
+	margin-top: 0;
 }
 
 .tabs {

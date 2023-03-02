@@ -3,6 +3,10 @@ body {
 	color: $text-dark;
 }
 
+.thumbnail {
+	width: 100%;
+}
+
 .icon {
 	display: flex;
 	svg {
@@ -147,9 +151,9 @@ address {
 }
 .swiper-button-prev:after,
 .swiper-button-next:after {
-	font-size: 22px;
+	font-size: 15px;
 	color: $text-dark;
-	margin-left: 5px;
+	margin-left: 3px;
 }
 
 .swiper-button-prev:after {

@@ -32,6 +32,17 @@
 		}
 		a {
 			color: $text-dark;
+			transition: all ease-in-out 250ms;
+
+			&:hover {
+				color: $primary-color;
+			}
+		}
+
+		&-account {
+			&--active {
+				color: $primary-color !important;
+			}
 		}
 	}
 

@@ -1,15 +1,7 @@
 <?php
-
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
+/*
  * @package Volos_Voyage
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -51,16 +43,11 @@
 					</a>
 				<?php endif; ?>
 				<?php $account_page = pll_get_post(48); ?>
-				<a href="<?php the_permalink($account_page); ?>" class="site-header__icons-account" aria-label="Link to account page">
+				<a href="<?php the_permalink($account_page); ?>" class="site-header__icons-account <?= is_page_template('page-templates/account.php') ? 'site-header__icons-account--active' : ''; ?>" aria-label="Link to account page">
 					<span class="icon icon--small">
 						<?= file_get_contents(get_stylesheet_directory() . '/assets/images/user.svg'); ?>
 					</span>
 				</a>
-				<!-- <a href="#!" class="site-header__icons-burger" aria-label="Open menu">
-					<span class="icon icon--small">
-						<?= file_get_contents(get_stylesheet_directory() . '/assets/images/burger.svg'); ?>
-					</span>
-				</a> -->
 			</div>
 		</div>
 		<?php if (have_rows('sub_menu', 'options')) : ?>

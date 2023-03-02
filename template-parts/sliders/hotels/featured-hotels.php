@@ -1,5 +1,5 @@
-<?php if (get_sub_field('hotels')) : ?>
-    <?php $hotels = get_sub_field('hotels'); ?>
+<?php $hotels = get_sub_field('hotels'); ?>
+<?php if ($hotels) : ?>
     <div class="swiper slider slider--hotels">
         <div class="swiper-wrapper">
             <?php foreach ($hotels as $post) : setup_postdata($post); ?>

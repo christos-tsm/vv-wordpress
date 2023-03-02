@@ -1,3 +1,7 @@
+.featured {
+	margin: 80px auto;
+}
+
 .header-hero {
 	display: flex;
 	align-items: center;
@@ -18,7 +22,7 @@
 
 	&__text {
 		font-size: 16px;
-		line-height: 30px;
+		line-height: 35px;
 	}
 
 	&__gallery {
@@ -65,19 +69,29 @@
 	}
 }
 
-.featured--hotels {
-	margin: 50px auto;
-}
-
 .featured--restaurants {
 	display: flex;
 	gap: 50px;
-	margin: 70px auto;
 	.restaurants {
 		flex: 1;
 	}
 
 	.section-title__container {
 		margin-bottom: 35px;
+	}
+}
+
+.featured--destinations {
+	.swiper-button-prev,
+	.swiper-button-next {
+		left: auto;
+		bottom: 0;
+		top: auto;
+	}
+	.swiper-button-prev {
+		right: 50px;
+	}
+	.swiper-button-next {
+		right: 0px;
 	}
 }

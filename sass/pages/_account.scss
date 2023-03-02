@@ -1,3 +1,11 @@
+.site-main--auth {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100vh - 370px);
+	margin-top: 0;
+}
+
 .tabs {
 	display: flex;
 	justify-content: center;
