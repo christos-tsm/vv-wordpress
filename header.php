@@ -15,7 +15,6 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-
 	<header class="site-header__container">
 		<?php $header_logo = get_field('header_logo', 'option'); ?>
 		<div class="site-header__content container container--medium">
