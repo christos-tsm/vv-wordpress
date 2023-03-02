@@ -19,9 +19,9 @@
             </span>
             <?php the_field('reviews'); ?>
         </p>
-        <p class="hotel-details__item"">
+        <p class="hotel-details__item">
             <span class=" icon icon--x-small">
-            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/credit-card.svg'); ?>
+                <?= file_get_contents(get_stylesheet_directory() . '/assets/images/credit-card.svg'); ?>
             </span>
             <?php the_field('average_price_per_night'); ?> &euro;
         </p>

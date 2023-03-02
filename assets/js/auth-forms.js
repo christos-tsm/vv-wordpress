@@ -18,14 +18,16 @@
 		if (registrationForm) {
 			let messageRegister = document.querySelector(".message--register");
 			registrationForm.addEventListener("submit", function (e) {
-				e.preventDefault(); // Prevent the default form submission
+				e.preventDefault();
 
-				// Get the form data
+				/** Get the form data */
 				var formData = new FormData(registrationForm);
 				formData.append("action", "register_user");
 				formData.append("user_login", registrationForm.elements["user_login"].value);
 				formData.append("user_email", registrationForm.elements["user_email"].value);
 				formData.append("user_pass", registrationForm.elements["user_pass"].value);
+
+				/** Empty values error */
 				if (
 					registrationForm.elements["user_pass"].value === "" ||
 					registrationForm.elements["confirm_password"].value === "" ||
@@ -38,6 +40,7 @@
 					return;
 				}
 
+				/** Password length < 6 error */
 				if (registrationForm.elements["user_pass"].value.length < 6) {
 					messageRegister.classList.remove("message--success");
 					messageRegister.classList.add("message--error");
@@ -45,13 +48,14 @@
 					return;
 				}
 
+				/** Password not matching password-confirm error */
 				if (registrationForm.elements["user_pass"].value !== registrationForm.elements["confirm_password"].value) {
 					messageRegister.classList.remove("message--success");
 					messageRegister.classList.add("message--error");
 					messageRegister.textContent = "Οι κωδικοί δεν ταιριάζουν";
 					return;
 				}
-				// Submit the form data using Ajax
+				/** Submit the form data using Ajax */
 				fetch(wp_ajax.ajax_url, {
 					method: "post",
 					body: formData,
@@ -84,12 +88,13 @@
 		if (loginForm) {
 			let messageLogin = document.querySelector(".message--login");
 			loginForm.addEventListener("submit", function (e) {
-				e.preventDefault(); // Prevent the default form submission
+				e.preventDefault();
 
-				// Get the form data
+				/** Get the form data */
 				const formData = new FormData(loginForm);
 				formData.append("action", "login_user");
 
+				/** Empty values error */
 				if (loginForm.elements["user_pass"].value === "" || loginForm.elements["user_email"].value === "") {
 					messageLogin.classList.remove("message--success");
 					messageLogin.classList.add("message--error");
@@ -97,7 +102,7 @@
 					return;
 				}
 
-				// Submit the form data using Ajax
+				/** Submit the form data using Ajax */
 				fetch(wp_ajax.ajax_url, {
 					method: "post",
 					body: formData,
