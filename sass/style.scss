@@ -18,9 +18,12 @@ Text Domain: volos-voyage
 @import "./generic/utils";
 /** Components */
 @import "./components/header";
+@import "./components/cards/gen-card";
 @import "./components/cards/categories-card";
 @import "./components/cards/hotels-card";
+@import "./components/cards/event-card";
 @import "./components/cards/grid-restaurants";
+// @import "./components/sliders/events-slider";
 @import "./components/ads/homepage-ad";
 @import "./components/forms";
 /** Pagess */

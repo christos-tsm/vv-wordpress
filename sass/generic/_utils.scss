@@ -122,7 +122,9 @@ body {
 .grid {
 	display: grid;
 }
-
+address {
+	font-style: normal;
+}
 .section-title {
 	font-size: 25px;
 	font-weight: 600;
@@ -130,5 +132,27 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		margin-bottom: 30px;
+		border-bottom: 1px solid #e6e6e6;
+		padding-bottom: 15px;
 	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	background-color: #fff;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+	font-size: 22px;
+	color: $text-dark;
+	margin-left: 5px;
+}
+
+.swiper-button-prev:after {
+	margin-left: 0;
+	margin-right: 2px;
 }

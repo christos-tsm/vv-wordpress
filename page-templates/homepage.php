@@ -37,7 +37,19 @@ get_header();
     <?php endif; ?>
     <?php if (have_rows('featured_hotels')) : ?>
         <?php while (have_rows('featured_hotels')) : the_row(); ?>
-            <?php get_template_part('template-parts/sliders/hotels/featured-hotels'); ?>
+            <?php $link = get_sub_field('link'); ?>
+            <section class="featured featured--hotels container container--medium">
+                <div class="section-title__container">
+                    <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+                    <a class="cta cta--all" href="<?= esc_url($link['url']); ?>">
+                        <span>
+                            <?= esc_attr($link['title']); ?>
+                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/arrow-right.svg') ?>
+                        </span>
+                    </a>
+                </div>
+                <?php get_template_part('template-parts/sliders/hotels/featured-hotels'); ?>
+            </section>
         <?php endwhile; ?>
     <?php endif; ?>
     <section class="featured featured--restaurants container container--medium">
@@ -64,11 +76,33 @@ get_header();
                         <?php foreach ($restaurants as $post) : setup_postdata($post); ?>
                             <?php get_template_part('template-parts/cards/restaurants/restaurants-grid-single'); ?>
                         <?php endforeach; ?>
-                        <?php wp_reset_postdata(); ?>
                     </div>
                 </div>
             <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
         <?php endif; ?>
     </section>
+    <?php if (have_rows('featured_events')) : ?>
+        <?php while (have_rows('featured_events')) : the_row(); ?>
+            <?php $link = get_sub_field('link'); ?>
+            <section class="featured featured--events container container--medium">
+                <div class="section-title__container">
+                    <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+                    <a class="cta cta--all" href="<?= esc_url($link['url']); ?>">
+                        <span>
+                            <?= esc_attr($link['title']); ?>
+                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/arrow-right.svg') ?>
+                        </span>
+                    </a>
+                </div>
+                <?php get_template_part('template-parts/sliders/events/featured-events'); ?>
+            </section>
+        <?php endwhile; ?>
+    <?php endif; ?>
+    <?php if (have_rows('newest')) : ?>
+        <?php while (have_rows('newest')) : ?>
+
+        <?php endwhile; ?>
+    <?php endif; ?>
 </main>
 <?php get_footer(); ?>

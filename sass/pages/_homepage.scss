@@ -67,30 +67,6 @@
 
 .featured--hotels {
 	margin: 50px auto;
-
-	.section-title__container {
-		margin-bottom: 35px;
-	}
-
-	// Featured Hotels Sliders Styles
-	.swiper-button-prev,
-	.swiper-button-next {
-		background-color: #fff;
-		width: 35px;
-		height: 35px;
-		border-radius: 50%;
-	}
-	.swiper-button-prev:after,
-	.swiper-button-next:after {
-		font-size: 22px;
-		color: $text-dark;
-		margin-left: 5px;
-	}
-
-	.swiper-button-prev:after {
-		margin-left: 0;
-		margin-right: 2px;
-	}
 }
 
 .featured--restaurants {

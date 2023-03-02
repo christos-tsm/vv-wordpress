@@ -66,7 +66,7 @@ function hide_admin_dashboard() {
 }
 add_action('admin_menu', 'hide_admin_dashboard');
 
-// Redirect all users role and non-logged in users away from wp-admin dashboard
+// Redirect all user roles except admin and non-logged in users away from wp-admin dashboard
 function custom_user_redirect_to_dashboard() {
     if (!current_user_can('administrator') && is_admin() && !(defined('DOING_AJAX') && DOING_AJAX)) {
         wp_redirect(pll_home_url());

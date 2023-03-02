@@ -13,6 +13,7 @@ function create_events_post_type() {
             'rewrite' => array('slug' => 'events'),
             'show_in_rest' => false,
             'menu_icon'   => 'dashicons-groups',
+            'supports' => array('thumbnail', 'title', 'revisions', 'editor')
         )
     );
 }
