@@ -38,6 +38,7 @@ $current_user = wp_get_current_user();
                 <div class="form-row form-row--submit">
                     <!-- <button id="update-user-details-form-submit" class="input btn pointer" type="submit">Ενημέρωση</button> -->
                 </div>
+                <p class="message--update"></p>
             </form>
             <?php if (get_transient('update_user_details_message')) : ?>
                 <?php $message =  get_transient('update_user_details_message'); ?>

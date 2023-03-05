@@ -60,8 +60,4 @@ require get_stylesheet_directory() . '/inc/custom-post-types/profiles.php';
  */
 require get_stylesheet_directory() . '/inc/users/auth-register-ajax.php';
 require get_stylesheet_directory() . '/inc/users/auth-login-ajax.php';
-
-/**
- * Update user details function
- */
 require get_stylesheet_directory() . '/inc/users/update-user-details.php';

@@ -53,4 +53,43 @@
 			submitContainer.innerHTML = "";
 		}
 	});
+	/** Handle form submit */
+	var updateForm = document.querySelector("#update-user-details-form");
+	if (updateForm) {
+		let messageUpdate = document.querySelector(".message--update");
+		updateForm.addEventListener("submit", function (e) {
+			e.preventDefault();
+			/** Get the form data */
+			var formData = new FormData(updateForm);
+			formData.append("action", "update_user_details");
+			formData.append("first_name", updateForm.elements["first_name"].value);
+			formData.append("last_name", updateForm.elements["last_name"].value);
+			formData.append("user_email", updateForm.elements["user_email"].value);
+			/** Submit the form data using Ajax */
+			fetch(wp_ajax.ajax_url, {
+				method: "post",
+				body: formData,
+			})
+				.then(function (response) {
+					return response.text();
+				})
+				.then(function (response) {
+					// Handle the Ajax response
+					const responseObject = JSON.parse(response);
+					if (responseObject.success) {
+						messageUpdate.classList.remove("message--error");
+						messageUpdate.classList.add("message--success");
+						messageUpdate.innerHTML = responseObject.data.data;
+					} else {
+						messageUpdate.classList.remove("message--success");
+						messageUpdate.classList.add("message--error");
+						messageUpdate.innerHTML = responseObject.data.data;
+					}
+				})
+				.catch(function (error) {
+					// Handle Ajax errors
+					console.error(error);
+				});
+		});
+	}
 })();
