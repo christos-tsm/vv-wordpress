@@ -40,6 +40,7 @@ function volos_voyage_setup() {
             'primary-menu' => esc_html__('Primary Menu', 'volos-voyage'),
             'footer-menu' => esc_html__('Footer Menu', 'volos-voyage'),
             'footer-useful-menu' => esc_html__('Footer Menu Useful', 'volos-voyage'),
+            'dashboard-account-menu' => esc_html__('Dashboard Account Menu', 'volos-voyage'),
         )
     );
 

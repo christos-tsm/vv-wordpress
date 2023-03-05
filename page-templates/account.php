@@ -5,8 +5,8 @@
  */
 get_header();
 ?>
-<main class="site-main site-main--auth">
-    <?php if (!is_user_logged_in()) : ?>
+<?php if (!is_user_logged_in()) : ?>
+    <main class="site-main site-main--auth">
         <section class="container container--medium section--account-forms">
             <div class="tabs">
                 <h3 class="tab-header tab-header--active cta" data-target="form#login"><span><?php pll_e('Σύνδεση'); ?></span></h3>
@@ -17,8 +17,10 @@ get_header();
                 <?php get_template_part('template-parts/account/register-form'); ?>
             </div>
         </section>
-    <?php else : ?>
+    </main>
+<?php else : ?>
+    <main class="site-main site-main--account">
         <?php get_template_part('template-parts/account/dashboard'); ?>
-    <?php endif; ?>
-</main>
+    </main>
+<?php endif; ?>
 <?php get_footer(); ?>

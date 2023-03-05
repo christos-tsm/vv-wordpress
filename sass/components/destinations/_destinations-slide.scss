@@ -18,6 +18,9 @@
 	}
 
 	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	&__subtitle {

@@ -17,6 +17,9 @@ function volos_voyage_scripts() {
         'nonce' => wp_create_nonce('wp_rest'),
         'logout_url' => wp_logout_url(home_url()),
     ));
+    if (is_page_template('page-templates/update-account.php')) {
+        wp_enqueue_script('volos-voyage-update-form', get_template_directory_uri() . '/assets/js/user-update-details.js', array(), _S_VERSION, true);
+    }
     if (is_page_template('page-templates/account.php')) {
         wp_enqueue_script('volos-voyage-auth-forms', get_template_directory_uri() . '/assets/js/auth-forms.js', array(), _S_VERSION, true);
         wp_localize_script('volos-voyage-auth-forms', 'wp_ajax', array('ajax_url' => admin_url('admin-ajax.php')));

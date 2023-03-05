@@ -53,9 +53,7 @@
     </div>
     <p class="copyrights">&copy; Volos Voyage 2023 - All rights reserved</p>
 </footer><!-- #colophon -->
-
 <?php wp_footer(); ?>
-
 </body>
 
 </html>

@@ -43,19 +43,25 @@ require get_stylesheet_directory() . '/inc/options.php';
 /**
  * Custom Post Types
  */
-require get_stylesheet_directory() . '/inc/restaurants.php';
-require get_stylesheet_directory() . '/inc/coffee-houses.php';
-require get_stylesheet_directory() . '/inc/museums.php';
-require get_stylesheet_directory() . '/inc/hotels.php';
-require get_stylesheet_directory() . '/inc/destinations.php';
-require get_stylesheet_directory() . '/inc/events.php';
-require get_stylesheet_directory() . '/inc/bars.php';
-require get_stylesheet_directory() . '/inc/travel-agents.php';
-require get_stylesheet_directory() . '/inc/night-clubs.php';
-require get_stylesheet_directory() . '/inc/sightseeing.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/restaurants.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/coffee-houses.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/museums.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/hotels.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/destinations.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/events.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/bars.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/travel-agents.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/night-clubs.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/sightseeing.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/profiles.php';
 
 /**
  * AJAX files
  */
-require get_stylesheet_directory() . '/inc/auth-register-ajax.php';
-require get_stylesheet_directory() . '/inc/auth-login-ajax.php';
+require get_stylesheet_directory() . '/inc/users/auth-register-ajax.php';
+require get_stylesheet_directory() . '/inc/users/auth-login-ajax.php';
+
+/**
+ * Update user details function
+ */
+require get_stylesheet_directory() . '/inc/users/update-user-details.php';

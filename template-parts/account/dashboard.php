@@ -1,8 +1,7 @@
-<?php if (!is_user_logged_in()) wp_die('Not Authorized'); ?>
-<section class="dasboard-container container container--medium">
-    <aside class="dashboard__menu">
-
-    </aside>
+<?php #require '/inc/protect-direct-access.php'; 
+?>
+<section class="dashboard__container container container--medium">
+    <?php get_template_part('template-parts/account/account-menu'); ?>
     <main class="dashboard__content">
         <h1>Dashboard Content</h1>
     </main>
