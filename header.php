@@ -35,7 +35,7 @@
 			</div>
 			<div class="site-header__icons">
 				<?php if (is_user_logged_in()) : ?>
-					<a href="#!" class="site-header__icons-logout" id="logout" aria-label="Logout">
+					<a href="<?php echo wp_logout_url(home_url()); ?>" class="site-header__icons-logout" id="logout" aria-label="Logout">
 						<span class="icon icon--small">
 							<?= file_get_contents(get_stylesheet_directory() . '/assets/images/logout.svg'); ?>
 						</span>

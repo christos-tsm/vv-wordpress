@@ -5,7 +5,6 @@ add_action('admin_post_nopriv_update_user_details', 'update_user_details');
 function update_user_details() {
     $account_page_gr = get_the_permalink(227);
     $account_page_en = get_the_permalink(232);
-
     // Check nonce
     if (!isset($_POST['update_user_details_nonce'])) {
         if (!wp_verify_nonce($_POST['update_user_details_nonce'], 'update_user_details')) {
