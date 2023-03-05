@@ -45,8 +45,8 @@ function volos_voyage_remove_admin_bar() {
 }
 
 //Create new user role for registered users
-function create_client_role() {
-    add_role('client', 'Client User', array(
+function create_guest_role() {
+    add_role('guest', 'Guest User', array(
         'read' => true,
         'edit_posts' => true,
         'delete_posts' => true,
@@ -56,21 +56,14 @@ function create_client_role() {
         'delete_published_posts' => true
     ));
 }
-add_action('init', 'create_client_role');
-
-//Hide wp-admin from client user role
-function hide_admin_dashboard() {
-    if (current_user_can('custom_user')) {
-        remove_menu_page('index.php');
-    }
-}
-add_action('admin_menu', 'hide_admin_dashboard');
+add_action('init', 'create_guest_role');
 
 // Redirect all user roles except admin and non-logged in users away from wp-admin dashboard
-function custom_user_redirect_to_dashboard() {
-    if (!current_user_can('administrator') && is_admin() && !(defined('DOING_AJAX') && DOING_AJAX)) {
+function guest_user_redirect_to_dashboard() {
+    $user = wp_get_current_user();
+    if (in_array('guest', (array) $user->roles) && is_admin() && !(defined('DOING_AJAX') && DOING_AJAX)) {
         wp_redirect(pll_home_url());
         exit;
     }
 }
-add_action('admin_init', 'custom_user_redirect_to_dashboard');
+add_action('admin_init', 'guest_user_redirect_to_dashboard');
