@@ -1,5 +1,5 @@
 <?php
-require get_stylesheet_directory() . '/inc/protect-direct-access.php';
+// require get_stylesheet_directory() . '/inc/protect-direct-access.php';
 /**
  * Template Name: Update Account
  */

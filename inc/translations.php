@@ -12,4 +12,6 @@ if (function_exists('pll_register_string')) :
     pll_register_string('Επιβεβαίωση κωδικού', 'Επιβεβαίωση κωδικού', true);
     pll_register_string('μακριά άπο τον Βόλο', 'μακριά άπο τον Βόλο', true);
     pll_register_string('Καταχώρηση', 'Καταχώρηση', true);
+    pll_register_string('Επεξεργασία', 'Επεξεργασία', true);
+    pll_register_string('Το επαγγελματικό προφίλ που αναζητάτε δεν βρέθηκε', 'Το επαγγελματικό προφίλ που αναζητάτε δεν βρέθηκε', true);
 endif;
