@@ -25,4 +25,10 @@ if (function_exists('acf_add_options_page')) {
         'menu_title'    => 'Ads Settings',
         'parent_slug'   => 'theme-general-settings',
     ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Municipalities',
+        'menu_title'    => 'Municipalities',
+        'parent_slug'   => 'theme-general-settings',
+    ));
 }

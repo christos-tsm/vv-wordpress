@@ -1,13 +1,9 @@
 <?php
-
+require get_stylesheet_directory() . '/inc/protect-direct-access.php';
 /**
  * Template Name: Update Account
  */
 get_header();
-if (!is_user_logged_in()) {
-    wp_redirect(pll_home_url());
-    exit;
-}
 $current_user = wp_get_current_user();
 ?>
 <main class="site-main site-main--account">
@@ -28,16 +24,13 @@ $current_user = wp_get_current_user();
                     <label for="last_name">Last Name*</label>
                     <input type="text" name="last_name" id="last_name" class="input" value="<?php echo esc_attr($current_user->last_name); ?>">
                     <span class="message message--error text--left" id="last_name_error"></span>
-
                 </div>
                 <div class="form-row form-row--col">
                     <label for="email">Email Address*</label>
                     <input type="email" name="user_email" id="user_email" class="input" value="<?php echo esc_attr($current_user->user_email); ?>">
                     <span class="message message--error text--left" id="email_error"></span>
                 </div>
-                <div class="form-row form-row--submit">
-                    <!-- <button id="update-user-details-form-submit" class="input btn pointer" type="submit">Ενημέρωση</button> -->
-                </div>
+                <div class="form-row form-row--submit"></div>
                 <p class="message--update"></p>
             </form>
             <?php if (get_transient('update_user_details_message')) : ?>

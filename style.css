@@ -61,6 +61,14 @@ body {
 	height: 15px;
 }
 
+.icon--delete {
+	color: #c92525;
+}
+
+.icon--add {
+	color: #0f960f;
+}
+
 .btn {
 	display: inline-flex;
 	padding: 4px 10px;
@@ -595,6 +603,7 @@ address {
 .form-row {
 	display: flex;
 	gap: 20px;
+	flex: 1;
 }
 
 .form-row--col {
@@ -622,6 +631,8 @@ address {
 	background-color: #fff;
 	border: 1px solid #ddd;
 	color: #222;
+	width: 100%;
+	font-size: 14px;
 }
 
 .input::placeholder {
@@ -646,6 +657,157 @@ address {
 
 .label--checkbox {
 	font-size: 13px;
+}
+
+.label--cta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/** ACF Form */
+.acf-fields > .acf-field {
+	border: none !important;
+}
+
+.acf-label {
+	display: flex;
+	align-items: baseline;
+	gap: 5px;
+}
+
+.acf-label .description {
+	font-size: 12px;
+	opacity: 0.6;
+	font-weight: 600;
+}
+
+.acf-label .description::before {
+	content: "(";
+}
+
+.acf-label .description::after {
+	content: ")";
+}
+
+.acf-table {
+	border: none;
+	background-color: #f5f5f5;
+}
+
+.acf-table thead {
+	display: none;
+}
+
+.acf-repeater .acf-row-handle.remove {
+	background-color: #fff;
+	border-left: 1px solid #ddd;
+}
+
+.acf-repeater .acf-row-handle .acf-icon {
+	display: none !important;
+}
+
+.acf-repeater .acf-row-handle.order {
+	background-color: #fff;
+	color: #222;
+}
+
+.acf-repeater .acf-row-handle .acf-icon.-minus {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	background: #fd5631 !important;
+	color: #fff;
+	border: none;
+}
+
+.acf-actions {
+	display: flex;
+}
+
+.acf-actions a {
+	color: #fd5631;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.acf-actions a.disabled {
+	opacity: 0.4;
+	pointer-events: none;
+}
+
+.acf-input-prepend {
+	background: #fff !important;
+	border: none !important;
+	opacity: 0.8;
+	min-height: 40px !important;
+	display: flex;
+	align-items: center;
+}
+
+.acf-fields > .acf-field {
+	padding: 15px 0;
+}
+
+.acf-url i {
+	top: 50% !important;
+	transform: translateY(-50%);
+}
+
+.acf-field input[type="text"],
+.acf-field input[type="password"],
+.acf-field input[type="date"],
+.acf-field input[type="datetime"],
+.acf-field input[type="datetime-local"],
+.acf-field input[type="email"],
+.acf-field input[type="month"],
+.acf-field input[type="number"],
+.acf-field input[type="search"],
+.acf-field input[type="tel"],
+.acf-field input[type="time"],
+.acf-field input[type="url"],
+.acf-field input[type="week"],
+.acf-field textarea,
+.acf-field select {
+	min-height: 40px;
+}
+
+.acf-field input[type="text"]::placeholder,
+.acf-field input[type="password"]::placeholder,
+.acf-field input[type="date"]::placeholder,
+.acf-field input[type="datetime"]::placeholder,
+.acf-field input[type="datetime-local"]::placeholder,
+.acf-field input[type="email"]::placeholder,
+.acf-field input[type="month"]::placeholder,
+.acf-field input[type="number"]::placeholder,
+.acf-field input[type="search"]::placeholder,
+.acf-field input[type="tel"]::placeholder,
+.acf-field input[type="time"]::placeholder,
+.acf-field input[type="url"]::placeholder,
+.acf-field input[type="week"]::placeholder,
+.acf-field textarea::placeholder,
+.acf-field select::placeholder {
+	opacity: 0.4;
+}
+
+.acf-field-taxonomy ul {
+	column-count: 2;
+}
+
+.acf-field-taxonomy ul input[type="checkbox"] {
+	accent-color: #fd5631;
+}
+
+.updated {
+	display: flex;
+	justify-content: center;
+	color: #fff;
+	background: #0f960f;
+	margin: 20px 10px;
+	padding: 5px;
+	font-weight: 600;
+	border-radius: 5px;
 }
 
 /** Pagess */
@@ -837,6 +999,27 @@ address {
 
 .dashboard__content .section-title {
 	margin-bottom: 40px;
+}
+
+.email-group,
+.tel-group {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.email-group:not(:last-child),
+.tel-group:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.remove-tel svg,
+.remove-email svg {
+	pointer-events: none;
+}
+
+.business-profile-form {
+	margin: 0 0 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

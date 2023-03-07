@@ -1,0 +1,20 @@
+.email-group,
+.tel-group {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
+}
+
+.remove-tel,
+.remove-email {
+	svg {
+		pointer-events: none;
+	}
+}
+
+.business-profile-form {
+	margin: 0 0 100px;
+}
