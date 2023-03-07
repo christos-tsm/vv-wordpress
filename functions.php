@@ -54,6 +54,7 @@ require get_stylesheet_directory() . '/inc/custom-post-types/travel-agents.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/night-clubs.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/sightseeing.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/profiles.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/municipalities.php';
 
 /**
  * AJAX files

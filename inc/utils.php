@@ -82,7 +82,9 @@ function my_add_user_display_name_column($columns) {
 add_action('manage_profiles_posts_custom_column', 'my_display_user_display_name_column', 10, 2);
 function my_display_user_display_name_column($column_name, $post_id) {
     if ($column_name === 'submitted_by') {
-        $user_display_name = get_post_meta($post_id, 'submitted_by_user_display_name', true);
+        $user_id = intval(get_field('user_id', $post_id));
+        $user_data = get_userdata($user_id);
+        $user_display_name = $user_data->user_login . ' - ' . $user_data->user_email;
         if ($user_display_name) {
             echo esc_html($user_display_name);
         } else {

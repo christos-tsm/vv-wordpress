@@ -93,7 +93,7 @@ body {
 }
 
 .site-main {
-	margin-top: 102px;
+	margin-top: 103px;
 }
 
 .container {
@@ -219,6 +219,18 @@ address {
 
 .text--left {
 	text-align: left;
+}
+
+.badge {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	background-color: #fd5631;
+	color: #fff;
+	padding: 5px;
+	border-radius: 5px;
+	font-weight: 600;
+	font-size: 14px;
 }
 
 /** Components */
@@ -536,6 +548,7 @@ address {
 	padding: 15px;
 	display: flex;
 	gap: 50px;
+	position: relative;
 }
 
 .profile-card__thumbnail {
@@ -547,7 +560,14 @@ address {
 .profile-card__thumbnail-link {
 	overflow: hidden;
 	display: flex;
-	width: 45%;
+	width: 20%;
+	height: 180px;
+}
+
+.profile-card__details {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 }
 
 .profile-card__title {
@@ -567,6 +587,18 @@ address {
 .profile-card__description {
 	font-size: 14px;
 	line-height: 25px;
+}
+
+.profile-card__footer {
+	margin-top: auto;
+}
+
+.profile-card__address {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-weight: 600;
+	font-size: 14px;
 }
 
 .slide-destination {
@@ -675,7 +707,7 @@ address {
 }
 
 .input::placeholder {
-	opacity: 1;
+	opacity: 0.5;
 	color: #222;
 }
 
@@ -692,6 +724,10 @@ address {
 .input--checkbox {
 	accent-color: #fd5631;
 	margin-top: 4px;
+}
+
+.input--reveal {
+	opacity: 1 !important;
 }
 
 .label--checkbox {
@@ -852,6 +888,15 @@ address {
 input#file-upload-button {
 	background-color: #fd5631 !important;
 	color: #fff;
+}
+
+.acf-field-relationship {
+	opacity: 0;
+	transition: all ease-in-out 250ms;
+}
+
+.acf-fields > .acf-field {
+	min-height: fit-content !important;
 }
 
 /** Pagess */
@@ -1064,6 +1109,14 @@ input#file-upload-button {
 
 .business-profile-form {
 	margin: 0 0 100px;
+}
+
+.profiles-archive__content {
+	padding: 50px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	min-height: calc(100vh - 473px);
 }
 
 /*# sourceMappingURL=style.css.map */

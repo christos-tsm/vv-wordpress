@@ -1,7 +1,7 @@
 <?php
 require get_stylesheet_directory() . '/inc/protect-direct-access.php';
 /**
- * Template Name: My Business List
+ * Template Name: My Business Profiles
  */
 get_header();
 // Get current user id
@@ -15,7 +15,7 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
         <?php get_template_part('template-parts/account/account-menu'); ?>
         <main class="dashboard__content">
             <?php if (isset($post_id) && !empty($post_id) && $edit_mode === 1) :  ?>
-                <?php $profile_user_id = intval(get_post_meta($post_id, 'submitted_by_user_id')); ?>
+                <?php $profile_user_id = intval(get_field('user_id', $post_id)); ?>
                 <?php if ($current_user_id === $profile_user_id) : ?>
                     <?= do_shortcode('[acfe_form post_id=" ' . $post_id . ' " name="edit-business-profile"]') ?>
                 <?php else : ?>
@@ -28,7 +28,8 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
                 $args = array(
                     'post_type' => 'profiles',
                     'posts_per_page' => -1,
-                    'meta_key' => 'submitted_by_user_id',
+                    'post_status' => array('publish', 'draft'),
+                    'meta_key' => 'user_id',
                     'meta_value' => $current_user_id
                 );
                 $query = new WP_Query($args);
