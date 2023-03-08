@@ -61,17 +61,6 @@ function volos_voyage_guest_user_redirect_to_dashboard() {
     }
 }
 add_action('admin_init', 'volos_voyage_guest_user_redirect_to_dashboard');
-// Add user data when they upload business
-add_action('acf/save_post', 'my_acf_save_post', 10, 1);
-function my_acf_save_post($post_id) {
-    // Get current user's ID and display name
-    $user_id = get_current_user_id();
-    $user_display_name = get_the_author_meta('display_name', $user_id);
-
-    // Save user data as post meta data
-    update_post_meta($post_id, 'submitted_by_user_id', $user_id);
-    update_post_meta($post_id, 'submitted_by_user_display_name', $user_display_name);
-}
 // Show who uploaded the business profile in the backend
 add_filter('manage_edit-profiles_columns', 'my_add_user_display_name_column');
 function my_add_user_display_name_column($columns) {

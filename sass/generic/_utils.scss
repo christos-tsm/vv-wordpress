@@ -49,6 +49,9 @@ body {
 	&--small {
 		font-size: 12px;
 	}
+	&--delete {
+		background-color: $red;
+	}
 	&[disabled] {
 		opacity: 0.5;
 		pointer-events: none;

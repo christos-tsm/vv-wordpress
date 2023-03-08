@@ -14,7 +14,7 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
     <section class="dashboard__container container container--medium">
         <?php get_template_part('template-parts/account/account-menu'); ?>
         <main class="dashboard__content">
-            <?php if (isset($post_id) && !empty($post_id) && $edit_mode === 1) :  ?>
+            <?php if (isset($post_id) && !empty($post_id) && $edit_mode === 1 && get_post_status($post_id) === 'publish') :  ?>
                 <?php $profile_user_id = intval(get_field('user_id', $post_id)); ?>
                 <?php if ($current_user_id === $profile_user_id) : ?>
                     <?= do_shortcode('[acfe_form post_id=" ' . $post_id . ' " name="edit-business-profile"]') ?>

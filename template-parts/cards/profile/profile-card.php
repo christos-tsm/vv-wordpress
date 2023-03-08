@@ -31,8 +31,19 @@ if (strlen($business_description) > 350) {
         <h3 class="profile-card__title">
             <a href="<?php the_permalink(); ?>"><?= $business_title; ?></a>
             <?php if ($current_user_id === $profile_user_id) : ?>
-                <?php $update_profile_page = pll_get_post(339); ?>
-                <a href="<?php the_permalink($update_profile_page) ?>?profile_id=<?= get_the_ID(); ?>&edit_mode=1" class="btn btn--small input"><?php pll_e('Επεξεργασία') ?></a>
+                <div class="profile-card__actions">
+                    <?php $update_profile_page = pll_get_post(339); ?>
+                    <form method="POST" id="delete-profile-form" action="<?= esc_url(admin_url('admin-post.php')); ?>">
+                        <input type="hidden" name="action" value="delete_user_profile">
+                        <input type="hidden" name="user_id" value="<?= get_field('user_id') ?>">
+                        <input type="hidden" name="delete_profile_nonce" value="<?= wp_create_nonce('delete_profile_nonce'); ?>">
+                        <input type="hidden" name="profile_id" value="<?= esc_attr(get_the_ID()); ?>">
+                        <button id="delete-profile-button" class="btn input pointer btn--delete" type="submit">Delete Profile</button>
+                    </form>
+                    <?php if ($post_status === 'publish') : ?>
+                        <a href="<?php the_permalink($update_profile_page) ?>?profile_id=<?= get_the_ID(); ?>&edit_mode=1" class="btn btn--small input"><?php pll_e('Επεξεργασία') ?></a>
+                    <?php endif; ?>
+                </div>
             <?php endif; ?>
         </h3>
         <p class="profile-card__description"><?= $short_description; ?></p>

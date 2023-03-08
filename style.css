@@ -83,6 +83,10 @@ body {
 	font-size: 12px;
 }
 
+.btn--delete {
+	background-color: #c92525;
+}
+
 .btn[disabled] {
 	opacity: 0.5;
 	pointer-events: none;
@@ -599,6 +603,11 @@ address {
 	gap: 5px;
 	font-weight: 600;
 	font-size: 14px;
+}
+
+.profile-card__actions {
+	display: flex;
+	gap: 20px;
 }
 
 .slide-destination {
