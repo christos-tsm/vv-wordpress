@@ -27,8 +27,6 @@
 			const deleteButton = document.getElementById("delete-profile-button");
 			deleteButton.addEventListener("click", function (e) {
 				e.preventDefault();
-				// const xhr = new XMLHttpRequest();
-				// xhr.open("POST", wp_ajax.ajax_url);
 				const data = new FormData();
 				data.append("action", "delete_user_profile");
 				data.append("user_id", document.querySelector('input[name="user_id"]').value);
@@ -52,14 +50,6 @@
 					.catch((error) => {
 						console.error("An error occurred while deleting the profile.", error);
 					});
-				// xhr.onload = function () {
-				// 	if (xhr.status === 200) {
-				// 		location.reload();
-				// 	} else {
-				// 		console.error("Server error.");
-				// 	}
-				// };
-				// xhr.send(data);
 			});
 		}
 	});
