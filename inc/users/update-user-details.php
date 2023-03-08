@@ -35,4 +35,5 @@ function update_user_details_callback() {
         'data' =>  $message
     );
     wp_send_json_success($response);
+    wp_die();
 }

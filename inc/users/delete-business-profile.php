@@ -20,4 +20,5 @@ function volos_voyage_delete_user_profile() {
         wp_send_json_success();
     }
     wp_send_json_success();
+    wp_die();
 }
