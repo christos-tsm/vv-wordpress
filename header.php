@@ -41,13 +41,21 @@
 						?>
 						<select class="input pointer" name="profile_category" id="profile_category">
 							<?php foreach ($non_empty_terms as $term) : ?>
-								<option value="<?= esc_attr($term->term_id) ?>"><?= esc_attr($term->name); ?></option>
+								<?php if (isset($_POST['profile_category'])  && !empty($_POST['profile_category']) && intval($_POST['profile_category']) === $term->term_id) : ?>
+									<option selected value="<?= esc_attr($term->term_id) ?>"><?= esc_attr($term->name); ?></option>
+								<?php else : ?>
+									<option value="<?= esc_attr($term->term_id) ?>"><?= esc_attr($term->name); ?></option>
+								<?php endif; ?>
 							<?php endforeach; ?>
 						</select>
-						<select class="input pointer" name="area" id="area">
+						<select class="input pointer" name="municipality" id="municipality">
 							<?php if ($municipalities->have_posts()) : ?>
 								<?php while ($municipalities->have_posts()) : $municipalities->the_post(); ?>
-									<option value="<?= get_the_ID() ?>"><?php the_title(); ?></option>
+									<?php if (isset($_POST['municipality'])  && !empty($_POST['municipality']) && intval($_POST['municipality']) === get_the_ID()) : ?>
+										<option selected value="<?= get_the_ID() ?>"><?php the_title(); ?></option>
+									<?php else : ?>
+										<option value="<?= get_the_ID() ?>"><?php the_title(); ?></option>
+									<?php endif; ?>
 								<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
 							<?php endif; ?>

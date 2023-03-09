@@ -306,6 +306,19 @@ address {
 	color: #fd5631;
 }
 
+.site-header__search .form-row > select {
+	display: none;
+}
+
+.site-header__search .nice-select {
+	line-height: initial;
+	min-width: 300px;
+}
+
+.site-header__search .nice-select .nice-select-dropdown {
+	width: 100%;
+}
+
 .site-footer {
 	background-color: #222;
 	padding: 50px 0 0;
@@ -546,6 +559,10 @@ address {
 	color: #fd5631;
 }
 
+.dashboard__content .profile-card:not(:last-child) {
+	margin-bottom: 20px;
+}
+
 .profile-card {
 	border: 1px solid #fd5631;
 	border-radius: 10px;
@@ -713,6 +730,10 @@ address {
 	color: #222;
 	width: 100%;
 	font-size: 14px;
+	padding: 0 15px;
+	min-height: 45px;
+	display: flex;
+	align-items: center;
 }
 
 .input::placeholder {

@@ -57,13 +57,9 @@ require get_stylesheet_directory() . '/inc/custom-post-types/profiles.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/municipalities.php';
 
 /**
- * Delete user profile function
- */
-require get_stylesheet_directory() . '/inc/users/delete-business-profile.php';
-
-/**
  * AJAX files
  */
 require get_stylesheet_directory() . '/inc/users/auth-register-ajax.php';
 require get_stylesheet_directory() . '/inc/users/auth-login-ajax.php';
 require get_stylesheet_directory() . '/inc/users/update-user-details.php';
+require get_stylesheet_directory() . '/inc/users/delete-business-profile.php';

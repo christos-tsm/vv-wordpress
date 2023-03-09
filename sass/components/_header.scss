@@ -67,4 +67,19 @@
 			}
 		}
 	}
+
+	&__search {
+		.form-row {
+			& > select {
+				display: none;
+			}
+		}
+		.nice-select {
+			line-height: initial;
+			min-width: 300px;
+			.nice-select-dropdown {
+				width: 100%;
+			}
+		}
+	}
 }

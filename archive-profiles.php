@@ -6,12 +6,18 @@ $args = array(
     'posts_per_page' => -1,
 );
 if (isset($_POST['profile_category']) && !empty($_POST['profile_category'])) {
-    $category = $_POST['profile_category'];
-    $area = $_POST['area'];
+    $municipality = (int) $_POST['municipality'];
+    $category = (int) $_POST['profile_category'];
     $args['meta_query'] = array(
+        'relation' => 'AND',
         array(
             'key' => 'business_category',
             'value' => '"' . $category . '"',
+            'compare' => 'LIKE',
+        ),
+        array(
+            'key' => 'municipality',
+            'value' => '"' . $municipality . '"',
             'compare' => 'LIKE',
         )
     );
@@ -28,7 +34,7 @@ $query = new WP_Query($args);
             wp_reset_postdata();
             ?>
         <?php else : ?>
-            <h1>No profiles found</h1>
+            <h1 class="message message--error"><?php pll_e('Δεν βρέθηκαν αποτελέσματα για την αναζήτησή σας.') ?></h1>
         <?php endif; ?>
     </section>
 </main>
