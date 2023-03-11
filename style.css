@@ -811,6 +811,11 @@ address {
 	font-weight: 600;
 }
 
+.acf-label .description a {
+	color: #fd5631;
+	font-weight: 600;
+}
+
 .acf-label .description::before {
 	content: "(";
 }
@@ -1171,10 +1176,13 @@ input#file-upload-button {
 	padding-top: 20px;
 }
 
+.profile-single__section {
+	margin: 30px auto;
+}
+
 .profile-single__container {
 	border-radius: 10px;
-	padding: 20px;
-	margin-bottom: 30px;
+	padding: 20px 0;
 }
 
 .profile-single__header {
@@ -1183,6 +1191,11 @@ input#file-upload-button {
 
 .profile-single__header .section-title {
 	padding-right: 180px;
+	margin-top: 15px;
+}
+
+.profile-single__cover {
+	display: flex;
 }
 
 .profile-single__cover-image {
@@ -1210,23 +1223,149 @@ input#file-upload-button {
 }
 
 .profile-single__address {
-	display: flex;
-	gap: 6px;
-	align-items: center;
-	font-size: 16px;
-	margin: 10px 0;
+	margin-bottom: 10px;
 }
 
 .profile-single__address a {
+	display: flex;
+	gap: 6px;
+	align-items: center;
 	color: #222;
+	font-size: 14px;
+}
+
+.profile-single__address a svg path {
+	fill: #222;
+	transition: all ease-in-out 250ms;
 }
 
 .profile-single__address a:hover {
 	color: #fd5631;
 }
 
+.profile-single__address a:hover svg path {
+	fill: #fd5631;
+}
+
 .profile-single__content {
 	margin: 30px 0;
+}
+
+.profile-single__contact-container {
+	display: flex;
+	gap: 50px;
+}
+
+.profile-single__contact-links {
+	display: flex;
+	gap: 35px;
+}
+
+.profile-single__details {
+	flex: 1;
+}
+
+.profile-single__map {
+	flex: 1;
+}
+
+.profile-single__list {
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+}
+
+.profile-single__list:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.profile-single__list-item a {
+	display: flex;
+	gap: 6px;
+	color: #222;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.profile-single__list-item a:hover {
+	color: #fd5631;
+}
+
+.profile-single__list--social-media {
+	flex-direction: row;
+}
+
+.profile-single__list--social-media .profile-single__list-item svg path {
+	transition: all ease-in-out 250ms;
+}
+
+.profile-single__list--social-media .profile-single__list-item a:hover svg path {
+	fill: #fd5631;
+}
+
+.profile-single__gallery {
+	display: grid;
+	gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+	.profile-single__gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.profile-single__gallery {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.profile-single__gallery-link {
+	display: flex;
+	width: 100%;
+	color: #fff;
+	height: 350px;
+}
+
+.profile-single__gallery-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.profile-single__gallery-single {
+	position: relative;
+}
+
+.profile-single__gallery-single .overlay {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	background: rgba(0, 0, 0, 0.5);
+	transition: all ease-in-out 250ms;
+}
+
+.profile-single__gallery-single:hover .overlay {
+	opacity: 1;
+}
+
+#map {
+	height: 500px;
+}
+
+#map .leaflet-control-attribution {
+	background-color: transparent !important;
+}
+
+#map .leaflet-control-attribution a {
+	color: #222;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -101,6 +101,10 @@
 		font-size: 12px;
 		opacity: 0.6;
 		font-weight: 600;
+		a {
+			color: $primary-color;
+			font-weight: 600;
+		}
 		&::before {
 			content: "(";
 		}

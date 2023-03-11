@@ -8,7 +8,6 @@
 			let hotelSlider = new Swiper(".slider--hotels", {
 				slidesPerView: 3,
 				spaceBetween: 30,
-
 				navigation: {
 					nextEl: ".swiper-button-next",
 					prevEl: ".swiper-button-prev",
@@ -54,14 +53,11 @@
 						var option = document.createElement("option");
 						option.value = choice.dataset.id;
 						option.text = choice.innerText;
-
 						// Append the option element to the select element
 						select.appendChild(option);
 					});
-
 					// Replace the relationship field with the new select element
 					relationshipField.parentNode.replaceChild(select, relationshipField);
-
 					// Set the form action to the current URL
 					var form = document.querySelector("form");
 					form.action = window.location.href;
@@ -75,7 +71,8 @@
 			document.querySelectorAll(".profile-card__address a").length >= 1 ? document.querySelectorAll(".profile-card__address a") : document.querySelectorAll(".profile-single__address a");
 		addressLinks.forEach((link) => {
 			const address = link.textContent;
-			const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+			const trimedAddress = address.replace(/\s+/g, " ").trim();
+			const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(trimedAddress)}`;
 			link.setAttribute("href", mapsLink);
 		});
 	});
