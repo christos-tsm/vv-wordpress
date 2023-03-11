@@ -38,6 +38,7 @@
 	font-weight: 600;
 	border-radius: 5px;
 	transition: all ease-in-out 250ms;
+
 	&:not(.btn) {
 		background-color: #fff;
 		border: 1px solid #ddd;
@@ -87,7 +88,9 @@
 
 /** ACF Form */
 .acf-fields > .acf-field {
-	border: none !important;
+	// border: 1px solid #ddd !important;
+	min-height: fit-content !important;
+	padding: 15px 0;
 }
 
 .acf-label {
@@ -156,9 +159,6 @@
 	display: flex;
 	align-items: center;
 }
-.acf-fields > .acf-field {
-	padding: 15px 0;
-}
 
 .acf-url i {
 	top: 50% !important;
@@ -180,7 +180,9 @@
 .acf-field input[type="week"],
 .acf-field textarea,
 .acf-field select {
-	min-height: 40px;
+	min-height: 45px !important;
+	padding: 0 15px !important;
+	line-height: 30px !important;
 	&::placeholder {
 		opacity: 0.4;
 	}
@@ -214,8 +216,4 @@ input#file-upload-button {
 .acf-field-relationship {
 	opacity: 0;
 	transition: all ease-in-out 250ms;
-}
-
-.acf-fields > .acf-field {
-	min-height: fit-content !important;
 }

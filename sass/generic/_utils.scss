@@ -3,6 +3,16 @@ body {
 	color: $text-dark;
 }
 
+::-moz-selection {
+	background: $primary-color;
+	color: #fff;
+}
+
+::selection {
+	background: $primary-color;
+	color: #fff;
+}
+
 .thumbnail {
 	width: 100%;
 }

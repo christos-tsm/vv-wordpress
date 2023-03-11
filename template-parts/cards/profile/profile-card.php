@@ -2,10 +2,11 @@
 $current_user_id = get_current_user_id();
 $profile_user_id = intval(get_field('user_id'));
 $featured_image = get_field('featured_image');
+$business_logo = get_field('logo');
 $business_title = get_field('business_title');
 $business_description = get_field('business_content');
 $address = get_field('address');
-$municipality = get_field('municipality');
+$municipalities = get_field('municipality');
 if (strlen($business_description) > 350) {
     $short_description = substr($business_description, 0, 350) . '...';
 } else {
@@ -17,9 +18,9 @@ if (strlen($business_description) > 350) {
     <?php if ($post_status === 'draft') : ?>
         <span class="badge badge--draft"><?php pll_e('Εκκρεμεί έγκριση') ?></span>
     <?php endif; ?>
-    <?php if ($featured_image) : ?>
+    <?php if ($business_logo) : ?>
         <a class="profile-card__thumbnail-link" aria-label="Link for <?php the_title(); ?> page" href="<?php the_permalink(); ?>">
-            <img class="profile-card__thumbnail" src="<?= esc_url($featured_image['url']) ?>" alt="<?php the_title(); ?>">
+            <img class="profile-card__thumbnail" src="<?= esc_url($business_logo['sizes']['medium']) ?>" alt="<?php the_title(); ?>">
         </a>
     <?php else : ?>
         <?php $logo = get_field('header_logo', 'option'); ?>
@@ -52,7 +53,12 @@ if (strlen($business_description) > 350) {
                 <span class=" icon icon--x-small">
                     <?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg'); ?>
                 </span>
-                <?= esc_attr($address); ?>
+                <a href="#!" target="_blank" rel="noreferrer noopener">
+                    <?= esc_attr($address); ?>,
+                    <?php foreach ($municipalities as $municipality) : ?>
+                        <?= esc_attr($municipality->post_title); ?>
+                    <?php endforeach; ?>
+                </a>
             </address>
         </footer>
     </div>
