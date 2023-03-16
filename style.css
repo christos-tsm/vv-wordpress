@@ -1368,4 +1368,85 @@ input#file-upload-button {
 	color: #222;
 }
 
+.site-main--archive {
+	margin: 103px auto;
+	display: flex;
+	padding: 40px 0;
+}
+
+.archive__filters {
+	flex: 1;
+	max-width: 250px;
+}
+
+.archive__content {
+	flex: 1;
+	display: grid;
+	gap: 25px;
+}
+
+@media screen and (min-width: 768px) {
+	.archive__content {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.archive__content {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.archive-item__thumbnail {
+	min-height: 50px;
+	transition: all ease-in-out 250ms;
+}
+
+.archive-item__thumbnail-link {
+	border-radius: 10px;
+	min-height: 150px;
+	margin-bottom: 25px;
+	background-color: #f5f5f5;
+	display: flex;
+	justify-content: center;
+}
+
+.archive-item__title {
+	margin-bottom: 10px;
+}
+
+.archive-item__title-link {
+	color: #222;
+	font-size: 20px;
+}
+
+.archive-item__description {
+	min-height: 75px;
+}
+
+.archive-item__description p {
+	font-size: 14px;
+	line-height: 25px;
+}
+
+.archive-item__details {
+	display: flex;
+	gap: 15px;
+	margin-top: 15px;
+}
+
+.archive-item__details-item {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.archive-item:hover .archive-item__thumbnail {
+	transform: scale(1.1);
+}
+
+.archive-item:hover .archive-item__title-link {
+	color: #fd5631;
+}
+
 /*# sourceMappingURL=style.css.map */
