@@ -491,6 +491,7 @@ address {
 	display: flex;
 	gap: 4px;
 	align-items: center;
+	color: #9691a4;
 }
 
 .event-time, .event-date {
@@ -543,6 +544,7 @@ address {
 	font-size: 13px;
 	font-weight: 500;
 	align-items: center;
+	color: #9691a4;
 }
 
 .grid--restaurants__logo {
@@ -682,6 +684,7 @@ address {
 	display: flex;
 	gap: 4px;
 	margin: 15px 0;
+	color: #9691a4;
 }
 
 .slide-destination__text {
@@ -1372,11 +1375,31 @@ input#file-upload-button {
 	margin: 103px auto;
 	display: flex;
 	padding: 40px 0;
+	min-height: 780px;
 }
 
 .archive__filters {
 	flex: 1;
 	max-width: 250px;
+}
+
+.archive__categories-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.archive__categories-list-item a {
+	color: #9691a4;
+}
+
+.archive__categories-list-item a:hover {
+	color: #fd5631;
+}
+
+.archive__categories-list-item--active a {
+	color: #fd5631;
+	font-weight: 600;
 }
 
 .archive__content {
@@ -1439,6 +1462,8 @@ input#file-upload-button {
 	display: flex;
 	align-items: center;
 	gap: 5px;
+	font-size: 14px;
+	color: #9691a4;
 }
 
 .archive-item:hover .archive-item__thumbnail {
