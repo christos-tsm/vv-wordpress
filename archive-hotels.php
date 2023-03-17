@@ -18,7 +18,7 @@ $taxonomy =  'hotel-categories';
         <section class="archive__content">
             <?php
             while (have_posts()) : the_post();
-                get_template_part('template-parts/archive/content-restaurant');
+                get_template_part('template-parts/archive/content-archive');
             endwhile;
             wp_reset_postdata();
             ?>
