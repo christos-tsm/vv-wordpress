@@ -65,6 +65,17 @@
 				</form>
 			</div>
 			<div class="site-header__icons">
+				<?php
+				$languages = pll_the_languages(array('raw' => 1));
+				$clang = pll_current_language('name');
+				?>
+				<?php foreach ($languages as $language) :
+					if ($language['name'] == $clang) : ?>
+						<span class="site-header__language site-header__language--current"><?= $language['name']; ?></span>
+					<?php else : ?>
+						<a class="site-header__language" href="<?= $language['url']; ?>"><?= $language['name']; ?></a>
+				<?php endif;
+				endforeach; ?>
 				<?php if (is_user_logged_in()) : ?>
 					<a href="<?php echo wp_logout_url(home_url()); ?>" class="site-header__icons-logout" id="logout" aria-label="Logout">
 						<span class="icon icon--small">

@@ -276,7 +276,7 @@ address {
 
 .site-header__icons {
 	display: flex;
-	gap: 40px;
+	gap: 30px;
 	width: 180px;
 	justify-content: flex-end;
 	align-items: center;
@@ -298,6 +298,15 @@ address {
 
 .site-header__icons-account--active {
 	color: #fd5631 !important;
+}
+
+.site-header__language {
+	font-size: 14px;
+}
+
+.site-header__language--current {
+	font-weight: 600;
+	color: #fd5631;
 }
 
 .site-header__menu {
@@ -1376,11 +1385,13 @@ input#file-upload-button {
 	display: flex;
 	padding: 40px 0;
 	min-height: 780px;
+	gap: 50px;
 }
 
 .archive__filters {
 	flex: 1;
-	max-width: 250px;
+	max-width: 200px;
+	border-right: 1px solid #ddd;
 }
 
 .archive__categories-list {
@@ -1421,11 +1432,25 @@ input#file-upload-button {
 }
 
 .archive-item__thumbnail {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	transition: all ease-in-out 250ms;
+	border-radius: 10px;
+}
+
+.archive-item__thumbnail-link {
+	display: flex;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+.archive-item__logo {
 	min-height: 50px;
 	transition: all ease-in-out 250ms;
 }
 
-.archive-item__thumbnail-link {
+.archive-item__logo-link {
 	border-radius: 10px;
 	min-height: 150px;
 	margin-bottom: 25px;

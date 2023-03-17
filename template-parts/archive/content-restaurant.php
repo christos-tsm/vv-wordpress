@@ -3,19 +3,27 @@ $description = get_field('description');
 if ($description) :
     $words = explode(" ", $description);
     $trimmed_description = implode(" ", array_splice($words, 0, 15));
+else :
+    $description = get_the_content();
+    $words = explode(" ", $description);
+    $trimmed_description = implode(" ", array_splice($words, 0, 15));
 endif;
 ?>
 <article class="archive-item archive-item--restaurant archive-item--<?= get_the_ID() ?>">
     <header class="archive-item__header">
-        <?php if (get_field('logo')) : ?>
-            <?php $logo = get_field('logo'); ?>
+        <?php if (has_post_thumbnail()) : ?>
             <a class="archive-item__thumbnail-link" href="<?php the_permalink() ?>">
-                <img class="archive-item__thumbnail" src="<?= esc_url($logo['url']) ?>" alt="<?php the_title() ?>">
+                <img class="archive-item__thumbnail" src="<?= esc_url(the_post_thumbnail_url('medium_large')) ?>" alt="<?php the_title() ?>">
+            </a>
+        <?php elseif (get_field('logo')) : ?>
+            <?php $logo = get_field('logo'); ?>
+            <a class="archive-item__logo-link" href="<?php the_permalink() ?>">
+                <img class="archive-item__logo" src="<?= esc_url($logo['url']) ?>" alt="<?php the_title() ?>">
             </a>
         <?php else : ?>
             <?php $logo = get_field('header_logo'); ?>
-            <a class="archive-item__thumbnail-link" href="<?php the_permalink() ?>">
-                <img class="archive-item__thumbnail" src="<?= esc_url($logo['url']) ?>" alt="<?php the_title() ?>">
+            <a class="archive-item__logo-link" href="<?php the_permalink() ?>">
+                <img class="archive-item__logo" src="<?= esc_url($logo['url']) ?>" alt="<?php the_title() ?>">
             </a>
         <?php endif; ?>
         <h3 class="archive-item__title">

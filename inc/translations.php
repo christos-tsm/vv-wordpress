@@ -15,4 +15,5 @@ if (function_exists('pll_register_string')) :
     pll_register_string('Επεξεργασία', 'Επεξεργασία', true);
     pll_register_string('Το επαγγελματικό προφίλ που αναζητάτε δεν βρέθηκε', 'Το επαγγελματικό προφίλ που αναζητάτε δεν βρέθηκε', true);
     pll_register_string('Επικοινωνία', 'Επικοινωνία', true);
+    pll_register_string('Όλες οι κατηγορίες', 'Όλες οι κατηγορίες', true);
 endif;

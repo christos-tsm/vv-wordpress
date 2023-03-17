@@ -41,6 +41,11 @@ require get_stylesheet_directory() . '/inc/utils.php';
 require get_stylesheet_directory() . '/inc/options.php';
 
 /**
+ * String Translations
+ */
+require get_stylesheet_directory() . '/inc/translations.php';
+
+/**
  * Custom Post Types
  */
 require get_stylesheet_directory() . '/inc/custom-post-types/restaurants.php';

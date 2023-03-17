@@ -22,7 +22,7 @@
 
 	&__icons {
 		display: flex;
-		gap: 40px;
+		gap: 30px;
 		width: 180px;
 		justify-content: flex-end;
 		align-items: center;
@@ -43,6 +43,14 @@
 			&--active {
 				color: $primary-color !important;
 			}
+		}
+	}
+
+	&__language {
+		font-size: 14px;
+		&--current {
+			font-weight: 600;
+			color: $primary-color;
 		}
 	}
 
