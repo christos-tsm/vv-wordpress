@@ -74,6 +74,13 @@
 				}
 			}
 		}
+
+		.current-menu-item {
+			a {
+				color: $primary-color;
+				font-weight: 600;
+			}
+		}
 	}
 
 	&__search {

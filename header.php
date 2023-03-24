@@ -65,17 +65,7 @@
 				</form>
 			</div>
 			<div class="site-header__icons">
-				<?php
-				$languages = pll_the_languages(array('raw' => 1));
-				$clang = pll_current_language('name');
-				?>
-				<?php foreach ($languages as $language) :
-					if ($language['name'] == $clang) : ?>
-						<span class="site-header__language site-header__language--current"><?= $language['name']; ?></span>
-					<?php else : ?>
-						<a class="site-header__language" href="<?= $language['url']; ?>"><?= $language['name']; ?></a>
-				<?php endif;
-				endforeach; ?>
+				<?php get_template_part('template-parts/utils/languages'); ?>
 				<?php if (is_user_logged_in()) : ?>
 					<a href="<?php echo wp_logout_url(home_url()); ?>" class="site-header__icons-logout" id="logout" aria-label="Logout">
 						<span class="icon icon--small">
@@ -91,14 +81,5 @@
 				</a>
 			</div>
 		</div>
-		<?php if (have_rows('sub_menu', 'options')) : ?>
-			<nav class="site-header__menu">
-				<ul class="site-header__categories container container--medium">
-					<?php while (have_rows('sub_menu', 'options')) : the_row(); ?>
-						<?php $link = get_sub_field('link_' . pll_current_language()); ?>
-						<li class="site-header__categories-item"><a href="<?= esc_url($link['url']) ?>"><?= esc_attr($link['title']) ?></a></li>
-					<?php endwhile; ?>
-				</ul>
-			</nav>
-		<?php endif; ?>
+		<?php get_template_part('template-parts/menus/header-menu'); ?>
 	</header><!-- #masthead -->

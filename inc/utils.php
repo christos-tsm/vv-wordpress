@@ -85,8 +85,7 @@ function my_display_user_display_name_column($column_name, $post_id) {
     }
 }
 // Restrict access to non-logged in users
-add_action('template_redirect', 'restrict_child_pages');
-function restrict_child_pages() {
+function volos_voyage_restrict_child_pages() {
     if (!is_user_logged_in()) { // Check if user is not logged in
         $parent_ids = array(48, 50); // Set the IDs of the parent pages
         $page_id = get_queried_object_id(); // Get the ID of the current page
@@ -103,3 +102,12 @@ function restrict_child_pages() {
         }
     }
 }
+add_action('template_redirect', 'volos_voyage_restrict_child_pages');
+// Add class in menu li
+function volos_voyage_add_additional_class_on_li($classes, $item, $args) {
+    if (isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'volos_voyage_add_additional_class_on_li', 1, 3);

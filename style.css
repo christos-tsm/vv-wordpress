@@ -330,6 +330,11 @@ address {
 	color: #fd5631;
 }
 
+.site-header__categories .current-menu-item a {
+	color: #fd5631;
+	font-weight: 600;
+}
+
 .site-header__search .form-row > select {
 	display: none;
 }
