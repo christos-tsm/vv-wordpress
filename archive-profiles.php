@@ -5,9 +5,9 @@ $args = array(
     'post_status' => 'publish',
     'posts_per_page' => -1,
 );
-if (isset($_POST['profile_category']) && !empty($_POST['profile_category'])) {
-    $municipality = (int) $_POST['municipality'];
-    $category = (int) $_POST['profile_category'];
+if (isset($_GET['profile_category']) && !empty($_GET['profile_category'])) {
+    $municipality = (int) $_GET['municipality'];
+    $category = (int) $_GET['profile_category'];
     $args['meta_query'] = array(
         'relation' => 'AND',
         array(

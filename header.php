@@ -11,6 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
+	<style>/* Critical CSS for above-the-fold content */body {font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;color: #222; }.archive-item__title-link {font-size: 20px;}a {color: #222;font-size: 14px;}</style>
 </head>
 
 <body <?php body_class(); ?> uuid="<?= get_current_user_id(); ?>">
@@ -20,49 +21,7 @@
 		<div class="site-header__content container container--medium">
 			<a class="site-header__logo" href="<?= pll_home_url() ?>" aria-label="Homepage Link"><?= file_get_contents($header_logo['url']); ?></a>
 			<div class="site-header__search">
-				<form method="POST" action="<?php echo esc_url(pll_home_url() . 'profiles/'); ?>">
-					<div class="form-row">
-						<?php
-						$terms = get_terms(array(
-							'taxonomy' => 'profile-categories',
-							'pad_counts' => true,
-						));
-						$non_empty_terms = array();
-						foreach ($terms as $term) :
-							if ($term->count > 0) {
-								$non_empty_terms[] = $term;
-							}
-						endforeach;
-						$args = array(
-							'post_type' => 'municipalities',
-							'posts_per_page' => -1
-						);
-						$municipalities = new WP_Query($args);
-						?>
-						<select class="input pointer" name="profile_category" id="profile_category">
-							<?php foreach ($non_empty_terms as $term) : ?>
-								<?php if (isset($_POST['profile_category'])  && !empty($_POST['profile_category']) && intval($_POST['profile_category']) === $term->term_id) : ?>
-									<option selected value="<?= esc_attr($term->term_id) ?>"><?= esc_attr($term->name); ?></option>
-								<?php else : ?>
-									<option value="<?= esc_attr($term->term_id) ?>"><?= esc_attr($term->name); ?></option>
-								<?php endif; ?>
-							<?php endforeach; ?>
-						</select>
-						<select class="input pointer" name="municipality" id="municipality">
-							<?php if ($municipalities->have_posts()) : ?>
-								<?php while ($municipalities->have_posts()) : $municipalities->the_post(); ?>
-									<?php if (isset($_POST['municipality'])  && !empty($_POST['municipality']) && intval($_POST['municipality']) === get_the_ID()) : ?>
-										<option selected value="<?= get_the_ID() ?>"><?php the_title(); ?></option>
-									<?php else : ?>
-										<option value="<?= get_the_ID() ?>"><?php the_title(); ?></option>
-									<?php endif; ?>
-								<?php endwhile; ?>
-								<?php wp_reset_postdata(); ?>
-							<?php endif; ?>
-						</select>
-						<button class="input btn pointer" type="submit"><?php pll_e('Αναζήτηση'); ?></button>
-					</div>
-				</form>
+				<?php get_template_part('template-parts/search/form'); ?>
 			</div>
 			<div class="site-header__icons">
 				<?php get_template_part('template-parts/utils/languages'); ?>
@@ -82,4 +41,4 @@
 			</div>
 		</div>
 		<?php get_template_part('template-parts/menus/header-menu'); ?>
-	</header><!-- #masthead -->
+	</header>
