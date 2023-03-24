@@ -1,0 +1,16 @@
+.error-404 {
+	min-height: calc(100vh - 481px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	position: relative;
+	.texture {
+		position: absolute;
+		font-size: 450px;
+		opacity: 0.1;
+		color: $primary-color;
+		pointer-events: none;
+	}
+}

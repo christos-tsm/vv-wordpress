@@ -25,6 +25,9 @@ function volos_voyage_deregister_styles() {
     wp_dequeue_style('classic-theme-styles');
 }
 add_action('wp_enqueue_scripts', 'volos_voyage_deregister_styles', 20);
+// Disable all colors within Gutenberg.
+remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
 //Remove Gutenberg Block Library CSS from loading on the frontend
 function volos_voyage_wp_block_library_css() {
     wp_dequeue_style('wp-block-library');

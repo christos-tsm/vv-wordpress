@@ -7,24 +7,20 @@
  *
  * @package Volos_Voyage
  */
-
 get_header();
 ?>
 
-<main id="primary" class="site-main">
-
+<main class="site-main site-main--404">
 	<section class="error-404 not-found">
-		<header class="page-header">
-			<h1 class="page-title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'volos-voyage'); ?></h1>
-		</header><!-- .page-header -->
-
-		<div class="page-content">
-			<p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'volos-voyage'); ?></p>
-
-		</div><!-- .page-content -->
-	</section><!-- .error-404 -->
-
-</main><!-- #main -->
+		<span class="texture">404</span>
+		<h1 class="page-title"><?php pll_e('Η σελίδα δεν βρέθηκε.', 'volos-voyage'); ?></h1>
+		<a class="cta cta--primary" href="<?= pll_home_url(); ?>">
+			<span>
+				<?php pll_e('Επιστροφή στην αρχική') ?>
+			</span>
+		</a>
+	</section>
+</main>
 
 <?php
 get_footer();

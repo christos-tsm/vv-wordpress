@@ -29,7 +29,7 @@ function filter_cpt() {
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
-            get_template_part('template-parts/archive/content-restaurant');
+            get_template_part('template-parts/archive/content-archive');
         }
     } else {
         echo '<p class="message message--error">Δεν βρέθηκαν αποτελέσματα</p>';

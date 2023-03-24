@@ -1,5 +1,8 @@
 <?php
 $description = get_field('description');
+$reviews = get_field('reviews');
+$avg_price = get_field('average_price');
+$address = get_field('address');
 if ($description) :
     $words = explode(" ", $description);
     $trimmed_description = implode(" ", array_splice($words, 0, 15));
@@ -21,7 +24,7 @@ endif;
                 <img class="archive-item__logo" src="<?= esc_url($logo['url']) ?>" alt="<?php the_title() ?>">
             </a>
         <?php else : ?>
-            <?php $logo = get_field('header_logo'); ?>
+            <?php $logo = get_field('header_logo', 'option'); ?>
             <a class="archive-item__logo-link" href="<?php the_permalink() ?>">
                 <img class="archive-item__logo" src="<?= esc_url($logo['url']) ?>" alt="<?php the_title() ?>">
             </a>
@@ -41,20 +44,22 @@ endif;
             <?php endif; ?>
         </div>
     <?php endif; ?>
-    <footer>
-        <ul class="archive-item__details">
-            <li class="archive-item__details-item">
-                <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/star.svg') ?></span>
-                <?php the_field('reviews'); ?>
-            </li>
-            <li class="archive-item__details-item">
-                <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/credit-card.svg') ?></span>
-                <?php the_field('average_price_per_dinner'); ?> &euro;
-            </li>
-            <li class="archive-item__details-item">
-                <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg') ?></span>
-                <address><?php the_field('address'); ?></address>
-            </li>
-        </ul>
-    </footer>
+    <?php if ($reviews || $avg_price || $address) : ?>
+        <footer>
+            <ul class="archive-item__details">
+                <li class="archive-item__details-item">
+                    <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/star.svg') ?></span>
+                    <?= esc_attr($reviews); ?>
+                </li>
+                <li class="archive-item__details-item">
+                    <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/credit-card.svg') ?></span>
+                    <?= esc_attr($avg_price) ?> &euro;
+                </li>
+                <li class="archive-item__details-item">
+                    <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg') ?></span>
+                    <address><?= esc_attr($address); ?></address>
+                </li>
+            </ul>
+        </footer>
+    <?php endif; ?>
 </article>

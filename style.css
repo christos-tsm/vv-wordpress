@@ -1481,6 +1481,7 @@ input#file-upload-button {
 	display: flex;
 	gap: 15px;
 	margin-top: 15px;
+	flex-wrap: wrap;
 }
 
 .archive-item__details-item {
@@ -1497,6 +1498,24 @@ input#file-upload-button {
 
 .archive-item:hover .archive-item__title-link {
 	color: #fd5631;
+}
+
+.error-404 {
+	min-height: calc(100vh - 481px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	position: relative;
+}
+
+.error-404 .texture {
+	position: absolute;
+	font-size: 450px;
+	opacity: 0.1;
+	color: #fd5631;
+	pointer-events: none;
 }
 
 /*# sourceMappingURL=style.css.map */
