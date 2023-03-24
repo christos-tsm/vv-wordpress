@@ -1441,10 +1441,10 @@ input#file-upload-button {
 	height: 150px;
 	object-fit: cover;
 	transition: all ease-in-out 250ms;
-	border-radius: 10px;
 }
 
 .archive-item__thumbnail-link {
+	border-radius: 10px;
 	display: flex;
 	overflow: hidden;
 	margin-bottom: 25px;
@@ -1498,7 +1498,7 @@ input#file-upload-button {
 }
 
 .archive-item:hover .archive-item__thumbnail {
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
 
 .archive-item:hover .archive-item__title-link {

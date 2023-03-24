@@ -54,8 +54,8 @@
 			height: 150px;
 			object-fit: cover;
 			transition: all ease-in-out 250ms;
-			border-radius: 10px;
 			&-link {
+				border-radius: 10px;
 				display: flex;
 				overflow: hidden;
 				margin-bottom: 25px;
@@ -106,7 +106,7 @@
 		}
 		&:hover {
 			.archive-item__thumbnail {
-				transform: scale(1.1);
+				transform: scale(1.05);
 			}
 			.archive-item__title-link {
 				color: $primary-color;

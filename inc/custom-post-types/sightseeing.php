@@ -10,10 +10,11 @@ function create_sightseeing_post_type() {
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'Sightseeing'),
+            'rewrite' => array('slug' => 'sightseeing'),
             'show_in_rest' => false,
             'menu_icon'   => 'dashicons-location-alt',
-            'menu_position' => 3
+            'menu_position' => 3,
+            'supports' => array('thumbnail', 'title', 'revisions', 'editor')
         )
     );
 }
