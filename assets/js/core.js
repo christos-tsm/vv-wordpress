@@ -37,9 +37,9 @@
 			});
 		}
 		/** Handle relationship inputs in business-profile pages */
-		setTimeout(() => {
-			// Get all relationship fields on the page
-			if (document.querySelectorAll(".acf-relationship").length) {
+		if (document.querySelectorAll(".acf-relationship").length) {
+			setTimeout(() => {
+				// Get all relationship fields on the page
 				var relationshipFields = document.querySelectorAll(".acf-relationship");
 				// Loop through each relationship field
 				relationshipFields.forEach(function (relationshipField) {
@@ -64,8 +64,8 @@
 					console.log(relationshipField);
 					document.querySelector('div[data-name="municipality"]').classList.add("input--reveal");
 				});
-			}
-		}, 1000);
+			}, 1000);
+		}
 		/** Handle google maps links */
 		let addressLinks =
 			document.querySelectorAll(".profile-card__address a").length >= 1 ? document.querySelectorAll(".profile-card__address a") : document.querySelectorAll(".profile-single__address a");

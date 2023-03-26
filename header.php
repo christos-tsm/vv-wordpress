@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
-	<style>/* Critical CSS for above-the-fold content */body {font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;color: #222; }.archive-item__title-link {font-size: 20px;}a {color: #222;font-size: 14px;}</style>
+	<style>/* Critical CSS for above-the-fold content */body {font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;color: #222; }.archive-item__title-link {font-size: 20px;}a {color: #222;font-size: 14px;transition: color ease-in-out 250ms}</style>
 </head>
 
 <body <?php body_class(); ?> uuid="<?= get_current_user_id(); ?>">
