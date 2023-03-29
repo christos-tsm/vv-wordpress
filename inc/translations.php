@@ -11,8 +11,13 @@ if (function_exists('pll_register_string')) :
     pll_register_string('Κωδικός', 'Κωδικός', true);
     pll_register_string('Επιβεβαίωση κωδικού', 'Επιβεβαίωση κωδικού', true);
     pll_register_string('μακριά άπο τον Βόλο', 'μακριά άπο τον Βόλο', true);
+    pll_register_string('από το κέντρο του Βόλου', 'από το κέντρο του Βόλου', true);
     pll_register_string('Καταχώρηση', 'Καταχώρηση', true);
+    pll_register_string('Τοποθεσία', 'Τοποθεσία', true);
     pll_register_string('Επεξεργασία', 'Επεξεργασία', true);
+    pll_register_string('Ιστοσελίδα', 'Ιστοσελίδα', true);
+    pll_register_string('Πληροφορίες', 'Πληροφορίες', true);
+    pll_register_string('Περιγραφή', 'Περιγραφή', true);
     pll_register_string('Το επαγγελματικό προφίλ που αναζητάτε δεν βρέθηκε', 'Το επαγγελματικό προφίλ που αναζητάτε δεν βρέθηκε', true);
     pll_register_string('Επικοινωνία', 'Επικοινωνία', true);
     pll_register_string('Όλες οι κατηγορίες', 'Όλες οι κατηγορίες', true);

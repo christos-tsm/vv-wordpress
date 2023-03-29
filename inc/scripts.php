@@ -7,7 +7,7 @@ function volos_voyage_scripts() {
     // Styles
     wp_enqueue_style('swiper-styles', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), null);
     wp_enqueue_style('volos-voyage-select', get_template_directory_uri() . '/assets/css/nice-select2.css', array(), _S_VERSION);
-    if (is_singular('profiles')) {
+    if (is_singular()) {
         wp_enqueue_style('volos-voyage-leaflet', get_template_directory_uri() . '/assets/css/leaflet.css', array(), _S_VERSION);
     }
     wp_enqueue_style('volos-voyage-font', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700&display=swap', array(), null);
@@ -19,13 +19,10 @@ function volos_voyage_scripts() {
     wp_enqueue_script('volos-voyage-select', get_template_directory_uri() . '/assets/js/select.min.js', array(), _S_VERSION, true);
     wp_enqueue_script('volos-voyage-profile-search', get_template_directory_uri() . '/assets/js/profile-search.js', array(), _S_VERSION, true);
     wp_enqueue_script('volos-voyage-core', get_template_directory_uri() . '/assets/js/core.js', array(), _S_VERSION, true);
-    if (is_singular('profiles')) {
+    if (is_singular()) {
+        wp_enqueue_script('volos-voyage-lightboxed', get_template_directory_uri() . '/assets/js/lightboxed.js', array(), _S_VERSION, true);
         wp_enqueue_script('volos-voyage-leaflet', get_template_directory_uri() . '/assets/js/leaflet.min.js', array(), _S_VERSION, true);
         wp_enqueue_script('volos-voyage-map', get_template_directory_uri() . '/assets/js/map.js', array(), _S_VERSION, true);
-    }
-    if (is_singular('profiles')) {
-        /** @TODO: Add lightbox support wherever is needed */
-        wp_enqueue_script('volos-voyage-lightboxed', get_template_directory_uri() . '/assets/js/lightboxed.js', array(), _S_VERSION, true);
     }
     if (is_page_template('page-templates/update-account.php')) {
         wp_enqueue_script('volos-voyage-update-form', get_template_directory_uri() . '/assets/js/user-update-details.js', array(), _S_VERSION, true);

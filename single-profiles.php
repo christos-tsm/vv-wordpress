@@ -35,7 +35,7 @@ $website = get_field('website');
                 <h2 class="section-title"><?php pll_e('Τοποθεσία'); ?></h2>
             </div>
             <h3 class="profile-single__address">
-                <a href="#!" target="_blank" rel="noreferrer noopener">
+                <a href="#!" class="address-link" target="_blank" rel="noreferrer noopener">
                     <span class="icon icon--small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg') ?></span>
                     <?php the_field('address'); ?>,
                     <?php foreach ($municipalities as $municipality) : ?>

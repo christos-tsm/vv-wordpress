@@ -53,7 +53,7 @@ if (strlen($business_description) > 350) {
                 <span class=" icon icon--x-small">
                     <?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg'); ?>
                 </span>
-                <a href="#!" target="_blank" rel="noreferrer noopener">
+                <a class="address-link" href="#!" target="_blank" rel="noreferrer noopener">
                     <?= esc_attr($address); ?>,
                     <?php foreach ($municipalities as $municipality) : ?>
                         <?= esc_attr($municipality->post_title); ?>

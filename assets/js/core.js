@@ -67,8 +67,7 @@
 			}, 1000);
 		}
 		/** Handle google maps links */
-		let addressLinks =
-			document.querySelectorAll(".profile-card__address a").length >= 1 ? document.querySelectorAll(".profile-card__address a") : document.querySelectorAll(".profile-single__address a");
+		let addressLinks = document.querySelectorAll(".address-link").length >= 1 ? document.querySelectorAll(".address-link") : document.querySelectorAll(".address-link");
 		addressLinks.forEach((link) => {
 			const address = link.textContent;
 			const trimedAddress = address.replace(/\s+/g, " ").trim();
