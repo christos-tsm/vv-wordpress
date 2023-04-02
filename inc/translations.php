@@ -12,6 +12,7 @@ if (function_exists('pll_register_string')) :
     pll_register_string('Επιβεβαίωση κωδικού', 'Επιβεβαίωση κωδικού', true);
     pll_register_string('μακριά άπο τον Βόλο', 'μακριά άπο τον Βόλο', true);
     pll_register_string('από το κέντρο του Βόλου', 'από το κέντρο του Βόλου', true);
+    pll_register_string('Απόσταση από το κέντρο του Βόλου', 'από το κέντρο του Βόλου', true);
     pll_register_string('Καταχώρηση', 'Καταχώρηση', true);
     pll_register_string('Τοποθεσία', 'Τοποθεσία', true);
     pll_register_string('Επεξεργασία', 'Επεξεργασία', true);

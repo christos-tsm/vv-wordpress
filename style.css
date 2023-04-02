@@ -53,6 +53,7 @@ p {
 .icon svg {
 	width: 100%;
 	height: 100%;
+	pointer-events: none;
 }
 
 .icon--medium {
@@ -78,12 +79,18 @@ p {
 	color: #0f960f;
 }
 
+.icon--inactive {
+	opacity: 0.2;
+	pointer-events: none;
+}
+
 .btn {
 	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 	padding: 4px 10px;
 	background-color: #fd5631;
 	color: #fff;
-	align-items: center;
 	border-radius: 5px;
 	transition: background-color ease-in-out 250ms;
 }
@@ -210,9 +217,31 @@ address {
 	padding-bottom: 15px;
 }
 
+.section-title--dashboard {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.section-title--dashboard .divider {
+	flex: 1;
+	height: 1px;
+	background-color: #f5f5f5;
+}
+
 .section-subtitle {
 	font-size: 18px;
 	font-weight: 600;
+}
+
+.section-subtitle--dashboard {
+	font-size: 12px;
+	color: #8888;
+	margin-bottom: 5px;
+}
+
+.subsection-title {
+	font-size: 18px;
 }
 
 .swiper-button-prev,
@@ -742,6 +771,7 @@ address {
 	display: flex;
 	gap: 20px;
 	flex: 1;
+	position: relative;
 }
 
 .form-row--col {
@@ -800,6 +830,18 @@ address {
 	opacity: 1 !important;
 }
 
+.input--file {
+	visibility: hidden;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+}
+
+textarea.input {
+	padding: 10px !important;
+}
+
 .label--checkbox {
 	font-size: 13px;
 }
@@ -810,10 +852,16 @@ address {
 	align-items: center;
 }
 
+.label--file {
+	opacity: 0.5;
+}
+
 /** ACF Form */
 .acf-fields > .acf-field {
 	min-height: fit-content !important;
-	padding: 15px 0;
+	padding: 15px 0 !important;
+	border-top: none !important;
+	border-bottom: 1px solid #f5f5f5;
 }
 
 .acf-label {
@@ -826,6 +874,7 @@ address {
 	font-size: 12px;
 	opacity: 0.6;
 	font-weight: 600;
+	text-align: right;
 }
 
 .acf-label .description a {
@@ -967,6 +1016,18 @@ input#file-upload-button {
 .acf-field-relationship {
 	opacity: 0;
 	transition: all ease-in-out 250ms;
+}
+
+.gallery-preview__container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 5px;
+}
+
+.gallery-preview__container > img {
+	width: 100%;
+	max-height: 350px;
+	object-fit: contain;
 }
 
 /** Pagess */
@@ -1153,7 +1214,7 @@ input#file-upload-button {
 
 .dashboard__content {
 	flex: 1;
-	padding: 20px;
+	padding: 20px 0;
 }
 
 .dashboard__content .section-title {
@@ -1179,6 +1240,58 @@ input#file-upload-button {
 
 .business-profile-form {
 	margin: 0 0 100px;
+}
+
+.store-categories__container {
+	display: flex;
+	flex-direction: column;
+}
+
+.store-categories__container select[name="shop-category"] {
+	display: none;
+}
+
+.store-categories__container .nice-select {
+	width: 100%;
+	margin: 20px 0;
+}
+
+.store-categories__container .nice-select.open .nice-select-dropdown {
+	width: 100%;
+}
+
+.store-form__header {
+	margin-bottom: 20px;
+}
+
+.store-form--hidden {
+	display: none;
+}
+
+#emails-container,
+#tels-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.email-row,
+.tel-row {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.preview-gallery__container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 10px;
+}
+
+.preview-gallery__container img {
+	width: 100%;
+	height: 300px;
+	object-fit: contain;
 }
 
 .profiles-archive__content {

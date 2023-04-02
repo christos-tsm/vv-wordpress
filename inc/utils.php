@@ -64,15 +64,17 @@ function volos_voyage_guest_user_redirect_to_dashboard() {
     }
 }
 add_action('admin_init', 'volos_voyage_guest_user_redirect_to_dashboard');
-// Show who uploaded the business profile in the backend
-add_filter('manage_edit-profiles_columns', 'my_add_user_display_name_column');
-function my_add_user_display_name_column($columns) {
+// Show who uploaded the custom post types in the backend
+add_filter('manage_edit-profiles_columns', 'volos_voyage_add_user_display_name_column');
+add_filter('manage_edit-hotels_columns', 'volos_voyage_add_user_display_name_column');
+function volos_voyage_add_user_display_name_column($columns) {
     $columns['submitted_by'] = __('Submitted By', 'my-text-domain');
     return $columns;
 }
 // Display user display name in "Submitted By" column of profiles custom post type
-add_action('manage_profiles_posts_custom_column', 'my_display_user_display_name_column', 10, 2);
-function my_display_user_display_name_column($column_name, $post_id) {
+add_action('manage_profiles_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
+add_action('manage_hotels_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
+function volos_voyage_display_user_display_name_column($column_name, $post_id) {
     if ($column_name === 'submitted_by') {
         $user_id = intval(get_field('user_id', $post_id));
         $user_data = get_userdata($user_id);

@@ -22,7 +22,7 @@ function create_hotels_post_type() {
 add_action('init', 'create_hotels_post_type');
 
 //Taxonomy
-add_action('init', 'create_hotels_categories_hierarchical_taxonomy', 0);
+add_action('init', 'create_hotels_categories_hierarchical_taxonomy', 20);
 
 function create_hotels_categories_hierarchical_taxonomy() {
 

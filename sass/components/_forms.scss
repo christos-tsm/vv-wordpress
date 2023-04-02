@@ -17,7 +17,7 @@
 	display: flex;
 	gap: 20px;
 	flex: 1;
-
+	position: relative;
 	&--col {
 		flex-direction: column;
 		gap: 10px;
@@ -71,6 +71,18 @@
 	&--reveal {
 		opacity: 1 !important;
 	}
+
+	&--file {
+		visibility: hidden;
+		opacity: 0;
+		width: 0px;
+		height: 0px;
+		position: absolute;
+	}
+}
+
+textarea.input {
+	padding: 10px !important;
 }
 
 .label {
@@ -83,13 +95,19 @@
 		justify-content: space-between;
 		align-items: center;
 	}
+
+	&--file {
+		opacity: 0.5;
+	}
 }
 
 /** ACF Form */
 .acf-fields > .acf-field {
 	// border: 1px solid #ddd !important;
 	min-height: fit-content !important;
-	padding: 15px 0;
+	padding: 15px 0 !important;
+	border-top: none !important;
+	border-bottom: 1px solid #f5f5f5;
 }
 
 .acf-label {
@@ -100,6 +118,7 @@
 		font-size: 12px;
 		opacity: 0.6;
 		font-weight: 600;
+		text-align: right;
 		a {
 			color: $primary-color;
 			font-weight: 600;
@@ -219,4 +238,15 @@ input#file-upload-button {
 .acf-field-relationship {
 	opacity: 0;
 	transition: all ease-in-out 250ms;
+}
+
+.gallery-preview__container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 5px;
+	& > img {
+		width: 100%;
+		max-height: 350px;
+		object-fit: contain;
+	}
 }

@@ -10,7 +10,7 @@ $current_user = wp_get_current_user();
     <section class="dashboard__container container container--medium">
         <?php get_template_part('template-parts/account/account-menu'); ?>
         <main class="dashboard__content">
-            <h1 class="section-title"><?php pll_e('Ενημέρωση στοιχείων') ?></h1>
+            <h1 class="section-title section-title--dashboard"><?php pll_e('Ενημέρωση στοιχείων') ?> <span class="divider"></span></h1>
             <form class="form form--fluid" id="update-user-details-form" method="POST" action="<?= esc_url(admin_url('admin-post.php')); ?>">
                 <?php wp_nonce_field('update_user_details', 'update_user_details_nonce'); ?>
                 <input type="hidden" name="action" value="update_user_details">
