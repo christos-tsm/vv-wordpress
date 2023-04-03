@@ -13,6 +13,7 @@ function create_night_clubs_post_type() {
             'rewrite' => array('slug' => 'night-clubs'),
             'show_in_rest' => false,
             'menu_icon'   => 'dashicons-buddicons-tracking',
+            'supports' => array('thumbnail', 'title', 'revisions', 'editor')
         )
     );
 }

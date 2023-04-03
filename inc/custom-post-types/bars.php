@@ -13,6 +13,7 @@ function create_bars_post_type() {
             'rewrite' => array('slug' => 'bars'),
             'show_in_rest' => false,
             'menu_icon'   => 'dashicons-beer',
+            'supports' => array('thumbnail', 'title', 'revisions', 'editor')
         )
     );
 }

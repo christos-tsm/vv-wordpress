@@ -1,22 +1,32 @@
 (function () {
 	document.addEventListener("DOMContentLoaded", function () {
-		// Initialize select picker
-		var options = {
-			searchable: false,
-			placeholder: document.documentElement.lang === "el" ? "Επιλογή κατηγορίας" : "Choose category",
-		};
-		NiceSelect.bind(document.getElementById("shop-category"), options);
-		// Choose category to display the correct form for every single custom post type
-		const categorySelect = document.querySelector('select[name="shop-category"]');
-		categorySelect.addEventListener("change", () => {
-			let category = categorySelect.value;
-			const urlParams = new URLSearchParams(window.location.search);
-			urlParams.set("store", category);
-			window.location.search = urlParams;
-		});
+		if (document.getElementById("shop-category")) {
+			// Initialize select picker
+			var options = {
+				searchable: false,
+				placeholder: document.documentElement.lang === "el" ? "Επιλογή κατηγορίας" : "Choose category",
+			};
+			NiceSelect.bind(document.getElementById("shop-category"), options);
+			// Choose category to display the correct form for every single custom post type
+			const categorySelect = document.querySelector('select[name="shop-category"]');
+			categorySelect.addEventListener("change", () => {
+				let category = categorySelect.value;
+				const urlParams = new URLSearchParams(window.location.search);
+				urlParams.set("store", category);
+				window.location.search = urlParams;
+			});
+		}
+		if (document.getElementById("cat")) {
+			var options = {
+				searchable: false,
+				placeholder: document.documentElement.lang === "el" ? "Επιλογή κατηγορίας" : "Choose category",
+			};
+			NiceSelect.bind(document.getElementById("cat"), options);
+		}
+
 		// Create custom photo uploader and display the thumbnails of the uploaded photos
-		const inputElements = document.querySelectorAll('input[type="file"][name="gallery[]"]');
-		inputElements.forEach((inputElement) => {
+		if (document.querySelector('input[type="file"][name="gallery[]"]')) {
+			const inputElement = document.querySelector('input[type="file"][name="gallery[]"]');
 			inputElement.addEventListener("change", () => {
 				const previewContainer = document.querySelector(".preview-gallery__container");
 				previewContainer.innerHTML = ""; // Clear any existing previews
@@ -52,7 +62,40 @@
 					previewContainer.innerHTML = ""; // Clear any previews
 				}
 			});
-		});
+		}
+		// Custom photo uploader with thumbnail for the logo
+		if (document.querySelector('input[type="file"][name="logo"]')) {
+			const logoElement = document.querySelector('input[type="file"][name="logo"]');
+			logoElement.addEventListener("change", function () {
+				const logoPreviewContainer = document.querySelector(".preview-logo__container");
+				logoPreviewContainer.innerHTML = ""; // Clear any existing previews
+				const fileList = logoElement.files;
+				const maxFileSize = 2 * 1024 * 1024; // 2MB
+				let fileSizeExceeded = false;
+				console.log(fileList);
+				for (let i = 0; i < fileList.length; i++) {
+					const file = fileList[i];
+					if (file.size > maxFileSize) {
+						fileSizeExceeded = true;
+						break;
+					}
+					const fileReader = new FileReader();
+					fileReader.onload = (event) => {
+						const img = document.createElement("img");
+						img.classList.add("preview");
+						img.src = event.target.result;
+						logoPreviewContainer.appendChild(img);
+					};
+					fileReader.readAsDataURL(file);
+				}
+				if (fileSizeExceeded) {
+					let message = document.documentElement.lang == "el" ? "Το μέγεθος της φωτογραφίας δεν πρέπει να ξεπερνάει τα 2MB" : "File exceeded the maximum file size of 2MB";
+					alert(message);
+					inputElement.value = null; // Reset the input
+					logoPreviewContainer.innerHTML = ""; // Clear any previews
+				}
+			});
+		}
 		// Append or delete email & tel input rows
 		function addRow(type) {
 			const container = document.getElementById(`${type}s-container`);
@@ -90,15 +133,20 @@
 			}
 		}
 		// Add click event listener to "add-email" button
-		const addEmailBtn = document.getElementById("add-email");
-		addEmailBtn.addEventListener("click", function () {
-			addRow("email");
-		});
+		if (document.getElementById("add-email")) {
+			const addEmailBtn = document.getElementById("add-email");
+			addEmailBtn.addEventListener("click", function () {
+				addRow("email");
+			});
+		}
 		// Add click event listener to "add-tel" button
-		const addTelBtn = document.getElementById("add-tel");
-		addTelBtn.addEventListener("click", function () {
-			addRow("tel");
-		});
+		if (document.getElementById("add-tel")) {
+			const addTelBtn = document.getElementById("add-tel");
+			addTelBtn.addEventListener("click", function () {
+				addRow("tel");
+			});
+		}
+
 		// Add click event listener to "remove-input" buttons
 		const containers = document.querySelectorAll("#emails-container, #tels-container");
 		containers.forEach((container) => {

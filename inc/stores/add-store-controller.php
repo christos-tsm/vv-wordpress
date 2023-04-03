@@ -12,7 +12,36 @@ if (isset($_POST['action']) && $_POST['action'] === "submit_custom_store_form" &
         'post_content' => $description,
         'post_status' => 'draft',
     );
-    $post_id = wp_insert_post($new_post);
+    if (isset($_POST['edit_mode']) && $_POST['edit_mode'] === "1" && isset($_POST['post_id'])) {
+        $post_id = sanitize_text_field($_POST['post_id']);
+        $new_post['ID'] = $post_id;
+        $new_post['post_status'] = 'publish';
+        wp_update_post($new_post);
+    } else {
+        $post_id = wp_insert_post($new_post);
+    }
+    // Add post featured image
+    if (isset($_FILES['logo'])) :
+        // Get the uploaded file data
+        $uploaded_file = $_FILES['logo'];
+        // Handle the file upload
+        $upload_overrides = array('test_form' => false);
+        $movefile = wp_handle_upload($uploaded_file, $upload_overrides);
+        if ($movefile && !isset($movefile['error'])) {
+            // The file has been uploaded successfully, set it as the post thumbnail
+            $attachment_id = wp_insert_attachment(array(
+                'guid' => $movefile['url'],
+                'post_mime_type' => $movefile['type'],
+                'post_title' => preg_replace('/\.[^.]+$/', '', $uploaded_file['name']),
+                'post_content' => '',
+                'post_status' => 'inherit'
+            ), $movefile['file']);
+            set_post_thumbnail($post_id, $attachment_id);
+        } else {
+            // Handle the error case
+            $error_msg = $movefile['error'];
+        }
+    endif;
     // Set the taxonomy for the post
     $taxonomy = sanitize_text_field($_POST['taxonomy']);
     if (isset($_POST['cat']) && !empty($_POST['cat'])) {
@@ -24,9 +53,6 @@ if (isset($_POST['action']) && $_POST['action'] === "submit_custom_store_form" &
     // Get and sanitize form data
     if (isset($_POST['address']) && !empty($_POST['address'])) {
         $address = sanitize_text_field($_POST['address']);
-    }
-    if (isset($_POST['distance_from_city_center']) && !empty($_POST['distance_from_city_center'])) {
-        $distance = sanitize_text_field($_POST['distance_from_city_center']);
     }
     if (isset($_POST['average_price']) && !empty($_POST['average_price'])) {
         $price = sanitize_text_field($_POST['average_price']);
@@ -104,9 +130,6 @@ if (isset($_POST['action']) && $_POST['action'] === "submit_custom_store_form" &
     if ($address) {
         update_field('address', $address, $post_id);
     }
-    if ($distance) {
-        update_field('distance_from_city_center', $distance, $post_id);
-    }
     if ($price) {
         update_field('average_price', $price, $post_id);
     }
@@ -142,12 +165,22 @@ if (isset($_POST['action']) && $_POST['action'] === "submit_custom_store_form" &
     }
 
     update_field('user_id', $uuid, $post_id);
-    if ($post_id) {
-        // Set success message as transient
-        set_transient('custom_hotel_form_success', 'Η καταχώρηση σας είναι προς έγκριση, σας ευχαριστούμε', 5);
+    if (isset($_POST['edit_mode']) && $_POST['edit_mode'] === "1" && isset($_POST['post_id'])) {
+        if ($post_id) {
+            // Set success message as transient
+            set_transient('custom_hotel_form_success', 'Η καταχώρηση ανανεώθηκε, σας ευχαριστούμε', 5);
+        } else {
+            // Set error message as transient
+            set_transient('custom_hotel_form_error', 'Προέκυψε κάποιο σφάλμα, παρακαλούμε δοκιμάστε ξανά', 5);
+        }
     } else {
-        // Set error message as transient
-        set_transient('custom_hotel_form_error', 'Προέκυψε κάποιο σφάλμα, παρακαλούμε δοκιμάστε ξανά', 5);
+        if ($post_id) {
+            // Set success message as transient
+            set_transient('custom_hotel_form_success', 'Η καταχώρηση σας είναι προς έγκριση, σας ευχαριστούμε', 5);
+        } else {
+            // Set error message as transient
+            set_transient('custom_hotel_form_error', 'Προέκυψε κάποιο σφάλμα, παρακαλούμε δοκιμάστε ξανά', 5);
+        }
     }
     // Redirect to the same page
     wp_redirect('/logariasmos/katachorisi-epicheirisis/');

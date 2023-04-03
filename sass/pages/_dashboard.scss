@@ -22,6 +22,7 @@
 				line-height: 30px;
 				justify-content: center;
 				font-weight: 600;
+				transition: color ease-in-out 250ms, background-color ease-in-out 250ms;
 				&:hover {
 					background-color: $primary-color;
 					color: #fff;

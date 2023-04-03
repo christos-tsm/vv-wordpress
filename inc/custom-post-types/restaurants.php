@@ -13,7 +13,8 @@ function create_restaurant_post_type() {
             'rewrite' => array('slug' => 'restaurants'),
             'show_in_rest' => false,
             'menu_icon'   => 'dashicons-food',
-            'menu_position' => 3
+            'menu_position' => 3,
+            'supports' => array('thumbnail', 'title', 'revisions', 'editor')
         )
     );
 }

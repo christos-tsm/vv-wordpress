@@ -13,6 +13,7 @@ function create_travel_agents_post_type() {
             'rewrite' => array('slug' => 'travel-agents'),
             'show_in_rest' => false,
             'menu_icon'   => 'dashicons-tickets-alt',
+            'supports' => array('thumbnail', 'title', 'revisions', 'editor')
         )
     );
 }

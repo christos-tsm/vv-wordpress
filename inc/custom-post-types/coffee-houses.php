@@ -13,7 +13,8 @@ function create_coffee_house_post_type() {
             'rewrite' => array('slug' => 'coffee-houses'),
             'show_in_rest' => false,
             'menu_icon'   => 'dashicons-store',
-            'menu_position' => 2
+            'menu_position' => 2,
+            'supports' => array('thumbnail', 'title', 'revisions', 'editor')
         )
     );
 }
@@ -41,13 +42,13 @@ function create_coffee_houses_categories_hierarchical_taxonomy() {
     );
 
     // Now register the taxonomy
-    register_taxonomy('coffee-houses-categories', array('coffee-houses'), array(
+    register_taxonomy('coffee-house-categories', array('coffee-houses'), array(
         'hierarchical' => true,
         'labels' => $labels,
         'show_ui' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
         'query_var' => true,
-        'rewrite' => array('slug' => 'coffee-houses-categories'),
+        'rewrite' => array('slug' => 'coffee-house-categories'),
     ));
 }

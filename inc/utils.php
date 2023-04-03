@@ -67,6 +67,11 @@ add_action('admin_init', 'volos_voyage_guest_user_redirect_to_dashboard');
 // Show who uploaded the custom post types in the backend
 add_filter('manage_edit-profiles_columns', 'volos_voyage_add_user_display_name_column');
 add_filter('manage_edit-hotels_columns', 'volos_voyage_add_user_display_name_column');
+add_filter('manage_edit-bars_columns', 'volos_voyage_add_user_display_name_column');
+add_filter('manage_edit-coffee-houses_columns', 'volos_voyage_add_user_display_name_column');
+add_filter('manage_edit-travel-agents_columns', 'volos_voyage_add_user_display_name_column');
+add_filter('manage_edit-night-clubs_columns', 'volos_voyage_add_user_display_name_column');
+add_filter('manage_edit-restaurants_columns', 'volos_voyage_add_user_display_name_column');
 function volos_voyage_add_user_display_name_column($columns) {
     $columns['submitted_by'] = __('Submitted By', 'my-text-domain');
     return $columns;
@@ -74,6 +79,11 @@ function volos_voyage_add_user_display_name_column($columns) {
 // Display user display name in "Submitted By" column of profiles custom post type
 add_action('manage_profiles_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
 add_action('manage_hotels_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
+add_action('manage_bars_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
+add_action('manage_coffee-houses_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
+add_action('manage_travel-agents_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
+add_action('manage_night-clubs_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
+add_action('manage_restaurants_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
 function volos_voyage_display_user_display_name_column($column_name, $post_id) {
     if ($column_name === 'submitted_by') {
         $user_id = intval(get_field('user_id', $post_id));
@@ -113,3 +123,20 @@ function volos_voyage_add_additional_class_on_li($classes, $item, $args) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'volos_voyage_add_additional_class_on_li', 1, 3);
+// Admin side notifications about draft posts in each custom post type
+add_filter('add_menu_classes', 'custom_post_type_draft_count');
+function custom_post_type_draft_count($menu) {
+    global $wpdb;
+    $post_types = get_post_types(array('_builtin' => false)); // Get all custom post types
+    foreach ($post_types as $post_type) {
+        $count = wp_count_posts($post_type)->draft; // Get the count of draft posts
+        $menu_slug = 'edit.php?post_type=' . $post_type; // The slug for the custom post type menu item
+        foreach ($menu as $menu_key => $menu_data) {
+            if ($menu_slug == $menu_data[2]) {
+                $menu[$menu_key][0] .= " <span class='awaiting-mod count-$count'><span class='pending-count'>" . number_format_i18n($count) . "</span></span>"; // Add the count to the menu item title
+                break;
+            }
+        }
+    }
+    return $menu;
+}

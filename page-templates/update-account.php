@@ -8,7 +8,6 @@ $current_user = wp_get_current_user();
 ?>
 <main class="site-main site-main--account">
     <section class="dashboard__container container container--medium">
-        <?php get_template_part('template-parts/account/account-menu'); ?>
         <main class="dashboard__content">
             <h1 class="section-title section-title--dashboard"><?php pll_e('Ενημέρωση στοιχείων') ?> <span class="divider"></span></h1>
             <form class="form form--fluid" id="update-user-details-form" method="POST" action="<?= esc_url(admin_url('admin-post.php')); ?>">
