@@ -72,6 +72,7 @@ add_filter('manage_edit-coffee-houses_columns', 'volos_voyage_add_user_display_n
 add_filter('manage_edit-travel-agents_columns', 'volos_voyage_add_user_display_name_column');
 add_filter('manage_edit-night-clubs_columns', 'volos_voyage_add_user_display_name_column');
 add_filter('manage_edit-restaurants_columns', 'volos_voyage_add_user_display_name_column');
+add_filter('manage_edit-shops_columns', 'volos_voyage_add_user_display_name_column');
 function volos_voyage_add_user_display_name_column($columns) {
     $columns['submitted_by'] = __('Submitted By', 'my-text-domain');
     return $columns;
@@ -84,6 +85,7 @@ add_action('manage_coffee-houses_posts_custom_column', 'volos_voyage_display_use
 add_action('manage_travel-agents_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
 add_action('manage_night-clubs_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
 add_action('manage_restaurants_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
+add_action('manage_shops_posts_custom_column', 'volos_voyage_display_user_display_name_column', 10, 2);
 function volos_voyage_display_user_display_name_column($column_name, $post_id) {
     if ($column_name === 'submitted_by') {
         $user_id = intval(get_field('user_id', $post_id));

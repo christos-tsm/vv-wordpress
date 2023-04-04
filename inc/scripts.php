@@ -43,5 +43,9 @@ function volos_voyage_scripts() {
     if (is_page_template('page-templates/add-store.php') || is_page_template('page-templates/my-stores-list.php')) {
         wp_enqueue_script('volos-voyage-add-store', get_template_directory_uri() . '/assets/js/add-store.js', array(), _S_VERSION, true);
     }
+    if (is_page_template('page-templates/my-stores-list.php')) {
+        wp_enqueue_script('volos-voyage-delete-store', get_template_directory_uri() . '/assets/js/delete-store.js', array(), _S_VERSION, true);
+        wp_localize_script('volos-voyage-delete-store', 'wp_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
+    }
 }
 add_action('wp_enqueue_scripts', 'volos_voyage_scripts', 9999);

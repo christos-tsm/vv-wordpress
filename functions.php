@@ -51,6 +51,7 @@ require get_stylesheet_directory() . '/inc/translations.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/restaurants.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/coffee-houses.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/museums.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/shops.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/hotels.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/destinations.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/events.php';
@@ -68,6 +69,7 @@ require get_stylesheet_directory() . '/inc/users/auth-register-ajax.php';
 require get_stylesheet_directory() . '/inc/users/auth-login-ajax.php';
 require get_stylesheet_directory() . '/inc/users/update-user-details.php';
 require get_stylesheet_directory() . '/inc/users/delete-business-profile.php';
+require get_stylesheet_directory() . '/inc/stores/delete-store.php';
 require get_stylesheet_directory() . '/inc/ajax/cpt-archive-ajax.php';
 
 /**

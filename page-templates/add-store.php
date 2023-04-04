@@ -26,6 +26,7 @@ if (isset($_GET['store']) && !empty($_GET['store'])) {
                         <option value="night-clubs" <?= isset($_GET['store']) && $_GET['store'] === 'night-clubs' ? 'selected' : '' ?>><?php pll_e('Night Club'); ?></option>
                         <option value="restaurants" <?= isset($_GET['store']) && $_GET['store'] === 'restaurants' ? 'selected' : '' ?>><?php pll_e('Εστιατόριο'); ?></option>
                         <option value="travel-agents" <?= isset($_GET['store']) && $_GET['store'] === 'travel-agents' ? 'selected' : '' ?>><?php pll_e('Ταξιδιωτικό γραφείο'); ?></option>
+                        <option value="shops" <?= isset($_GET['store']) && $_GET['store'] === 'shops' ? 'selected' : '' ?>><?php pll_e('Καταστήματα λιανικού εμπορίου'); ?></option>
                     </select>
                 </div>
             <?php endif; ?>
@@ -59,6 +60,9 @@ if (isset($_GET['store']) && !empty($_GET['store'])) {
                         break;
                     case 'travel-agents':
                         get_template_part('template-parts/forms/add-travel-agents');
+                        break;
+                    case 'shops':
+                        get_template_part('template-parts/forms/add-shops');
                         break;
                     default:
                         break;

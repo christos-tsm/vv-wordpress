@@ -33,12 +33,12 @@ if (strlen($business_description) > 350) {
             <?php if ($current_user_id === $profile_user_id) : ?>
                 <div class="store-card__actions">
                     <?php $update_store_page = pll_get_post(854); ?>
-                    <form method="POST" id="delete-profile-form" action="<?= esc_url(admin_url('admin-post.php')); ?>">
-                        <input type="hidden" name="action" value="delete_user_profile">
+                    <form method="POST" id="delete-store-form" action="<?= esc_url(admin_url('admin-post.php')); ?>">
+                        <input type="hidden" name="action" value="delete_store">
                         <input type="hidden" name="user_id" value="<?= get_field('user_id') ?>">
-                        <input type="hidden" name="delete_profile_nonce" value="<?= wp_create_nonce('delete_profile_nonce'); ?>">
-                        <input type="hidden" name="profile_id" value="<?= esc_attr(get_the_ID()); ?>">
-                        <button id="delete-profile-button" class="btn input pointer btn--delete" type="submit">Delete Profile</button>
+                        <input type="hidden" name="delete_store_nonce" value="<?= wp_create_nonce('delete_store_nonce'); ?>">
+                        <input type="hidden" name="store_id" value="<?= esc_attr(get_the_ID()); ?>">
+                        <button class="btn input pointer btn--delete btn--delete-store" type="submit"><?php pll_e('Διαγραφή'); ?></button>
                     </form>
                     <?php if ($post_status === 'publish') : ?>
                         <a href="<?php the_permalink($update_store_page) ?>?store_id=<?= get_the_ID(); ?>&type=<?= $post_type ?>&edit_mode=1" class="btn btn--small input"><?php pll_e('Επεξεργασία') ?></a>
