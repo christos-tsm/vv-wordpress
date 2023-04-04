@@ -33,12 +33,12 @@ p {
 }
 
 ::-moz-selection {
-	background: #fd5631;
+	background: #ff576b;
 	color: #fff;
 }
 
 ::selection {
-	background: #fd5631;
+	background: #ff576b;
 	color: #fff;
 }
 
@@ -89,7 +89,7 @@ p {
 	justify-content: center;
 	align-items: center;
 	padding: 4px 10px;
-	background-color: #fd5631;
+	background-color: #ff576b;
 	color: #fff;
 	border-radius: 5px;
 	transition: background-color ease-in-out 250ms;
@@ -109,7 +109,7 @@ p {
 }
 
 .btn:hover {
-	background-color: #ee2d02;
+	background-color: #ff1a35;
 }
 
 .site-main {
@@ -131,7 +131,7 @@ p {
 
 .cta {
 	position: relative;
-	color: #222;
+	color: #4d4d4d;
 	padding: 0 5px;
 }
 
@@ -154,7 +154,7 @@ p {
 	transition: all ease-in-out 250ms;
 	width: 100%;
 	height: 0%;
-	background-color: #fd5631;
+	background-color: #ff576b;
 }
 
 .cta:hover::before {
@@ -185,7 +185,7 @@ p {
 }
 
 .message a {
-	color: #fd5631;
+	color: #ff576b;
 	font-weight: 600;
 	display: flex;
 	justify-content: center;
@@ -255,7 +255,7 @@ address {
 .swiper-button-prev:after,
 .swiper-button-next:after {
 	font-size: 15px;
-	color: #222;
+	color: #4d4d4d;
 	margin-left: 3px;
 }
 
@@ -272,7 +272,7 @@ address {
 	position: absolute;
 	top: 15px;
 	left: 15px;
-	background-color: #fd5631;
+	background-color: #ff576b;
 	color: #fff;
 	padding: 5px;
 	border-radius: 5px;
@@ -302,6 +302,11 @@ address {
 	width: 180px;
 }
 
+.site-header__logo svg {
+	width: 100%;
+	height: 100%;
+}
+
 .site-header__icons {
 	display: flex;
 	gap: 30px;
@@ -312,20 +317,20 @@ address {
 
 .site-header__icons-burger {
 	padding: 20px;
-	background-color: #fd5631;
+	background-color: #ff576b;
 }
 
 .site-header__icons a {
-	color: #222;
+	color: #4d4d4d;
 	transition: all ease-in-out 250ms;
 }
 
 .site-header__icons a:hover {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .site-header__icons-account--active {
-	color: #fd5631 !important;
+	color: #ff576b !important;
 }
 
 .site-header__language {
@@ -334,7 +339,7 @@ address {
 
 .site-header__language--current {
 	font-weight: 600;
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .site-header__menu {
@@ -350,16 +355,16 @@ address {
 }
 
 .site-header__categories-item a {
-	color: #222;
+	color: #4d4d4d;
 	font-size: 14px;
 }
 
 .site-header__categories-item a:hover {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .site-header__categories .current-menu-item a {
-	color: #fd5631;
+	color: #ff576b;
 	font-weight: 600;
 }
 
@@ -401,7 +406,7 @@ address {
 }
 
 .site-footer__menu ul li a:hover {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .site-footer__social .social-media {
@@ -415,7 +420,7 @@ address {
 }
 
 .site-footer__social .social-media a:hover svg path {
-	fill: #fd5631;
+	fill: #ff576b;
 }
 
 .site-footer__logo {
@@ -456,7 +461,7 @@ address {
 }
 
 .card__title a {
-	color: #222;
+	color: #4d4d4d;
 	transition: all ease-in-out 250ms;
 	font-size: 16px;
 }
@@ -498,7 +503,7 @@ address {
 }
 
 .card:hover .card__title a {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .categories-cards {
@@ -513,7 +518,7 @@ address {
 	font-size: 14px;
 	font-weight: 600;
 	align-items: center;
-	color: #222;
+	color: #4d4d4d;
 	padding: 20px;
 	border-radius: 20px;
 	box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -542,7 +547,7 @@ address {
 
 .event-price {
 	margin-left: auto;
-	background-color: #fd5631;
+	background-color: #ff576b;
 	padding: 2px 5px;
 	border-radius: 5px;
 	font-size: 14px;
@@ -566,7 +571,7 @@ address {
 }
 
 .grid--restaurants__title a {
-	color: #222;
+	color: #4d4d4d;
 	font-size: 16px;
 	font-weight: 600;
 }
@@ -612,7 +617,7 @@ address {
 }
 
 .grid--restaurants__single:hover .grid--restaurants__title a {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .dashboard__content .store-card:not(:last-child) {
@@ -620,7 +625,7 @@ address {
 }
 
 .store-card {
-	border: 1px solid #fd5631;
+	border: 1px solid #ff576b;
 	border-radius: 10px;
 	padding: 15px;
 	display: flex;
@@ -658,7 +663,7 @@ address {
 }
 
 .store-card__title a:not(.btn) {
-	color: #222;
+	color: #4d4d4d;
 }
 
 .store-card__description {
@@ -679,11 +684,11 @@ address {
 }
 
 .store-card__address a {
-	color: #222;
+	color: #4d4d4d;
 }
 
 .store-card__address a:hover {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .store-card__actions {
@@ -794,7 +799,7 @@ address {
 .input:not(.btn) {
 	background-color: #fff;
 	border: 1px solid #ddd;
-	color: #222;
+	color: #4d4d4d;
 	width: 100%;
 	font-size: 14px;
 	padding: 0 15px;
@@ -805,11 +810,11 @@ address {
 
 .input::placeholder {
 	opacity: 0.5;
-	color: #222;
+	color: #4d4d4d;
 }
 
 .input:focus, .input:hover {
-	border-color: #fd5631;
+	border-color: #ff576b;
 }
 
 @media screen and (min-width: 1280px) {
@@ -819,7 +824,7 @@ address {
 }
 
 .input--checkbox {
-	accent-color: #fd5631;
+	accent-color: #ff576b;
 	margin-top: 4px;
 }
 
@@ -875,7 +880,7 @@ textarea.input {
 }
 
 .acf-label .description a {
-	color: #fd5631;
+	color: #ff576b;
 	font-weight: 600;
 }
 
@@ -907,14 +912,14 @@ textarea.input {
 
 .acf-repeater .acf-row-handle.order {
 	background-color: #fff;
-	color: #222;
+	color: #4d4d4d;
 }
 
 .acf-repeater .acf-row-handle .acf-icon.-minus {
 	display: flex !important;
 	justify-content: center;
 	align-items: center;
-	background: #fd5631 !important;
+	background: #ff576b !important;
 	color: #fff;
 	border: none;
 }
@@ -924,7 +929,7 @@ textarea.input {
 }
 
 .acf-actions a {
-	color: #fd5631;
+	color: #ff576b;
 	font-size: 14px;
 	font-weight: 600;
 }
@@ -991,7 +996,7 @@ textarea.input {
 }
 
 .acf-field-taxonomy ul input[type="checkbox"] {
-	accent-color: #fd5631;
+	accent-color: #ff576b;
 }
 
 .updated {
@@ -1006,7 +1011,7 @@ textarea.input {
 }
 
 input#file-upload-button {
-	background-color: #fd5631 !important;
+	background-color: #ff576b !important;
 	color: #fff;
 }
 
@@ -1034,7 +1039,7 @@ input#file-upload-button {
 }
 
 .nice-select:focus, .nice-select:hover {
-	border-color: #fd5631;
+	border-color: #ff576b;
 }
 
 .nice-select-dropdown {
@@ -1063,7 +1068,7 @@ input#file-upload-button {
 }
 
 .header-hero__title span {
-	color: #fd5631;
+	color: #ff576b;
 	font-weight: 700;
 }
 
@@ -1206,7 +1211,7 @@ input#file-upload-button {
 	display: flex;
 	padding: 20px;
 	border: 1px solid #ddd;
-	color: #222;
+	color: #4d4d4d;
 	font-size: 14px;
 	line-height: 30px;
 	justify-content: center;
@@ -1215,12 +1220,12 @@ input#file-upload-button {
 }
 
 .dashboard__nav li a:hover {
-	background-color: #fd5631;
+	background-color: #ff576b;
 	color: #fff;
 }
 
 .dashboard__nav li.current_page_item a {
-	background-color: #fd5631;
+	background-color: #ff576b;
 	color: #fff;
 }
 
@@ -1378,21 +1383,12 @@ select[name="cat"] {
 	display: flex;
 	gap: 6px;
 	align-items: center;
-	color: #222;
+	color: #4d4d4d;
 	font-size: 14px;
 }
 
-.profile-single__address a svg path {
-	fill: #222;
-	transition: all ease-in-out 250ms;
-}
-
 .profile-single__address a:hover {
-	color: #fd5631;
-}
-
-.profile-single__address a:hover svg path {
-	fill: #fd5631;
+	color: #ff576b;
 }
 
 .profile-single__content {
@@ -1430,13 +1426,13 @@ select[name="cat"] {
 .profile-single__list-item a {
 	display: flex;
 	gap: 6px;
-	color: #222;
+	color: #4d4d4d;
 	font-size: 14px;
 	font-weight: 600;
 }
 
 .profile-single__list-item a:hover {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .profile-single__list--social-media {
@@ -1448,7 +1444,7 @@ select[name="cat"] {
 }
 
 .profile-single__list--social-media .profile-single__list-item a:hover svg path {
-	fill: #fd5631;
+	fill: #ff576b;
 }
 
 .profile-single__gallery {
@@ -1513,7 +1509,7 @@ select[name="cat"] {
 }
 
 #map .leaflet-control-attribution a {
-	color: #222;
+	color: #4d4d4d;
 }
 
 .site-main--archive {
@@ -1541,11 +1537,11 @@ select[name="cat"] {
 }
 
 .archive__categories-list-item a:hover {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .archive__categories-list-item--active a {
-	color: #fd5631;
+	color: #ff576b;
 	font-weight: 600;
 }
 
@@ -1602,7 +1598,7 @@ select[name="cat"] {
 }
 
 .archive-item__title-link {
-	color: #222;
+	color: #4d4d4d;
 	font-size: 20px;
 }
 
@@ -1635,7 +1631,7 @@ select[name="cat"] {
 }
 
 .archive-item:hover .archive-item__title-link {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .error-404 {
@@ -1652,7 +1648,7 @@ select[name="cat"] {
 	position: absolute;
 	font-size: 450px;
 	opacity: 0.1;
-	color: #fd5631;
+	color: #ff576b;
 	pointer-events: none;
 }
 
@@ -1678,7 +1674,7 @@ select[name="cat"] {
 }
 
 .single-header__actions .icon:hover {
-	background-color: #fd5631;
+	background-color: #ff576b;
 	color: #fff;
 }
 
@@ -1776,7 +1772,7 @@ select[name="cat"] {
 }
 
 .single-info__ul-link:hover {
-	color: #fd5631;
+	color: #ff576b;
 }
 
 .single-info__ul-item {

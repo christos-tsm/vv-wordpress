@@ -15,9 +15,9 @@
 <footer class="site-footer">
     <div class="site-footer__content container container--medium">
         <div class="site-footer__col">
-            <?php $logo = get_field('footer_logo', 'options'); ?>
+            <?php $footer_logo = get_field('footer_logo', 'option'); ?>
             <a class="site-footer__logo" aria-label="Link to homepage" class="icon" href="<?= pll_home_url(); ?>">
-                <?= file_get_contents($logo['url']) ?>
+                <img src="<?= esc_url($footer_logo['url']) ?>" alt="<?php the_title(); ?>">
             </a>
         </div>
         <div class="site-footer__col site-footer__menu">

@@ -54,19 +54,8 @@
 			align-items: center;
 			color: $text-dark;
 			font-size: 14px;
-			svg {
-				path {
-					fill: $text-dark;
-					transition: all ease-in-out 250ms;
-				}
-			}
 			&:hover {
 				color: $primary-color;
-				svg {
-					path {
-						fill: $primary-color;
-					}
-				}
 			}
 		}
 	}

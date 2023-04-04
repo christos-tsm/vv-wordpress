@@ -23,7 +23,6 @@
 			};
 			NiceSelect.bind(document.getElementById("cat"), options);
 		}
-
 		// Create custom photo uploader and display the thumbnails of the uploaded photos
 		if (document.querySelector('input[type="file"][name="gallery[]"]')) {
 			const inputElement = document.querySelector('input[type="file"][name="gallery[]"]');
@@ -146,7 +145,6 @@
 				addRow("tel");
 			});
 		}
-
 		// Add click event listener to "remove-input" buttons
 		const containers = document.querySelectorAll("#emails-container, #tels-container");
 		containers.forEach((container) => {
