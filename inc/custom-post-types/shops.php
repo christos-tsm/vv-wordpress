@@ -25,7 +25,6 @@ add_action('init', 'create_shops_post_type');
 add_action('init', 'create_shops_categories_hierarchical_taxonomy', 20);
 
 function create_shops_categories_hierarchical_taxonomy() {
-
     // Add new taxonomy, make it hierarchical like categories
     $labels = array(
         'name' => _x('Shops Categories', 'taxonomy general name'),
@@ -40,7 +39,6 @@ function create_shops_categories_hierarchical_taxonomy() {
         'new_item_name' => __('New Shop Category Name'),
         'menu_name' => __('Shop Categories'),
     );
-
     // Now register the taxonomy
     register_taxonomy('shop-categories', array('shops'), array(
         'hierarchical' => true,

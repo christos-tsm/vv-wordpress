@@ -18,21 +18,37 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
                 <?php get_template_part('template-parts/forms/add', $type); ?>
             <?php else : ?>
                 <?php
-                $args = array(
-                    'post_type' => array('hotels', 'bars', 'restaurants', 'travel-agents', 'coffee-houses', 'night-clubs'),
-                    'meta_key' => 'user_id',
-                    'meta_value' => $current_user_id,
-                    'post_status' => array('publish', 'draft')
+                /**
+                 * WP_query didnt fetch "shops" cpt
+                 * Used sql instead to resolve the issue.
+                 */
+                global $wpdb;
+                $current_user_id = get_current_user_id();
+                $query = $wpdb->prepare(
+                    "
+                    SELECT *
+                    FROM {$wpdb->prefix}posts
+                    INNER JOIN {$wpdb->prefix}postmeta
+                    ON {$wpdb->prefix}posts.ID = {$wpdb->prefix}postmeta.post_id
+                    WHERE {$wpdb->prefix}posts.post_type IN ('hotels', 'bars', 'restaurants', 'travel-agents', 'coffee-houses', 'night-clubs', 'shops')
+                    AND {$wpdb->prefix}postmeta.meta_key = 'user_id'
+                    AND {$wpdb->prefix}postmeta.meta_value = '%d'
+                    AND {$wpdb->prefix}posts.post_status IN ('publish', 'draft')
+                    ",
+                    $current_user_id
                 );
-                $query = new WP_Query($args);
+                $results = $wpdb->get_results($query);
                 ?>
                 <div class="dashboard__content">
-                    <?php if ($query->have_posts()) : ?>
+                    <?php if (!empty($results)) : ?>
                         <div class="store-list__container">
                             <div class="store-list">
-                                <?php while ($query->have_posts()) : $query->the_post(); ?>
+                                <?php foreach ($results as $result) : ?>
+                                    <?php $post = get_post($result->ID); ?>
+                                    <?php setup_postdata($post); ?>
                                     <?php get_template_part('template-parts/admin/cards/store-card'); ?>
-                                <?php endwhile; ?>
+                                <?php endforeach; ?>
+                                <?php wp_reset_postdata(); ?>
                             </div>
                         </div>
                     <?php else : ?>
