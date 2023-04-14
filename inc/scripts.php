@@ -12,6 +12,9 @@ function volos_voyage_scripts() {
     }
     wp_enqueue_style('volos-voyage-font', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700&display=swap', array(), null);
     wp_enqueue_style('volos-voyage-select', get_template_directory_uri() . '/assets/css/nice-select2.css.map', array(), _S_VERSION);
+    if (is_page_template('page-templates/add-event.php')) {
+        wp_enqueue_style('volos-voyage-default-date', get_template_directory_uri() . '/assets/css/default.date.css', array(), _S_VERSION);
+    }
     wp_enqueue_style('volos-voyage-style', get_stylesheet_uri(), array(), _S_VERSION);
     remove_action('wp_body_open', 'wp_global_styles_render_svg_filters'); // Remove SVG Duotone Filters
     // Scripts
@@ -46,6 +49,10 @@ function volos_voyage_scripts() {
     if (is_page_template('page-templates/my-stores-list.php')) {
         wp_enqueue_script('volos-voyage-delete-store', get_template_directory_uri() . '/assets/js/delete-store.js', array(), _S_VERSION, true);
         wp_localize_script('volos-voyage-delete-store', 'wp_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
+    }
+    if (is_page_template('page-templates/add-event.php')) {
+        wp_enqueue_script('volos-voyage-date-picker', get_template_directory_uri() . '/assets/js/picker.date.js', array(), _S_VERSION, true);
+        wp_enqueue_script('volos-voyage-add-event', get_template_directory_uri() . '/assets/js/add-event.js', array(), _S_VERSION, true);
     }
 }
 add_action('wp_enqueue_scripts', 'volos_voyage_scripts', 9999);
