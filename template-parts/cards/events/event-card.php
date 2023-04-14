@@ -16,6 +16,7 @@ $price = get_field('tickets_from');
             </a>
         <?php endif; ?>
         <div class="card__content event-card__conent">
+            <h3 class="card__title event-card__title"> <a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
             <?php if ($date && $time) : ?>
                 <h4 class="card__subtitle event-card__subtitle">
                     <span class="event-date">
@@ -33,7 +34,6 @@ $price = get_field('tickets_from');
                     <span class="event-price"><?= pll_e('Εισητήρια από:') . esc_attr($price) ?> &euro;</span>
                 </h4>
             <?php endif; ?>
-            <h3 class="card__title event-card__title"> <a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
         </div>
     </header>
     <div class="card__overlay"></div>

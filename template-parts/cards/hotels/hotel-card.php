@@ -7,7 +7,7 @@
         <?php else : ?>
             <?php $default = get_field('header_logo', 'options'); ?>
             <a href="<?php the_permalink() ?>">
-                <img class="card__thumbnail hotel-card__thumbnail" src="<?= esc_url($default['url']) ?>" alt="<?php the_title(); ?>">
+                <img style="padding: 15px; object-fit: contain;" class="card__thumbnail hotel-card__thumbnail" src="<?= esc_url($default['url']) ?>" alt="<?php the_title(); ?>">
             </a>
         <?php endif; ?>
         <h3 class="card__title hotel-card__title"> <a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>

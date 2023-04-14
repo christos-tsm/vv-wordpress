@@ -1,5 +1,5 @@
 (function () {
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("DOMContentLoaded", () => {
 		if (document.getElementById("shop-category")) {
 			// Initialize select picker
 			var options = {

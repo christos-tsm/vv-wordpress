@@ -1,11 +1,11 @@
 <?php
 get_header();
 $categories = get_terms(array(
-    'taxonomy' => 'coffee-houses-categories',
+    'taxonomy' => 'coffee-house-categories',
     'hide_empty' => false,
 ));
 $post_type = 'coffee-houses';
-$taxonomy =  'coffee-houses-categories';
+$taxonomy =  'coffee-house-categories';
 ?>
 <main class="site-main site-main--archive  container container--medium">
     <?php

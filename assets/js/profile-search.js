@@ -1,5 +1,5 @@
 (function () {
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("DOMContentLoaded", () => {
 		var options = {
 			searchable: true,
 			placeholder: document.documentElement.lang === "el" ? "Αναζήτηση επαγγελματία" : "Search for local professionals",

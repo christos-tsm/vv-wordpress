@@ -1,5 +1,5 @@
 (function () {
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("DOMContentLoaded", () => {
 		let categoryItems = document.querySelectorAll(".archive__categories-list-item");
 		const archiveContent = document.querySelector(".archive__content");
 		categoryItems.forEach(function (item) {

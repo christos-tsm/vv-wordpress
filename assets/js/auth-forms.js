@@ -1,5 +1,5 @@
 (function () {
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("DOMContentLoaded", () => {
 		/** Tabs */
 		const tab = document.querySelectorAll(".tab-header");
 		tab.forEach((item) => {

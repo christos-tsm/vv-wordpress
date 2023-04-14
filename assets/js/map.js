@@ -1,5 +1,5 @@
 (function () {
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("DOMContentLoaded", () => {
 		/** Leaflet Map */
 		if (document.getElementById("map")) {
 			let coordinates = document.getElementById("map").getAttribute("data-coordinates");

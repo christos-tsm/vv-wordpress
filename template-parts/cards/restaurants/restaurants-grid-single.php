@@ -1,9 +1,16 @@
 <div class="grid--restaurants__single grid--restaurants__single-<?= get_the_ID(); ?>">
     <?php $logo = get_field('logo'); ?>
     <div class="grid--restaurants__logo">
-        <a href="<?php the_permalink(); ?>">
-            <img src="<?= esc_url($logo['url']) ?>" alt="<?php the_title(); ?>">
-        </a>
+        <?php if ($logo) : ?>
+            <a href="<?php the_permalink(); ?>">
+                <img src="<?= esc_url($logo['url']) ?>" alt="<?php the_title(); ?>">
+            </a>
+        <?php else : ?>
+            <?php $logo = get_field('header_logo', 'option'); ?>
+            <a href="<?php the_permalink(); ?>">
+                <img src="<?= esc_url($logo['url']) ?>" alt="<?php the_title(); ?>">
+            </a>
+        <?php endif; ?>
     </div>
     <div class="grid--restaurants__content">
         <h3 class="grid--restaurants__title">

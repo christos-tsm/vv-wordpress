@@ -1,5 +1,5 @@
 (function () {
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("DOMContentLoaded", () => {
 		if (document.querySelector("body").classList.contains("page-template-business-profile")) {
 			/** Prevent more than 3 photos for each post */
 			// Remove ACF notice

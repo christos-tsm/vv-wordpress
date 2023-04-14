@@ -1,5 +1,5 @@
 (function () {
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("DOMContentLoaded", () => {
 		/** Set local storage items */
 		localStorage.setItem("uuid", document.querySelector("body").getAttribute("uuid"));
 		/** Homepage sliders */
