@@ -77,8 +77,8 @@ require get_stylesheet_directory() . '/inc/ajax/cpt-archive-ajax.php';
  * Needs to be loaded after taxonomies are created, so they can be available in the form submission
  */
 function load_add_store_controller() {
-	// Load add-store-controller.php
 	require_once(get_stylesheet_directory() . '/inc/stores/add-store-controller.php');
+	require_once(get_stylesheet_directory() . '/inc/events/add-event-controller.php');
 }
 // Hook the function to wp_loaded action hook
 add_action('wp_loaded', 'load_add_store_controller');

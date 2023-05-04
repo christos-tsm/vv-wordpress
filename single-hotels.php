@@ -25,12 +25,21 @@ $avg_prce = get_field('average_price');
         </div>
     </div>
     <?php if ($gallery && !empty($gallery)) : ?>
-        <div class="single-gallery container container--medium">
-            <?php foreach ($gallery as $image) : ?>
-                <a class="single-gallery__item-link" aria-label="Open gallery lightbox" data-fslightbox="gallery" href="<?= esc_url($image['url']) ?>">
-                    <img class="single-gallery__item-image" src="<?= esc_url($image['sizes']['large']) ?>" alt="<?php the_title(); ?> image">
-                </a>
-            <?php endforeach; ?>
+        <div class="swiper slider single-gallery container container--medium">
+            <div class="swiper-wrapper">
+                <?php foreach ($gallery as $image) : ?>
+                    <a class="swiper-slide single-gallery__item-link" aria-label="Open gallery lightbox" data-fslightbox="gallery" href="<?= esc_url($image['url']) ?>">
+                        <img class="single-gallery__item-image" src="<?= esc_url($image['sizes']['large']) ?>" alt="<?php the_title(); ?> image">
+                        <span class="overlay">
+                            <span class="icon icon--medium">
+                                <?= file_get_contents(get_stylesheet_directory() . '/assets/images/external.svg'); ?>
+                            </span>
+                        </span>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     <?php endif; ?>
     <section class="single-info container container--medium">

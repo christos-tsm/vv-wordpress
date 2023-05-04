@@ -2,7 +2,7 @@
 // Get the ID of the current page
 $current_page_id = get_the_ID();
 // Check if the current page is post ID 48 or a child of that page
-if ($current_page_id == pll_get_post(48) || (get_post_ancestors($current_page_id) && in_array(pll_get_post(48), get_post_ancestors($current_page_id)))) {
+if (is_user_logged_in() && $current_page_id == pll_get_post(48) || (get_post_ancestors($current_page_id) && in_array(pll_get_post(48), get_post_ancestors($current_page_id)))) {
     // Show the first menu
     wp_nav_menu(array(
         'theme_location' => "dashboard-account-menu",

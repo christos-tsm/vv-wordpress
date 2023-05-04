@@ -16,7 +16,7 @@
 				window.location.search = urlParams;
 			});
 		}
-		if (document.getElementById("cat")) {
+		if (document.getElementById("cat") && !document.querySelector("body").classList.contains("page-template-add-event")) {
 			var options = {
 				searchable: false,
 				placeholder: document.documentElement.lang === "el" ? "Επιλογή κατηγορίας" : "Choose category",

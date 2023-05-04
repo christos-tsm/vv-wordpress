@@ -25,80 +25,6 @@ if ($post_id || $type || $edit_mode) {
         <label for="description"><?php pll_e('Περιγραφή εκδήλωσης'); ?></label>
         <textarea class="input" name="description" id="description" cols="30" rows="10" required><?= $post_id && $edit_mode ? get_post_field('post_content', $post_id) : "" ?></textarea>
     </div>
-    <div class="form-row form-row--col">
-        <label for="logo"><?php pll_e('Εικόνα εκδήλωσης / Αφίσα'); ?></label>
-        <label for="logo" class="label--file input pointer"><?php pll_e('Προσθήκη') ?></label>
-        <input class="input input--file" type="file" name="logo" id="logo" accept="image/*" />
-        <div class="preview-logo__container">
-            <?php if ($post_id && has_post_thumbnail($post_id)) : ?>
-                <img src="<?= get_the_post_thumbnail_url($post_id, 'medium') ?>" alt="<?php the_title(); ?>">
-            <?php endif; ?>
-        </div>
-    </div>
-    <div class="form-row form-row--col">
-        <input type="hidden" name="taxonomy" value="event-categories">
-        <label for="cat"><?php pll_e('Κατηγορίες'); ?></label>
-        <?php
-        if ($post_id && $edit_mode) :
-            $selected_category = ''; // initialize variable to hold the selected category
-            $categories = get_the_terms($post_id, 'event-categories'); // get the categories for the post
-            if ($categories && !is_wp_error($categories)) {
-                $category_ids = wp_list_pluck($categories, 'term_id'); // get the IDs of the categories
-                $args = array(
-                    'taxonomy' => 'event-categories',
-                    'orderby' => 'name',
-                    'hide_empty' => false,
-                    'class' => 'event-categories',
-                    'echo' => false,
-                    'selected' => $category_ids[0] // set the selected category to the first one in the list
-                );
-                $categories = wp_dropdown_categories($args); // generate the dropdown menu
-                $selected_category = ' selected="selected"'; // set the selected attribute
-            }
-            $categories = str_replace('id=', 'class="" id=', $categories); // replace the id attribute with a class
-            $categories = str_replace('<option value="' . $category_ids[0] . '">', '<option value="' . $category_ids[0] . '"' . $selected_category . '>', $categories); // add the selected attribute to the first category
-        else :
-            $args = array(
-                'taxonomy' => 'event-categories',
-                'orderby' => 'name',
-                'hide_empty' => false,
-                'class' => 'event-categories',
-                'echo' => false
-            );
-            $categories = wp_dropdown_categories($args);
-            $categories = str_replace('id=', 'class="" id=', $categories);
-        endif;
-        echo $categories;
-        ?>
-    </div>
-    <div class="form-row">
-        <div class="form-row form-row--col">
-            <label for="address"><?php pll_e('Διεύθυνση'); ?></label>
-            <input class="input" type="text" name="address" id="address" value="<?= $post_id && $edit_mode ? get_field('address', $post_id) : "" ?>" required>
-        </div>
-    </div>
-    <div class="form-row form-row--col">
-        <div class="acf-label">
-            <label for="coordinates"><?php pll_e('Συντεταγμένες'); ?></label>
-            <p class="description">
-                <?php pll_e('Στην διεύθυνση <a href="https://maps.google.com" target="_blank" rel="noopener">maps.google.com</a>, βάλτε την διεύθυνσή σας και πατήστε δεξί click στο location pin που σας εμφανίζει. Οι τιμές σε μορφή "23,502934, 23,5035525" είναι οι συντεταγμένες της επιχείρησής σας. Αριστερό κλικ σε αυτές για αντιγραφή και έπειτα κάντε επικόλληση εδώ.') ?>
-            </p>
-        </div>
-        <input class="input" type="text" name="coordinates" id="coordinates" value="<?= $post_id && $edit_mode ? get_field('coordinates', $post_id) : "" ?>" required>
-    </div>
-    <div class="form-row form-row--col">
-        <label for="gallery"><?php pll_e('Προσθήκη φωτογραφιών'); ?></label>
-        <label for="gallery" class="label--file input pointer"><?php pll_e('Προσθήκη') ?></label>
-        <input class="input input--file" type="file" name="gallery[]" id="gallery" multiple accept="image/*" max="5" />
-        <div class="preview-gallery__container">
-            <?php if ($post_id && $edit_mode && get_field('gallery', $post_id)) : ?>
-                <?php $gallery = get_field('gallery', $post_id); ?>
-                <?php foreach ($gallery as $image) : ?>
-                    <img src="<?= esc_url($image['sizes']['medium']) ?>" alt="<?php the_title(); ?>">
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
-    </div>
     <div class="form-row">
         <div class="form-row form-row--col">
             <label for="date"><?php pll_e('Ημερομηνία'); ?></label>
@@ -187,6 +113,42 @@ if ($post_id || $type || $edit_mode) {
             </select>
         </div>
     </div>
+    <div class="form-row form-row--col">
+        <input type="hidden" name="taxonomy" value="event-categories">
+        <label for="cat"><?php pll_e('Κατηγορίες'); ?></label>
+        <?php
+        if ($post_id && $edit_mode) :
+            $selected_category = ''; // initialize variable to hold the selected category
+            $categories = get_the_terms($post_id, 'event-categories'); // get the categories for the post
+            if ($categories && !is_wp_error($categories)) {
+                $category_ids = wp_list_pluck($categories, 'term_id'); // get the IDs of the categories
+                $args = array(
+                    'taxonomy' => 'event-categories',
+                    'orderby' => 'name',
+                    'hide_empty' => false,
+                    'class' => 'event-categories',
+                    'echo' => false,
+                    'selected' => $category_ids[0] // set the selected category to the first one in the list
+                );
+                $categories = wp_dropdown_categories($args); // generate the dropdown menu
+                $selected_category = ' selected="selected"'; // set the selected attribute
+            }
+            $categories = str_replace('id=', 'class="" id=', $categories); // replace the id attribute with a class
+            $categories = str_replace('<option value="' . $category_ids[0] . '">', '<option value="' . $category_ids[0] . '"' . $selected_category . '>', $categories); // add the selected attribute to the first category
+        else :
+            $args = array(
+                'taxonomy' => 'event-categories',
+                'orderby' => 'name',
+                'hide_empty' => false,
+                'class' => 'event-categories',
+                'echo' => false
+            );
+            $categories = wp_dropdown_categories($args);
+            $categories = str_replace('id=', 'class="" id=', $categories);
+        endif;
+        echo $categories;
+        ?>
+    </div>
     <div class="form-row">
         <div class="form-row form-row--col">
             <label for="emails"><?php pll_e('Διευθύνσεις email') ?></label>
@@ -237,6 +199,46 @@ if ($post_id || $type || $edit_mode) {
             </span>
         </div>
     </div>
+    <div class="form-row form-row--col">
+        <label for="logo"><?php pll_e('Εικόνα εκδήλωσης / Αφίσα'); ?></label>
+        <label for="logo" class="label--file input pointer"><?php pll_e('Προσθήκη') ?></label>
+        <input class="input input--file" type="file" name="logo" id="logo" accept="image/*" />
+        <div class="preview-logo__container">
+            <?php if ($post_id && has_post_thumbnail($post_id)) : ?>
+                <img src="<?= get_the_post_thumbnail_url($post_id, 'medium') ?>" alt="<?php the_title(); ?>">
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-row form-row--col">
+            <label for="address"><?php pll_e('Διεύθυνση'); ?></label>
+            <input class="input" type="text" name="address" id="address" value="<?= $post_id && $edit_mode ? get_field('address', $post_id) : "" ?>" required>
+        </div>
+    </div>
+    <div class="form-row form-row--col">
+        <div class="acf-label">
+            <label for="coordinates"><?php pll_e('Συντεταγμένες'); ?></label>
+            <p class="description">
+                <?php pll_e('Στην διεύθυνση <a href="https://maps.google.com" target="_blank" rel="noopener">maps.google.com</a>, βάλτε την διεύθυνσή σας και πατήστε δεξί click στο location pin που σας εμφανίζει. Οι τιμές σε μορφή "23,502934, 23,5035525" είναι οι συντεταγμένες της επιχείρησής σας. Αριστερό κλικ σε αυτές για αντιγραφή και έπειτα κάντε επικόλληση εδώ.') ?>
+            </p>
+        </div>
+        <input class="input" type="text" name="coordinates" id="coordinates" value="<?= $post_id && $edit_mode ? get_field('coordinates', $post_id) : "" ?>" required>
+    </div>
+    <div class="form-row form-row--col">
+        <label for="gallery"><?php pll_e('Προσθήκη φωτογραφιών'); ?></label>
+        <label for="gallery" class="label--file input pointer"><?php pll_e('Προσθήκη') ?></label>
+        <input class="input input--file" type="file" name="gallery[]" id="gallery" multiple accept="image/*" max="5" />
+        <div class="preview-gallery__container">
+            <?php if ($post_id && $edit_mode && get_field('gallery', $post_id)) : ?>
+                <?php $gallery = get_field('gallery', $post_id); ?>
+                <?php foreach ($gallery as $image) : ?>
+                    <img src="<?= esc_url($image['sizes']['medium']) ?>" alt="<?php the_title(); ?>">
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+
     <div class="form-row form-row--col">
         <div class="social-media-row form-row">
             <div class="form-row form-row--col">
