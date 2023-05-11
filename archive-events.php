@@ -23,6 +23,10 @@ $taxonomy =  'event-categories';
             wp_reset_postdata();
             ?>
         </section>
+    <?php else : ?>
+        <section class="archive__content">
+            <p class="message message--error">Δεν βρέθηκαν αποτελέσματα</p>
+        </section>
     <?php endif; ?>
 </main>
 <?php get_footer(); ?>

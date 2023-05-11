@@ -12,6 +12,9 @@ else :
     $trimmed_description = implode(" ", array_splice($words, 0, 15));
 endif;
 ?>
+<div class="loading-spinner__container">
+    <span class="loader"></span>
+</div>
 <article class="archive-item archive-item--restaurant archive-item--<?= get_the_ID() ?>">
     <header class="archive-item__header">
         <?php if (has_post_thumbnail()) : ?>

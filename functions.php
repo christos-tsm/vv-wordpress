@@ -59,8 +59,7 @@ require get_stylesheet_directory() . '/inc/custom-post-types/bars.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/travel-agents.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/night-clubs.php';
 require get_stylesheet_directory() . '/inc/custom-post-types/sightseeing.php';
-require get_stylesheet_directory() . '/inc/custom-post-types/profiles.php';
-require get_stylesheet_directory() . '/inc/custom-post-types/municipalities.php';
+require get_stylesheet_directory() . '/inc/custom-post-types/freelancers.php';
 
 /**
  * AJAX files
@@ -68,7 +67,6 @@ require get_stylesheet_directory() . '/inc/custom-post-types/municipalities.php'
 require get_stylesheet_directory() . '/inc/users/auth-register-ajax.php';
 require get_stylesheet_directory() . '/inc/users/auth-login-ajax.php';
 require get_stylesheet_directory() . '/inc/users/update-user-details.php';
-require get_stylesheet_directory() . '/inc/users/delete-business-profile.php';
 require get_stylesheet_directory() . '/inc/stores/delete-store.php';
 require get_stylesheet_directory() . '/inc/ajax/cpt-archive-ajax.php';
 

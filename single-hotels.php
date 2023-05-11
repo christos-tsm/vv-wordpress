@@ -4,12 +4,22 @@ $gallery = get_field('gallery');
 $address = get_field('address');
 $coordinates = get_field('coordinates');
 $website = get_field('website');
+$facebook_url = get_field('facebook_url');
+$instagram_url = get_field('instagram_url');
+$tiktok_url = get_field('tiktok_url');
+$tripadvisor_url = get_field('tripadvisor_url');
+$booking_url = get_field('booking_url');
 $distance = get_field('distance_from_city_center');
 $avg_prce = get_field('average_price');
+$categories = get_the_terms(get_the_ID(), 'hotel-categories');
+$category = '';
+if ($categories && !is_wp_error($categories)) {
+    $category = $categories[0]->name;
+}
 ?>
 <main class="site-main site-main--single">
     <section class="single-header container container--medium">
-        <h1 class="section-title"><?php the_title(); ?></h1>
+        <h1 class="section-title"><?php the_title(); ?> <span class="category"><?= esc_attr($category); ?></span></h1>
         <div class="single-header__actions">
             <a aria-label="Add <?php the_title(); ?> to your favourites" href="#!" class="icon icon--medium icon--add-to-favourites">
                 <?= file_get_contents(get_stylesheet_directory() . '/assets/images/heart.svg'); ?>
@@ -81,20 +91,60 @@ $avg_prce = get_field('average_price');
                     </ul>
                 </div>
             <?php endif; ?>
-            <?php if (have_rows('social_media')) : ?>
+            <?php if ($facebook_url || $instagram_url || $tiktok_url || $tripadvisor_url || $booking_url) : ?>
                 <div class="single-info__card-section">
                     <h2 class="section-subtitle"><?php pll_e('Social Media') ?></h2>
-                    <ul class="single-info__ul">
-                        <?php while (have_rows('social_media')) : the_row(); ?>
+                    <ul class="single-info__ul single-social-media__ul">
+                        <?php if ($facebook_url) : ?>
                             <li class="single-info__ul-item">
-                                <a class="single-info__ul-link icon icon--medium" href="<?= esc_url(get_sub_field('url')); ?>">
+                                <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($facebook_url); ?>">
                                     <span class="icon icon--small">
                                         <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
                                     </span>
-                                    <?= esc_attr(get_sub_field('title')); ?>
+                                    <?php pll_e('Facebook'); ?>
                                 </a>
                             </li>
-                        <?php endwhile; ?>
+                        <?php endif; ?>
+                        <?php if ($instagram_url) : ?>
+                            <li class="single-info__ul-item">
+                                <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($instagram_url); ?>">
+                                    <span class="icon icon--small">
+                                        <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
+                                    </span>
+                                    <?php pll_e('Instagram'); ?>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if ($tiktok_url) : ?>
+                            <li class="single-info__ul-item">
+                                <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($tiktok_url); ?>">
+                                    <span class="icon icon--small">
+                                        <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
+                                    </span>
+                                    <?php pll_e('Tiktok'); ?>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if ($tripadvisor_url) : ?>
+                            <li class="single-info__ul-item">
+                                <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($tripadvisor_url); ?>">
+                                    <span class="icon icon--small">
+                                        <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
+                                    </span>
+                                    <?php pll_e('Trip Advisor'); ?>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if ($booking_url) : ?>
+                            <li class="single-info__ul-item">
+                                <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($booking_url); ?>">
+                                    <span class="icon icon--small">
+                                        <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
+                                    </span>
+                                    <?php pll_e('Booking'); ?>
+                                </a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             <?php endif; ?>

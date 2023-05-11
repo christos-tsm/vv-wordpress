@@ -30,7 +30,7 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
                     FROM {$wpdb->prefix}posts
                     INNER JOIN {$wpdb->prefix}postmeta
                     ON {$wpdb->prefix}posts.ID = {$wpdb->prefix}postmeta.post_id
-                    WHERE {$wpdb->prefix}posts.post_type IN ('hotels', 'bars', 'restaurants', 'travel-agents', 'coffee-houses', 'night-clubs', 'shops')
+                    WHERE {$wpdb->prefix}posts.post_type IN ('hotels', 'bars', 'restaurants', 'travel-agents', 'coffee-houses', 'night-clubs', 'shops', 'freelancers')
                     AND {$wpdb->prefix}postmeta.meta_key = 'user_id'
                     AND {$wpdb->prefix}postmeta.meta_value = '%d'
                     AND {$wpdb->prefix}posts.post_status IN ('publish', 'draft')

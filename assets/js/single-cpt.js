@@ -9,6 +9,5 @@
 				prevEl: ".swiper-button-prev",
 			},
 		});
-		console.log("sss");
 	});
 })();

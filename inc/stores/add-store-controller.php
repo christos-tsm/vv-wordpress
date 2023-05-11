@@ -51,6 +51,10 @@ if (isset($_POST['action']) && $_POST['action'] === "submit_custom_store_form" &
         $result = wp_set_post_terms($post_id, $selected_categories, $taxonomy);
     }
     // Get and sanitize form data
+    if (isset($_POST['municipality']) && !empty($_POST['municipality'])) {
+        $municipality = sanitize_text_field($_POST['municipality']);
+    }
+
     if (isset($_POST['address']) && !empty($_POST['address'])) {
         $address = sanitize_text_field($_POST['address']);
     }
@@ -127,6 +131,9 @@ if (isset($_POST['action']) && $_POST['action'] === "submit_custom_store_form" &
         }
     }
     // Save the ACF fields as post meta data
+    if (!empty($municipality)) {
+        update_field('field_645d09e8fc0ab', $municipality, $post_id);
+    }
     if ($address) {
         update_field('address', $address, $post_id);
     }

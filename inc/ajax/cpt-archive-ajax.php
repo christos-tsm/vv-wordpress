@@ -25,18 +25,18 @@ function filter_cpt() {
         );
     }
     $query = new WP_Query($args);
-    ob_start(); // Start output buffering
+    ob_start();
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
             get_template_part('template-parts/archive/content-archive');
         }
     } else {
-        echo '<p class="message message--error">Δεν βρέθηκαν αποτελέσματα</p>';
+        echo '<div class="loading-spinner__container"><span class="loader"></span></div><p class="message message--error">Δεν βρέθηκαν αποτελέσματα</p>';
     }
     wp_reset_postdata();
-    $content = ob_get_clean(); // Get the content from the buffer
-    echo $content; // Return the content as HTML
+    $content = ob_get_clean();
+    echo $content;
     wp_reset_postdata();
     wp_die();
 }

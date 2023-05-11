@@ -39,7 +39,8 @@
 				<img src="<?= esc_url($header_logo['url']) ?>" alt="<?php the_title(); ?>">
 			</a>
 			<div class="site-header__search">
-				<?php get_template_part('template-parts/search/form'); ?>
+				<?php // get_template_part('template-parts/search/form'); 
+				?>
 			</div>
 			<div class="site-header__icons">
 				<?php get_template_part('template-parts/utils/languages'); ?>
