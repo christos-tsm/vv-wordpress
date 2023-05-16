@@ -5,3 +5,4 @@ vendor
 composer.lock
 phpcs.xml.dist
 yarn.lock
+.vscode
