@@ -16,6 +16,14 @@
 				window.location.search = urlParams;
 			});
 		}
+		if (document.querySelector("#custom-freelancer-form #municipality")) {
+			var options = {
+				searchable: true,
+				searchtext: document.documentElement.lang === "el" ? "Βόλος" : "Volos",
+				placeholder: document.documentElement.lang === "el" ? "Επιλογή περιοχής" : "Choose municipality",
+			};
+			NiceSelect.bind(document.querySelector("#custom-freelancer-form #municipality"), options);
+		}
 		if (document.getElementById("cat") && !document.querySelector("body").classList.contains("page-template-add-event")) {
 			var options = {
 				searchable: false,
