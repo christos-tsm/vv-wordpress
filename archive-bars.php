@@ -1,7 +1,5 @@
 <?php
 
-use WP_CLI\I18n\PotGenerator;
-
 get_header();
 $categories = get_terms(array(
     'taxonomy' => 'bar-categories',
