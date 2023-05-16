@@ -1,4 +1,4 @@
-<form method="GET" action="<?php echo esc_url(pll_home_url() . 'profiles/'); ?>">
+<form method="GET" id="s" action="<?php echo esc_url(pll_home_url() . 'profiles/'); ?>">
     <div class="form-row">
         <select class="input pointer" name="profile_category" id="profile_category">
             <option value="idravlikos">Υδραυλικός</option>

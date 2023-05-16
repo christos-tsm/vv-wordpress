@@ -36,36 +36,6 @@
 				},
 			});
 		}
-		/** Handle relationship inputs in business-profile pages */
-		if (document.querySelectorAll(".acf-relationship").length) {
-			setTimeout(() => {
-				// Get all relationship fields on the page
-				var relationshipFields = document.querySelectorAll(".acf-relationship");
-				// Loop through each relationship field
-				relationshipFields.forEach(function (relationshipField) {
-					// Create a new select element
-					var select = document.createElement("select");
-					select.name = relationshipField.querySelector('input[type="hidden"]').name;
-					select.classList.add("input", "pointer");
-					// Loop through each choice in the relationship field
-					relationshipField.querySelectorAll(".choices-list .acf-rel-item").forEach(function (choice) {
-						// Create a new option element
-						var option = document.createElement("option");
-						option.value = choice.dataset.id;
-						option.text = choice.innerText;
-						// Append the option element to the select element
-						select.appendChild(option);
-					});
-					// Replace the relationship field with the new select element
-					relationshipField.parentNode.replaceChild(select, relationshipField);
-					// Set the form action to the current URL
-					var form = document.querySelector("form");
-					form.action = window.location.href;
-					console.log(relationshipField);
-					document.querySelector('div[data-name="municipality"]').classList.add("input--reveal");
-				});
-			}, 1000);
-		}
 		/** Handle google maps links */
 		let addressLinks = document.querySelectorAll(".address-link").length >= 1 ? document.querySelectorAll(".address-link") : document.querySelectorAll(".address-link");
 		addressLinks.forEach((link) => {
