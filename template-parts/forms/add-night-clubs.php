@@ -34,11 +34,25 @@ if ($post_id || $type || $edit_mode) {
     </div>
     <div class="form-row form-row--col">
         <label for="logo"><?php pll_e('Εικόνα προφίλ / Λογότυπο'); ?></label>
-        <label for="logo" class="label--file input pointer"><?php pll_e('Προσθήκη') ?></label>
+        <label for="logo" class="label--file input pointer"><?php $post_id && has_post_thumbnail($post_id) ? pll_e('Αλλαγή εικόνας') :  pll_e('Προσθήκη') ?></label>
         <input class="input input--file" type="file" name="logo" id="logo" accept="image/*" />
         <div class="preview-logo__container">
             <?php if ($post_id && has_post_thumbnail($post_id)) : ?>
                 <img src="<?= get_the_post_thumbnail_url($post_id, 'medium') ?>" alt="<?php the_title(); ?>">
+            <?php endif; ?>
+        </div>
+    </div>
+    <div class="form-row form-row--col">
+        <div class="acf-label">
+            <label for="cover-photo"><?php pll_e('Εικόνα εξωφύλλου'); ?></label>
+            <p class="description"><?php pll_e('Προτεινόμενες διαστάσεις: 1260x360') ?></p>
+        </div>
+        <label for="cover-photo" class="label--file input pointer"><?php $post_id && get_field('cover_photo', $post_id) ? pll_e('Αλλαγή εικόνας') : pll_e('Προσθήκη') ?></label>
+        <input class="input input--file" type="file" name="cover-photo" id="cover-photo" accept="image/*" />
+        <div class="preview-cover-photo__container">
+            <?php if ($post_id && get_field('cover_photo', $post_id)) : ?>
+                <?php $cover_photo = get_field('cover_photo', $post_id); ?>
+                <img src="<?= esc_url($cover_photo['url']); ?>" alt="<?php the_title(); ?>">
             <?php endif; ?>
         </div>
     </div>
@@ -58,8 +72,8 @@ if ($post_id || $type || $edit_mode) {
         <input class="input" type="text" name="coordinates" id="coordinates" value="<?= $post_id && $edit_mode ? get_field('coordinates', $post_id) : "" ?>" required>
     </div>
     <div class="form-row form-row--col">
-        <label for="gallery"><?php pll_e('Προσθήκη φωτογραφιών'); ?></label>
-        <label for="gallery" class="label--file input pointer"><?php pll_e('Προσθήκη') ?></label>
+        <label for="gallery"><?php pll_e('Συλλογή φωτογραφιών'); ?></label>
+        <label for="gallery" class="label--file input pointer"><?php $post_id && $edit_mode && get_field('gallery', $post_id) ? pll_e('Αλλαγή φωτογραφιών') : pll_e('Προσθήκη') ?></label>
         <input class="input input--file" type="file" name="gallery[]" id="gallery" multiple accept="image/*" max="5" />
         <div class="preview-gallery__container">
             <?php if ($post_id && $edit_mode && get_field('gallery', $post_id)) : ?>

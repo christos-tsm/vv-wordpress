@@ -58,10 +58,163 @@ $categories = get_post_taxonomies(get_the_ID());
             <div class="section-title__container">
                 <h2 class="section-title"><?php pll_e('Σχετικά με εμάς'); ?> </h2>
             </div>
-            <?php the_content();  ?>
+            <div class="single-content">
+                <?php the_content();  ?>
+            </div>
+            <?php if ($gallery) : ?>
+                <div class="single-content__gallery">
+                    <?php foreach ($gallery as $image) :  ?>
+                        <a class="single-content__gallery-link" aria-label="Open gallery lightbox" data-fslightbox="gallery" href="<?= esc_url($image['url']) ?>">
+                            <img class="single-content__gallery-image" src="<?= esc_url($image['sizes']['large']) ?>" alt="<?php the_title(); ?> image">
+                            <span class="overlay">
+                                <span class="icon icon--medium">
+                                    <?= file_get_contents(get_stylesheet_directory() . '/assets/images/external.svg'); ?>
+                                </span>
+                            </span>
+                        </a>
+                    <?php endforeach;  ?>
+                </div>
+            <?php endif;  ?>
         </section>
-        <footer class="single-content__footer">
-            <!-- Contact details -->
+        <footer class="single-content__footer container container--medium">
+            <div class="single-info__card">
+                <?php if (have_rows('emails') || have_rows('tels')) : ?>
+                    <div class="single-info__card-section">
+                        <h2 class="section-subtitle"><?php pll_e('Επικοινωνία') ?></h2>
+                        <ul class="single-info__ul">
+                            <?php if (have_rows('emails')) : ?>
+                                <?php while (have_rows('emails')) : the_row(); ?>
+                                    <?php $email = antispambot(get_sub_field('email')); ?>
+                                    <li class="single-info__ul-item">
+                                        <a class="single-info__ul-link" href="mailto:<?= $email; ?>">
+                                            <span class="icon icon--small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/email.svg') ?></span>
+                                            <?php the_sub_field('email'); ?>
+                                        </a>
+                                    </li>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                            <?php if (have_rows('tels')) : ?>
+                                <?php while (have_rows('tels')) : the_row(); ?>
+                                    <?php $tel_url = preg_replace("/\s+/", "", get_sub_field('tel')); ?>
+                                    <li class="single-info__ul-item">
+                                        <a class="single-info__ul-link" href="tel:+30<?= $tel_url; ?>">
+                                            <span class="icon icon--small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/phone.svg') ?></span>
+                                            <?php the_sub_field('tel'); ?>
+                                        </a>
+                                    </li>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                            <?php if ($website && !empty($website)) : ?>
+                                <li class="single-info__ul-item">
+                                    <a class="single-info__ul-link" href="<?= esc_url($website) ?>" target="_blank" rel="noopener">
+                                        <span class="icon icon--small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/globe.svg') ?></span>
+                                        <?php pll_e('Ιστοσελίδα') ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+                <?php if ($facebook_url || $instagram_url || $tiktok_url || $tripadvisor_url || $booking_url) : ?>
+                    <div class="single-info__card-section">
+                        <h2 class="section-subtitle"><?php pll_e('Social Media') ?></h2>
+                        <ul class="single-info__ul single-social-media__ul">
+                            <?php if ($facebook_url) : ?>
+                                <li class="single-info__ul-item">
+                                    <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($facebook_url); ?>">
+                                        <span class="icon icon--small">
+                                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
+                                        </span>
+                                        <?php pll_e('Facebook'); ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ($instagram_url) : ?>
+                                <li class="single-info__ul-item">
+                                    <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($instagram_url); ?>">
+                                        <span class="icon icon--small">
+                                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
+                                        </span>
+                                        <?php pll_e('Instagram'); ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ($tiktok_url) : ?>
+                                <li class="single-info__ul-item">
+                                    <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($tiktok_url); ?>">
+                                        <span class="icon icon--small">
+                                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
+                                        </span>
+                                        <?php pll_e('Tiktok'); ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ($tripadvisor_url) : ?>
+                                <li class="single-info__ul-item">
+                                    <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($tripadvisor_url); ?>">
+                                        <span class="icon icon--small">
+                                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
+                                        </span>
+                                        <?php pll_e('Trip Advisor'); ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ($booking_url) : ?>
+                                <li class="single-info__ul-item">
+                                    <a class="single-info__ul-link icon icon--medium" target="_blank" rel="noopener" href="<?= esc_url($booking_url); ?>">
+                                        <span class="icon icon--small">
+                                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
+                                        </span>
+                                        <?php pll_e('Booking'); ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+                <?php if ($address && !empty($address)) : ?>
+                    <div class="single-info__card-section">
+                        <h2 class="section-subtitle"><?php pll_e('Διεύθυνση') ?></h2>
+                        <ul class="single-info__ul">
+                            <li class="single-info__ul-item">
+                                <a class="single-info__ul-link icon icon--medium address-link" target="_blank" rel="noopener noreferrer" href="#!">
+                                    <span class="icon icon--small">
+                                        <?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg'); ?>
+                                    </span>
+                                    <?= esc_attr($address); ?>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+                <?php if ($distance && !empty($distance) || $avg_prce && !empty($avg_prce)) : ?>
+                    <div class="single-info__card-section">
+                        <h2 class="section-subtitle"><?php pll_e('Πληροφορίες') ?></h2>
+                        <ul class="single-info__ul">
+                            <?php if ($distance && !empty($distance)) : ?>
+                                <li class="single-info__ul-item">
+                                    <span class="icon icon--small">
+                                        <?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg'); ?>
+                                    </span>
+                                    <?= esc_attr($distance) . ' ' . pll__('από το κέντρο του Βόλου'); ?>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ($avg_prce && !empty($avg_prce)) : ?>
+                                <li class="single-info__ul-item">
+                                    <span class="icon icon--small">
+                                        <?= file_get_contents(get_stylesheet_directory() . '/assets/images/credit-card.svg'); ?>
+                                    </span>
+                                    <?= esc_attr($avg_prce) ?> &euro;
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="single-info__map">
+                <h2 class="section-subtitle"><?php pll_e('Τοποθεσία') ?></h2>
+                <div id="map" data-coordinates="<?= esc_attr($coordinates); ?>" data-icon="<?= get_stylesheet_directory_uri() . '/assets/images/map-pin.svg' ?>"></div>
+            </div>
         </footer>
     </article>
 </main>

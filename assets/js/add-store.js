@@ -70,6 +70,38 @@
 				}
 			});
 		}
+		// Custom uploader with thumbnail for cover photo
+		if (document.querySelector('input[type="file"][name="cover-photo"]')) {
+			const coverPhotoElement = document.querySelector('input[type="file"][name="cover-photo"]');
+			coverPhotoElement.addEventListener("change", function () {
+				const coverPhotoPreviewContainer = document.querySelector(".preview-cover-photo__container");
+				coverPhotoPreviewContainer.innerHTML = ""; // Clear any existing previews
+				const fileList = coverPhotoElement.files;
+				const maxFileSize = 2 * 1024 * 1024; // 2MB
+				let fileSizeExceeded = false;
+				for (let i = 0; i < fileList.length; i++) {
+					const file = fileList[i];
+					if (file.size > maxFileSize) {
+						fileSizeExceeded = true;
+						break;
+					}
+					const fileReader = new FileReader();
+					fileReader.onload = (event) => {
+						const img = document.createElement("img");
+						img.classList.add("preview");
+						img.src = event.target.result;
+						coverPhotoPreviewContainer.appendChild(img);
+					};
+					fileReader.readAsDataURL(file);
+				}
+				if (fileSizeExceeded) {
+					let message = document.documentElement.lang == "el" ? "Το μέγεθος της φωτογραφίας δεν πρέπει να ξεπερνάει τα 2MB" : "File exceeded the maximum file size of 2MB";
+					alert(message);
+					coverPhotoElement.value = null; // Reset the input
+					coverPhotoPreviewContainer.innerHTML = ""; // Clear any previews
+				}
+			});
+		}
 		// Custom photo uploader with thumbnail for the logo
 		if (document.querySelector('input[type="file"][name="logo"]')) {
 			const logoElement = document.querySelector('input[type="file"][name="logo"]');

@@ -2,12 +2,15 @@
 	&__container {
 		display: flex;
 		flex-direction: column;
+
 		select[name="shop-category"] {
 			display: none;
 		}
+
 		.nice-select {
 			width: 100%;
 			margin: 20px 0;
+
 			&.open .nice-select-dropdown {
 				width: 100%;
 			}
@@ -24,16 +27,19 @@ select[name="cat"] {
 	&__header {
 		margin-bottom: 20px;
 	}
+
 	&--hidden {
 		display: none;
 	}
 }
+
 #emails-container,
 #tels-container {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 }
+
 .email-row,
 .tel-row {
 	display: flex;
@@ -47,9 +53,16 @@ select[name="cat"] {
 	grid-template-columns: repeat(5, 1fr);
 	gap: 10px;
 }
+
 .preview-logo__container img,
 .preview-gallery__container img {
 	width: 100%;
 	height: 300px;
 	object-fit: contain;
+}
+
+.preview-cover-photo__container img {
+	height: 360px;
+	object-fit: contain;
+	width: 100%;
 }
