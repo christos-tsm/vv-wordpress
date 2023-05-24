@@ -12,7 +12,7 @@ if (strlen($business_description) > 350) {
     $short_description = $business_description;
 }
 ?>
-<article class="store-card store-card__<?= get_the_ID() ?>">
+<article class="store-card store-card__<?= get_the_ID() ?>" data-post-type="<?= esc_attr($post_type); ?>">
     <?php $post_status = get_post_status(get_the_ID()); ?>
     <?php if ($post_status === 'draft') : ?>
         <span class="badge badge--draft"><?php pll_e('Εκκρεμεί έγκριση') ?></span>
@@ -33,6 +33,7 @@ if (strlen($business_description) > 350) {
             <?php if ($current_user_id === $profile_user_id) : ?>
                 <div class="store-card__actions">
                     <?php $update_store_page = pll_get_post(854); ?>
+                    <?php $update_event_page = pll_get_post(1075); ?>
                     <form method="POST" id="delete-store-form" action="<?= esc_url(admin_url('admin-post.php')); ?>">
                         <input type="hidden" name="action" value="delete_store">
                         <input type="hidden" name="user_id" value="<?= get_field('user_id') ?>">
@@ -41,7 +42,11 @@ if (strlen($business_description) > 350) {
                         <button class="btn input pointer btn--delete btn--delete-store" type="submit"><?php pll_e('Διαγραφή'); ?></button>
                     </form>
                     <?php if ($post_status === 'publish') : ?>
-                        <a href="<?php the_permalink($update_store_page) ?>?store_id=<?= get_the_ID(); ?>&type=<?= $post_type ?>&edit_mode=1" class="btn btn--small input"><?php pll_e('Επεξεργασία') ?></a>
+                        <?php if ($post_type === 'events') : ?>
+                            <a href="<?php the_permalink($update_event_page) ?>?event_id=<?= get_the_ID(); ?>&type=<?= $post_type ?>&edit_mode=1" class="btn btn--small input"><?php pll_e('Επεξεργασία') ?></a>
+                        <?php else : ?>
+                            <a href="<?php the_permalink($update_store_page) ?>?store_id=<?= get_the_ID(); ?>&type=<?= $post_type ?>&edit_mode=1" class="btn btn--small input"><?php pll_e('Επεξεργασία') ?></a>
+                        <?php endif; ?>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

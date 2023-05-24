@@ -67,8 +67,8 @@ p {
 }
 
 .icon--x-small {
-	width: 15px;
-	height: 15px;
+	width: 18px;
+	height: 18px;
 }
 
 .icon--delete {
@@ -302,6 +302,7 @@ address {
 	width: 180px;
 }
 
+.site-header__logo img,
 .site-header__logo svg {
 	width: 100%;
 	height: 100%;
@@ -538,42 +539,52 @@ address {
 	color: #9691a4;
 }
 
-.event-time, .event-date {
+.event-card__header {
+	position: relative;
+}
+
+.event-card__header > a {
+	overflow: hidden;
 	display: flex;
-	gap: 6px;
-	font-size: 14px;
-	align-items: center;
 }
 
-.event-price {
-	margin-left: auto;
-	background-color: #ff576b;
-	padding: 2px 5px;
-	border-radius: 5px;
-	font-size: 14px;
-}
-
-.event-card__title {
-	margin: 0 0 20px;
+.event-card__thumbnail {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	transition: all ease-in-out 250ms;
 }
 
 .event-card__title a {
-	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.event-card__subtitle {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px 0;
+	margin-bottom: 8px;
+	color: #ff576b;
+	font-size: 14px;
+	border-bottom: 1px solid #eee;
+}
+
+.event-card .event-date-time {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.event-card:hover .event-card__thumbnail {
+	transform: scale(1.05);
 }
 
 .grid--restaurants {
 	grid-template-columns: repeat(2, 1fr);
 	gap: 20px;
-}
-
-.grid--restaurants__title {
-	margin-bottom: 10px;
-}
-
-.grid--restaurants__title a {
-	color: #4d4d4d;
-	font-size: 16px;
-	font-weight: 600;
+	row-gap: 40px;
+	grid-row-gap: 40px;
 }
 
 .grid--restaurants__details {
@@ -595,7 +606,7 @@ address {
 	background: #f5f5f5;
 	display: flex;
 	justify-content: center;
-	padding: 20px;
+	padding: 8px;
 	align-items: center;
 	width: 100px;
 	max-width: 100%;
@@ -618,6 +629,19 @@ address {
 
 .grid--restaurants__single:hover .grid--restaurants__title a {
 	color: #ff576b;
+}
+
+.grid--restaurants__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 5px 0;
+}
+
+.grid--restaurants__title a {
+	color: #4d4d4d;
+	font-size: 16px;
+	font-weight: 600;
 }
 
 .dashboard__content .store-card:not(:last-child) {
@@ -807,6 +831,7 @@ address {
 	min-height: 45px;
 	display: flex;
 	align-items: center;
+	line-height: 25px;
 }
 
 .input::placeholder {
@@ -1083,7 +1108,14 @@ input#file-upload-button {
 	color: #fff;
 }
 
-/** Pagess */
+.related-events {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-bottom: 50px;
+	gap: 50px;
+}
+
+/** Pages */
 .featured {
 	margin: 80px auto;
 }

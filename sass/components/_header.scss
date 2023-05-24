@@ -18,6 +18,8 @@
 	&__logo {
 		display: flex;
 		width: 180px;
+
+		img,
 		svg {
 			width: 100%;
 			height: 100%;
@@ -30,10 +32,12 @@
 		width: 180px;
 		justify-content: flex-end;
 		align-items: center;
+
 		&-burger {
 			padding: 20px;
 			background-color: $primary-color;
 		}
+
 		a {
 			color: $text-dark;
 			transition: all ease-in-out 250ms;
@@ -52,6 +56,7 @@
 
 	&__language {
 		font-size: 14px;
+
 		&--current {
 			font-weight: 600;
 			color: $primary-color;
@@ -73,6 +78,7 @@
 			a {
 				color: $text-dark;
 				font-size: 14px;
+
 				&:hover {
 					color: $primary-color;
 				}
@@ -89,10 +95,11 @@
 
 	&__search {
 		.form-row {
-			& > select {
+			&>select {
 				display: none;
 			}
 		}
+
 		.nice-select {
 			line-height: initial;
 			min-width: 300px;

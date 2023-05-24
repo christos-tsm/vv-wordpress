@@ -1,9 +1,9 @@
+<?php $categories = get_post_taxonomies(get_the_ID()); ?>
 <div class="grid--restaurants__single grid--restaurants__single-<?= get_the_ID(); ?>">
-    <?php $logo = get_field('logo'); ?>
     <div class="grid--restaurants__logo">
-        <?php if ($logo) : ?>
+        <?php if (has_post_thumbnail()) : ?>
             <a href="<?php the_permalink(); ?>">
-                <img src="<?= esc_url($logo['url']) ?>" alt="<?php the_title(); ?>">
+                <img src="<?php the_post_thumbnail_url('medium_large'); ?>" alt="<?php the_title(); ?>">
             </a>
         <?php else : ?>
             <?php $logo = get_field('header_logo', 'option'); ?>
@@ -20,12 +20,17 @@
         </h3>
         <ul class="grid--restaurants__details">
             <li class="grid--restaurants__details-item">
-                <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/star.svg') ?></span>
-                <?php the_field('reviews'); ?>
-            </li>
-            <li class="grid--restaurants__details-item">
-                <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/credit-card.svg') ?></span>
-                <?php the_field('average_price_per_dinner'); ?> &euro;
+                <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/info.svg') ?></span>
+                <?php foreach ($categories as $category) : ?>
+                    <?php if (strpos($category, '-categories') !== false) : ?>
+                        <?php $terms = get_the_terms(get_the_ID(), $category); ?>
+                        <?php if ($terms && !is_wp_error($terms)) : ?>
+                            <?php foreach ($terms as $term) : ?>
+                                <span class="single-category"><?= $term->name; ?></span>
+                            <?php endforeach ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                <?php endforeach;  ?>
             </li>
             <li class="grid--restaurants__details-item">
                 <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg') ?></span>

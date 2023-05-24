@@ -15,7 +15,7 @@
 		/* Critical CSS for above-the-fold content */
 		body {
 			font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-			color: #222;
+			color: #363535;
 		}
 
 		.archive-item__title-link {
@@ -36,7 +36,7 @@
 		<?php $header_logo = get_field('header_logo', 'option'); ?>
 		<div class="site-header__content container container--medium">
 			<a class="site-header__logo" href="<?= pll_home_url() ?>" aria-label="Homepage Link">
-				<img src="<?= esc_url($header_logo['url']) ?>" alt="<?php the_title(); ?>">
+				<img src="<?= esc_url($header_logo['url']) ?>" alt="<?= bloginfo('name') . ' - Τα πάντα για τον Βόλο' ?>">
 			</a>
 			<div class="site-header__search">
 				<?php get_template_part('template-parts/search/form'); ?>

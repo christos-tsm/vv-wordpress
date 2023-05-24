@@ -42,7 +42,7 @@ $categories = get_post_taxonomies(get_the_ID());
                                 <?php endforeach ?>
                             <?php endif; ?>
                         <?php endif; ?>
-                    <?php endforeach;  ?>
+                    <?php endforeach; ?>
                 </h1>
                 <ul class="single-details">
                     <li class="single-details__item single-details__item--address">
@@ -217,4 +217,7 @@ $categories = get_post_taxonomies(get_the_ID());
             </div>
         </footer>
     </article>
+    <div>
+        <?php get_template_part('template-parts/single-cpt/related-events'); ?>
+    </div>
 </main>

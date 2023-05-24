@@ -44,6 +44,9 @@ $results = $wpdb->get_results($query);
                         <?php wp_reset_postdata(); ?>
                     <?php endif; ?>
                 </div>
+                <div class="store-event-form-container">
+                    <?php get_template_part('template-parts/forms/add-events'); ?>
+                </div>
             <?php endif; ?>
             <?php
             if (get_transient('custom_hotel_form_success')) {
@@ -55,9 +58,6 @@ $results = $wpdb->get_results($query);
                 delete_transient('custom_hotel_form_error');
             }
             ?>
-            <div class="store-event-form-container">
-                <?php get_template_part('template-parts/forms/add-event'); ?>
-            </div>
         </section>
     </div>
 </main>

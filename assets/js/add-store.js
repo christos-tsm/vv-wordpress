@@ -24,7 +24,7 @@
 			};
 			NiceSelect.bind(document.querySelector("#custom-freelancer-form #municipality"), options);
 		}
-		if (document.getElementById("cat") && !document.querySelector("body").classList.contains("page-template-add-event")) {
+		if (document.getElementById("cat") && !document.querySelector("body").classList.contains("page-template-add-event") && !document.querySelector("body").classList.contains("page-template-my-events-list")) {
 			var options = {
 				searchable: false,
 				placeholder: document.documentElement.lang === "el" ? "Επιλογή κατηγορίας" : "Choose category",

@@ -13,18 +13,6 @@
         <h3 class="card__title hotel-card__title"> <a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
     </header>
     <footer class="card__footer hotel-card__footer">
-        <p class="hotel-details__item">
-            <span class="icon icon--x-small">
-                <?= file_get_contents(get_stylesheet_directory() . '/assets/images/star.svg'); ?>
-            </span>
-            <?php the_field('reviews'); ?>
-        </p>
-        <p class="hotel-details__item">
-            <span class=" icon icon--x-small">
-                <?= file_get_contents(get_stylesheet_directory() . '/assets/images/credit-card.svg'); ?>
-            </span>
-            <?php the_field('average_price_per_night'); ?> &euro;
-        </p>
         <address class="hotel-details__item"">
             <span class=" icon icon--x-small">
             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg'); ?>
