@@ -14,6 +14,8 @@ $distance = get_field('distance_from_city_center');
 $avg_prce = get_field('average_price');
 $categories = get_post_taxonomies(get_the_ID());
 $current_user = wp_get_current_user();
+$user_id = get_current_user_id();
+$user_favourites_array = get_user_meta($user_id, 'favorites');
 ?>
 <main class="site-main site-main--single">
     <article id="single-<?= get_the_ID(); ?>" class="single-content single-content__<?= esc_attr($post_type); ?>">
@@ -36,9 +38,8 @@ $current_user = wp_get_current_user();
                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/flag.svg'); ?>
                             <span class="tooltip"><?php pll_e('Αναφορά'); ?></span>
                         </a>
-                        <a id="add-store-to-favourites" href="#!" class="icon icon--small action-badges__single action-badges__favourites" aria-label="Add <?= the_title(); ?> to favorites">
+                        <a data-action="<?= in_array(get_the_ID(), $user_favourites_array[0]) ? 'remove_from_favorites' : 'add_to_favorites' ?>" id="add-store-to-favourites" data-post-id="<?= get_the_ID(); ?>" href="#!" class="icon icon--small action-badges__single action-badges__favourites <?= in_array(get_the_ID(), $user_favourites_array[0]) ? 'favourited' : '' ?>" aria-label="Add <?= the_title(); ?> to favorites">
                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/heart.svg'); ?>
-                            <span class="tooltip"><?php pll_e('Προσθήκη στα αγαπημένα'); ?></span>
                         </a>
                     </div>
                 <?php endif; ?>

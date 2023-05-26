@@ -1754,6 +1754,7 @@ select[name="time"] {
 
 .single-info__map #map {
 	height: 100%;
+	min-height: 500px;
 }
 
 .single-info__ul {
@@ -1819,13 +1820,14 @@ select[name="time"] {
 	opacity: 1;
 }
 
+.action-badges__single.favourited svg path {
+	fill: #c92525;
+	stroke: #c92525;
+}
+
 .action-badges__report .tooltip {
 	bottom: -45px;
 	left: -20px;
-}
-
-.action-badges__favourites .tooltip {
-	left: 50px;
 }
 
 .report-form {
