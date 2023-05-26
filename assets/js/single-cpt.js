@@ -12,12 +12,14 @@
 		/** Report Form */
 		let reportBtn = document.getElementById('report-store');
 		let closeReportBtn = document.getElementById('close-report-form');
-		reportBtn.addEventListener('click', () => {
-			document.querySelector('.report-form__container').classList.add('report-form__container--active');
-		});
-		closeReportBtn.addEventListener('click', () => {
-			document.querySelector('.report-form__container').classList.remove('report-form__container--active');
-		});
+		if (reportBtn && closeReportBtn) {
+			reportBtn.addEventListener('click', () => {
+				document.querySelector('.report-form__container').classList.add('report-form__container--active');
+			});
+			closeReportBtn.addEventListener('click', () => {
+				document.querySelector('.report-form__container').classList.remove('report-form__container--active');
+			});
+		}
 		/** Handle Report Submissions Number */
 		document.addEventListener('wpcf7mailsent', function (event) {
 			var message = event.detail.apiResponse.message;

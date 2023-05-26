@@ -1,7 +1,5 @@
 <?php
 $description = get_field('description');
-$reviews = get_field('reviews');
-$avg_price = get_field('average_price');
 $address = get_field('address');
 if ($description) :
     $words = explode(" ", $description);
@@ -15,7 +13,7 @@ endif;
 <div class="loading-spinner__container">
     <span class="loader"></span>
 </div>
-<article class="archive-item archive-item--restaurant archive-item--<?= get_the_ID() ?>">
+<article class="archive-item archive-item--<?= get_post_type() ?> archive-item--<?= get_the_ID() ?>">
     <header class="archive-item__header">
         <?php if (has_post_thumbnail()) : ?>
             <a class="archive-item__thumbnail-link" href="<?php the_permalink() ?>">
@@ -37,6 +35,7 @@ endif;
                 <?php the_title(); ?>
             </a>
         </h3>
+        <?php get_template_part('template-parts/premium/premium-badge'); ?>
     </header>
     <?php if ($description) : ?>
         <div class="archive-item__description">
@@ -47,17 +46,9 @@ endif;
             <?php endif; ?>
         </div>
     <?php endif; ?>
-    <?php if ($reviews || $avg_price || $address) : ?>
+    <?php if ($address) : ?>
         <footer>
             <ul class="archive-item__details">
-                <li class="archive-item__details-item">
-                    <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/star.svg') ?></span>
-                    <?= esc_attr($reviews); ?>
-                </li>
-                <li class="archive-item__details-item">
-                    <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/credit-card.svg') ?></span>
-                    <?= esc_attr($avg_price) ?> &euro;
-                </li>
                 <li class="archive-item__details-item">
                     <span class="icon icon--x-small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg') ?></span>
                     <address><?= esc_attr($address); ?></address>

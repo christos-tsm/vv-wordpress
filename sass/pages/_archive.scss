@@ -8,9 +8,23 @@
 
 .archive {
 	&__filters {
-		flex: 1;
+		min-width: 200px;
 		max-width: 200px;
 		border-right: 1px solid #ddd;
+		padding-right: 50px;
+	}
+
+	&__container {
+		flex: 1;
+	}
+
+	&__premium-posts {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		gap: 25px;
 	}
 
 	&__categories {
@@ -18,9 +32,11 @@
 			display: flex;
 			flex-direction: column;
 			gap: 12px;
+
 			&-item {
 				a {
 					color: $light-gray;
+
 					&:hover {
 						color: $primary-color;
 					}
@@ -44,20 +60,32 @@
 		height: -moz-min-content;
 		height: min-content;
 		min-height: 65vh;
+
 		@media screen and (min-width: 768px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
+
 		@media screen and (min-width: 1024px) {
 			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.message {
+			text-align: left;
 		}
 	}
 
 	&-item {
+		&__header {
+			position: relative;
+			overflow: hidden;
+		}
+
 		&__thumbnail {
 			width: 100%;
 			height: 150px;
 			object-fit: cover;
 			transition: all ease-in-out 250ms;
+
 			&-link {
 				border-radius: 10px;
 				display: flex;
@@ -69,6 +97,7 @@
 		&__logo {
 			min-height: 50px;
 			transition: all ease-in-out 250ms;
+
 			&-link {
 				border-radius: 10px;
 				min-height: 150px;
@@ -81,6 +110,7 @@
 
 		&__title {
 			margin-bottom: 10px;
+
 			&-link {
 				color: $text-dark;
 				font-size: 20px;
@@ -89,6 +119,7 @@
 
 		&__description {
 			min-height: 75px;
+
 			p {
 				font-size: 14px;
 				line-height: 25px;
@@ -100,6 +131,7 @@
 			gap: 15px;
 			margin-top: 15px;
 			flex-wrap: wrap;
+
 			&-item {
 				display: flex;
 				align-items: center;
@@ -108,10 +140,12 @@
 				color: $light-gray;
 			}
 		}
+
 		&:hover {
 			.archive-item__thumbnail {
 				transform: scale(1.05);
 			}
+
 			.archive-item__title-link {
 				color: $primary-color;
 			}
@@ -136,11 +170,13 @@
 	transition: opacity ease-in-out 250ms;
 	opacity: 0;
 }
+
 .loading {
 	.loading-spinner__container {
 		opacity: 1;
 	}
 }
+
 .loader {
 	width: 48px;
 	height: 48px;
@@ -151,6 +187,7 @@
 	box-sizing: border-box;
 	animation: rotation 1s linear infinite;
 }
+
 .loader::after {
 	content: "";
 	box-sizing: border-box;
@@ -169,6 +206,7 @@
 	0% {
 		transform: rotate(0deg);
 	}
+
 	100% {
 		transform: rotate(360deg);
 	}

@@ -15,14 +15,9 @@ $taxonomy =  'hotel-categories';
     get_template_part('template-parts/archive/filters');
     ?>
     <?php if (have_posts()) : ?>
-        <section class="archive__content">
-            <?php
-            while (have_posts()) : the_post();
-                get_template_part('template-parts/archive/content-archive');
-            endwhile;
-            wp_reset_postdata();
-            ?>
-        </section>
+        <div class="archive__container">
+            <?php get_template_part('template-parts/premium/premium-archive'); ?>
+        </div>
     <?php endif; ?>
 </main>
 <?php get_footer(); ?>

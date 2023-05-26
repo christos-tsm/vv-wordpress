@@ -7,7 +7,7 @@ $categories = get_terms(array(
 $post_type = 'coffee-houses';
 $taxonomy =  'coffee-house-categories';
 ?>
-<main class="site-main site-main--archive  container container--medium">
+<main class="site-main site-main--archive container container--medium">
     <?php
     set_query_var('categories', $categories);
     set_query_var('post-type', $post_type);
@@ -15,14 +15,9 @@ $taxonomy =  'coffee-house-categories';
     get_template_part('template-parts/archive/filters');
     ?>
     <?php if (have_posts()) : ?>
-        <section class="archive__content">
-            <?php
-            while (have_posts()) : the_post();
-                get_template_part('template-parts/archive/content-archive');
-            endwhile;
-            wp_reset_postdata();
-            ?>
-        </section>
+        <div class="archive__container">
+            <?php get_template_part('template-parts/premium/premium-archive'); ?>
+        </div>
     <?php endif; ?>
 </main>
 <?php get_footer(); ?>

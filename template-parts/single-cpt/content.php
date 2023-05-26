@@ -1,4 +1,5 @@
 <?php
+// Single Post Details
 $post_type = get_post_type();
 $cover_photo = get_field('cover_photo');
 $gallery = get_field('gallery');
@@ -10,12 +11,11 @@ $instagram_url = get_field('instagram_url');
 $tiktok_url = get_field('tiktok_url');
 $tripadvisor_url = get_field('tripadvisor_url');
 $booking_url = get_field('booking_url');
-$distance = get_field('distance_from_city_center');
-$avg_prce = get_field('average_price');
 $categories = get_post_taxonomies(get_the_ID());
+// Current user logged in details
 $current_user = wp_get_current_user();
-$user_id = get_current_user_id();
-$user_favourites_array = get_user_meta($user_id, 'favorites');
+$current_user_id = get_current_user_id();
+$user_favourites_array = get_user_meta($current_user_id, 'favorites');
 ?>
 <main class="site-main site-main--single">
     <article id="single-<?= get_the_ID(); ?>" class="single-content single-content__<?= esc_attr($post_type); ?>">
@@ -79,7 +79,7 @@ $user_favourites_array = get_user_meta($user_id, 'favorites');
                 <div class="single-content__gallery">
                     <?php foreach ($gallery as $image) :  ?>
                         <a class="single-content__gallery-link" aria-label="Open gallery lightbox" data-fslightbox="gallery" href="<?= esc_url($image['url']) ?>">
-                            <img class="single-content__gallery-image" src="<?= esc_url($image['sizes']['large']) ?>" alt="<?php the_title(); ?> image">
+                            <img class="single-content__gallery-image" src="<?= esc_url($image['sizes']['medium']) ?>" alt="<?php the_title(); ?> image">
                             <span class="overlay">
                                 <span class="icon icon--medium">
                                     <?= file_get_contents(get_stylesheet_directory() . '/assets/images/external.svg'); ?>

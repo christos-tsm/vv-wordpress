@@ -258,4 +258,17 @@ address {
 	border-radius: 5px;
 	font-weight: 600;
 	font-size: 14px;
+
+	&--premium {
+		top: 5px;
+		left: auto;
+		right: -40px;
+		background-color: #fff;
+		border-radius: 0;
+		transform: rotate(45deg);
+		width: 120px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }

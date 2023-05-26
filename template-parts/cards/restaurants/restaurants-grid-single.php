@@ -1,6 +1,7 @@
 <?php $categories = get_post_taxonomies(get_the_ID()); ?>
 <div class="grid--restaurants__single grid--restaurants__single-<?= get_the_ID(); ?>">
     <div class="grid--restaurants__logo">
+        <?php get_template_part('template-parts/premium/premium-badge'); ?>
         <?php if (has_post_thumbnail()) : ?>
             <a href="<?php the_permalink(); ?>">
                 <img src="<?php the_post_thumbnail_url('medium_large'); ?>" alt="<?php the_title(); ?>">

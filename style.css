@@ -285,6 +285,19 @@ address {
 	font-size: 14px;
 }
 
+.badge--premium {
+	top: 5px;
+	left: auto;
+	right: -40px;
+	background-color: #fff;
+	border-radius: 0;
+	transform: rotate(45deg);
+	width: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /** Components */
 .site-header__container {
 	position: fixed;
@@ -535,6 +548,10 @@ address {
 	transform: scale(1.06);
 }
 
+.hotel-card {
+	position: relative;
+}
+
 .hotel-details__item {
 	font-size: 13px;
 	font-weight: 500;
@@ -615,15 +632,16 @@ address {
 	align-items: center;
 	width: 100px;
 	max-width: 100%;
+	position: relative;
 }
 
 .grid--restaurants__logo > a {
 	display: flex;
-	width: 100%;
 }
 
 .grid--restaurants__logo img {
-	width: 100%;
+	width: 85px;
+	height: 95px;
 	object-fit: contain;
 }
 
@@ -1404,9 +1422,23 @@ select[name="time"] {
 }
 
 .archive__filters {
-	flex: 1;
+	min-width: 200px;
 	max-width: 200px;
 	border-right: 1px solid #ddd;
+	padding-right: 50px;
+}
+
+.archive__container {
+	flex: 1;
+}
+
+.archive__premium-posts {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	gap: 25px;
 }
 
 .archive__categories-list {
@@ -1448,6 +1480,15 @@ select[name="time"] {
 	.archive__content {
 		grid-template-columns: repeat(3, 1fr);
 	}
+}
+
+.archive__content .message {
+	text-align: left;
+}
+
+.archive-item__header {
+	position: relative;
+	overflow: hidden;
 }
 
 .archive-item__thumbnail {
@@ -1821,8 +1862,8 @@ select[name="time"] {
 }
 
 .action-badges__single.favourited svg path {
-	fill: #c92525;
-	stroke: #c92525;
+	fill: #ff576b;
+	stroke: #ff576b;
 }
 
 .action-badges__report .tooltip {
