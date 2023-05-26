@@ -32,8 +32,8 @@ $results = $wpdb->get_results($query);
         <section class="dashboard__content">
             <h1 class="section-title section-title--dashboard"><?php pll_e('Καταχώρηση εκδήλωσης'); ?><span class="divider"></span></h1>
             <?php if (!get_transient('custom_hotel_form_success') && !get_transient('custom_hotel_form_error')) : ?>
-                <div class="store-select__container">
-                    <?php if (!empty($results)) : ?>
+                <?php if (!empty($results)) : ?>
+                    <div class="store-select__container">
                         <select name="store_id" id="store_id">
                             <?php foreach ($results as $result) : ?>
                                 <?php $post = get_post($result->ID); ?>
@@ -42,11 +42,13 @@ $results = $wpdb->get_results($query);
                             <?php endforeach; ?>
                         </select>
                         <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>
-                </div>
-                <div class="store-event-form-container">
-                    <?php get_template_part('template-parts/forms/add-events'); ?>
-                </div>
+                    </div>
+                    <div class="store-event-form-container">
+                        <?php get_template_part('template-parts/forms/add-events'); ?>
+                    </div>
+                <?php else : ?>
+                    <p class="message message--error"><?php pll_e('Για να καταχωρήσετε μία εκδήλωση, Θα πρέπει να έχετε καταχωρήσει πρώτα την επιχείρησή σας και να έχει λάβει έγκριση.')  ?> </p>
+                <?php endif; ?>
             <?php endif; ?>
             <?php
             if (get_transient('custom_hotel_form_success')) {

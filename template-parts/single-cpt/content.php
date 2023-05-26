@@ -13,6 +13,7 @@ $booking_url = get_field('booking_url');
 $distance = get_field('distance_from_city_center');
 $avg_prce = get_field('average_price');
 $categories = get_post_taxonomies(get_the_ID());
+$current_user = wp_get_current_user();
 ?>
 <main class="site-main site-main--single">
     <article id="single-<?= get_the_ID(); ?>" class="single-content single-content__<?= esc_attr($post_type); ?>">
@@ -29,6 +30,18 @@ $categories = get_post_taxonomies(get_the_ID());
                         <img class="profile-photo" src="<?php the_post_thumbnail_url('large') ?>" alt="Volos-Voyage - <?php the_title(); ?>">
                     </div>
                 <?php endif;  ?>
+                <?php if ($current_user) : ?>
+                    <div class="action-badges__container">
+                        <a id="report-store" href="#!" class="icon icon--small action-badges__single action-badges__report" aria-label="Report <?= the_title(); ?>">
+                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/flag.svg'); ?>
+                            <span class="tooltip"><?php pll_e('Αναφορά'); ?></span>
+                        </a>
+                        <a id="add-store-to-favourites" href="#!" class="icon icon--small action-badges__single action-badges__favourites" aria-label="Add <?= the_title(); ?> to favorites">
+                            <?= file_get_contents(get_stylesheet_directory() . '/assets/images/heart.svg'); ?>
+                            <span class="tooltip"><?php pll_e('Προσθήκη στα αγαπημένα'); ?></span>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="single-title__container container container--medium">
                 <h1 class="section-title section-title--single">
@@ -221,3 +234,13 @@ $categories = get_post_taxonomies(get_the_ID());
         <?php get_template_part('template-parts/single-cpt/related-events'); ?>
     </div>
 </main>
+<?php if (is_user_logged_in()) : ?>
+    <div class="report-form__container" id="report-form__container">
+        <div class="report-form">
+            <span class="icon icon--medium" id="close-report-form">
+                <?= file_get_contents(get_stylesheet_directory() . '/assets/images/remove.svg'); ?>
+            </span>
+            <?php get_template_part('template-parts/forms/report-store'); ?>
+        </div>
+    </div>
+<?php endif; ?>
