@@ -84,6 +84,15 @@ p {
 	pointer-events: none;
 }
 
+.icon--verified svg path {
+	fill: #ff576b;
+	stroke: #fff;
+}
+
+input[type="checkbox"] {
+	accent-color: #ff576b;
+}
+
 .btn {
 	display: inline-flex;
 	justify-content: center;
@@ -113,7 +122,11 @@ p {
 }
 
 .site-main {
-	margin-top: 105px;
+	margin-top: 139px;
+}
+
+.site-main--account {
+	margin-top: 95px;
 }
 
 .container {
@@ -189,6 +202,11 @@ p {
 	font-weight: 400;
 }
 
+.message--thankyou {
+	color: #ff576b;
+	text-align: left;
+}
+
 .message a {
 	color: #ff576b;
 	font-weight: 600;
@@ -211,6 +229,7 @@ address {
 .section-title {
 	font-size: 25px;
 	font-weight: 600;
+	line-height: 35px;
 }
 
 .section-title__container {
@@ -298,14 +317,337 @@ address {
 	align-items: center;
 }
 
+.membership .pmpro_table td,
+.membership .pmpro_table th {
+	text-align: left;
+	padding: 10px;
+	border: 1px solid #f5f5f5;
+	min-height: 55px;
+}
+
+.membership .pmpro_table a {
+	color: #ff576b;
+}
+
+.membership .membership-title {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+	font-size: 20px;
+}
+
+.membership #pmpro_account .pmpro_box {
+	padding: 0 0 20px;
+	margin: 0 0 20px;
+	border-top: none;
+}
+
+.membership #pmpro_account .pmpro_box p {
+	font-size: 14px;
+	margin: 0;
+}
+
+.membership #pmpro_account .pmpro_box h3 {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	font-size: 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.membership #pmpro_account .pmpro_box .pmpro_account-membership-levelname {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.membership #pmpro_account .pmpro_box > .pmpro_actionlinks {
+	margin-top: 10px;
+}
+
+.membership #pmpro_account .pmpro_box .pmpro_account-membership-levelfee {
+	text-transform: lowercase;
+}
+
+.pmpro_table .pmpro_account-membership-levelname .pmpro_actionlinks {
+	display: flex;
+	gap: 5px;
+}
+
+.pmpro_btn,
+.pmpro_btn:link,
+.pmpro_content_message a,
+.pmpro_content_message a:link,
+.pmpro_btn-select,
+.pmpro_btn-submit {
+	color: #fff !important;
+	background-color: #ff576b !important;
+	padding: 10px 15px;
+	border: none;
+}
+
+.pmpro_level_description_text strong {
+	color: #ff576b;
+}
+
+.pmpro_actionlinks a {
+	color: #ff576b;
+	display: flex;
+}
+
+.membership__subscription-levels #pmpro_levels_table {
+	width: 100%;
+}
+
+.membership__subscription-levels #pmpro_levels_table td:nth-child(1) {
+	min-width: initial;
+}
+
+.level-description {
+	margin: 20px 0;
+}
+
+body.pmpro-cancel .pmpro_cancel_wrap {
+	min-height: calc(100vh - 522px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+}
+
+.pmpro_checkout-fields {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.pmpro_checkout-fields .pmpro_level_description_text {
+	flex-basis: 100%;
+}
+
+#pmpropp_payment_plans {
+	flex-direction: column;
+}
+
+form.pmpro_form #pmpro_billing_address_fields .pmpro_checkout-fields div {
+	flex-basis: 50%;
+}
+
+.pmpro_alert {
+	background-color: #ff576b;
+	color: #fff;
+	margin: 20px 0;
+}
+
+.pmpro_alert a {
+	color: #fff;
+	font-weight: 600;
+}
+
+.pmpro_checkout .pmpro_level_cost_text,
+.pmpro_checkout .pmpro_level_name_text {
+	margin: 0 0 20px;
+}
+
+.pmpro_checkout .pmpro_level_cost_text strong,
+.pmpro_checkout .pmpro_level_name_text strong {
+	color: #ff576b;
+}
+
+form.pmpro_form .pmpro_checkout-fields div,
+#loginform p {
+	margin: 0 0 20px;
+}
+
+form.pmpro_form .pmpro_checkout-fields > .pmpro_checkout-field {
+	position: relative;
+}
+
+form.pmpro_form .pmpro_checkout-fields > .pmpro_checkout-field > label {
+	padding-left: 10px;
+}
+
+form.pmpro_form .pmpro_checkout-fields > .pmpro_checkout-field .pmpro_asterisk {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #c92525;
+}
+
+hr {
+	opacity: 0.2;
+}
+
+.pmpro_checkout h3 span.pmpro_checkout-h3-name {
+	margin: 0 10px 20px 0;
+}
+
+form.pmpro_form label,
+#loginform label {
+	font-size: 16px;
+	margin: 0 0 10px;
+}
+
+.pmprorh_checkbox_label.pmpro_clickable {
+	font-weight: 400;
+	margin-left: 7px;
+}
+
+form.pmpro_form input[type=text],
+form.pmpro_form input[type=password],
+form.pmpro_form input[type=email],
+form.pmpro_form input[type=number],
+form.pmpro_form textarea,
+form.pmpro_form select,
+#loginform input[type=text],
+#loginform input[type=password] {
+	border: 1px solid #e8e8e8;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 10px;
+	font-family: 'Manrope', sans-serif;
+	transition: all ease-in-out 250ms;
+	outline: none;
+}
+
+form.pmpro_form input[type=text]:focus, form.pmpro_form input[type=text]:hover,
+form.pmpro_form input[type=password]:focus,
+form.pmpro_form input[type=password]:hover,
+form.pmpro_form input[type=email]:focus,
+form.pmpro_form input[type=email]:hover,
+form.pmpro_form input[type=number]:focus,
+form.pmpro_form input[type=number]:hover,
+form.pmpro_form textarea:focus,
+form.pmpro_form textarea:hover,
+form.pmpro_form select:focus,
+form.pmpro_form select:hover,
+#loginform input[type=text]:focus,
+#loginform input[type=text]:hover,
+#loginform input[type=password]:focus,
+#loginform input[type=password]:hover {
+	border-color: #ff576b;
+}
+
+select {
+	cursor: pointer;
+}
+
+select#bcountry {
+	width: 100%;
+}
+
+select#ExpirationMonth {
+	margin-right: 10px;
+}
+
+select#ExpirationYear {
+	margin-left: 10px;
+}
+
+select#ExpirationMonth, select#ExpirationYear {
+	padding: 10px;
+	min-height: 47px;
+}
+
+.pmpro_payment-expiration {
+	display: inline-block;
+}
+
+.pmpro_payment-cvv {
+	display: inline-block;
+	width: 500px;
+	margin: 0 0 0 40px !important;
+}
+
+.pmpro_payment-cvv .input {
+	width: 100%;
+	max-width: 95%;
+}
+
+.pmpro_invoice_wrap,
+.pmpro_confirmation_wrap {
+	min-height: calc(100vh - 522px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 35px;
+}
+
+.pmpro_invoice_wrap .section-title,
+.pmpro_confirmation_wrap .section-title {
+	font-size: 20px;
+}
+
+.pmpro_invoice_wrap > ul,
+.pmpro_confirmation_wrap > ul {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.pmpro_invoice_wrap > ul li,
+.pmpro_confirmation_wrap > ul li {
+	color: #ff576b;
+	font-weight: 600;
+}
+
+.pmpro_invoice_wrap > ul li strong,
+.pmpro_confirmation_wrap > ul li strong {
+	color: #363535;
+}
+
+.pmpro_invoice_wrap table.pmpro_invoice td,
+.pmpro_invoice_wrap table.pmpro_invoice th {
+	text-align: left;
+	padding: 10px;
+	border: 1px solid #f5f5f5;
+}
+
+.pmpro_invoice_wrap table.pmpro_invoice tr > td:nth-child(2) a {
+	color: #ff576b;
+	font-weight: 600;
+}
+
 /** Components */
-.site-header__container {
+.site-header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 9999;
 	background-color: #fff;
+	transition: all ease-in-out 250ms;
+	border-bottom: 1px solid #f5f5f5;
+}
+
+.site-header--scrolled {
+	transform: translateY(-28px);
+}
+
+.site-header__topbar {
+	background-color: #ff576b;
+	padding: 5px 0;
+}
+
+.site-header__topbar-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+}
+
+.site-header__contact a {
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+.site-header__social-media {
+	display: flex;
+	gap: 10px;
 }
 
 .site-header__content {
@@ -334,11 +676,6 @@ address {
 	align-items: center;
 }
 
-.site-header__icons-burger {
-	padding: 20px;
-	background-color: #ff576b;
-}
-
 .site-header__icons a {
 	color: #363535;
 	transition: all ease-in-out 250ms;
@@ -361,16 +698,92 @@ address {
 	color: #ff576b;
 }
 
-.site-header__menu {
+.site-header__burger {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	background-color: #ff576b;
+	color: #fff;
+	padding: 8px 10px 8px 0;
+	min-width: 180px;
+	justify-content: center;
+}
+
+.site-header__burger .burger__container {
+	position: relative;
+}
+
+.site-header__burger .burger__container > .icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	pointer-events: none;
+	transition: all ease-in-out 250ms;
+}
+
+.site-header__burger .burger__container > .icon--active {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.site-header__bottom {
 	border-top: 1px solid #f5f5f5;
-	padding: 8px 0;
-	border-bottom: 1px solid #f5f5f5;
+}
+
+.site-header__menu {
+	position: absolute;
+	top: 45px;
+	left: 0;
+	min-width: 180px;
+	background-color: #fff;
+	padding: 12px;
+	border: 1px solid #f5f5f5;
+	opacity: 0;
+	z-index: 30;
+	pointer-events: none;
+	transition: all ease-in-out 250ms;
+}
+
+.site-header__menu-dashboard {
+	position: static;
+	opacity: 1;
+	pointer-events: all;
+}
+
+.site-header__menu--active {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.site-header__menu-container {
+	display: flex;
+	align-items: center;
+	position: relative;
+	justify-content: space-between;
+}
+
+.site-header__ext-menu-links {
+	display: flex;
+	gap: 50px;
+}
+
+.site-header__ext-menu-links a:hover {
+	color: #ff576b;
 }
 
 .site-header__categories {
 	display: flex;
-	gap: 10px;
+	flex-direction: column;
+	gap: 20px;
 	justify-content: space-between;
+}
+
+.site-header__categories-dashboard {
+	flex-direction: row;
+	gap: 10px;
 }
 
 .site-header__categories-item a {
@@ -716,6 +1129,7 @@ address {
 .store-card__description {
 	font-size: 14px;
 	line-height: 25px;
+	margin-bottom: 15px;
 }
 
 .store-card__footer {
@@ -1290,7 +1704,7 @@ input#file-upload-button {
 
 .dashboard__container {
 	display: flex;
-	flex-direction: column;
+	gap: 50px;
 }
 
 .dashboard__nav {
@@ -1336,6 +1750,68 @@ input#file-upload-button {
 
 .dashboard__content .section-title {
 	margin-bottom: 40px;
+}
+
+.user-details {
+	padding: 20px 0;
+	position: sticky;
+	top: 100px;
+}
+
+.user-details__title {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	font-size: 16px;
+	margin: 4px 0;
+}
+
+.user-details__info {
+	margin: 0 0 10px;
+	padding: 0 0 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.user-details__registration-date, .user-details__subtitle {
+	font-size: 14px;
+	color: #9691a4;
+	font-weight: 400;
+	line-height: 23px;
+}
+
+.user-details__menu {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.user-details__menu-item a {
+	display: flex;
+	padding: 10px 0;
+}
+
+.user-details__menu-item a:hover {
+	color: #ff576b;
+}
+
+.user-details__menu .current-menu-item a {
+	color: #ff576b;
+}
+
+.change-password__container {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #f5f5f5;
+}
+
+.change-password__container #update-user-password-form {
+	margin-top: 40px;
+	display: none;
+}
+
+.page-template-account .form {
+	gap: 20px;
 }
 
 .store-categories__container {
@@ -1414,7 +1890,7 @@ select[name="time"] {
 }
 
 .site-main--archive {
-	margin: 103px auto;
+	margin: 139px auto 0;
 	display: flex;
 	padding: 40px 0;
 	min-height: 780px;

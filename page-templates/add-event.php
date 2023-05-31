@@ -21,15 +21,11 @@ $query = $wpdb->prepare(
     $current_user_id
 );
 $results = $wpdb->get_results($query);
-// if (isset($_GET['store']) && !empty($_GET['store'])) {
-//     $store = $_GET['store'];
-// } else {
-//     $store = null;
-// }
 ?>
 <main class="site-main site-main--account">
-    <div class="dashboard__container container container--medium">
-        <section class="dashboard__content">
+    <section class="dashboard__container container container--medium">
+        <?php get_template_part('template-parts/account/user-details'); ?>
+        <div class="dashboard__content">
             <h1 class="section-title section-title--dashboard"><?php pll_e('Καταχώρηση εκδήλωσης'); ?><span class="divider"></span></h1>
             <?php if (!get_transient('custom_hotel_form_success') && !get_transient('custom_hotel_form_error')) : ?>
                 <?php if (!empty($results)) : ?>
@@ -60,7 +56,7 @@ $results = $wpdb->get_results($query);
                 delete_transient('custom_hotel_form_error');
             }
             ?>
-        </section>
-    </div>
+        </div>
+    </section>
 </main>
 <?php get_footer(); ?>

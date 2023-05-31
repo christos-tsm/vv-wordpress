@@ -89,11 +89,10 @@
 			let messageLogin = document.querySelector(".message--login");
 			loginForm.addEventListener("submit", function (e) {
 				e.preventDefault();
-
 				/** Get the form data */
 				const formData = new FormData(loginForm);
 				formData.append("action", "login_user");
-
+				formData.append("security", wp_ajax.nonce);
 				/** Empty values error */
 				if (loginForm.elements["user_pass"].value === "" || loginForm.elements["user_email"].value === "") {
 					messageLogin.classList.remove("message--success");

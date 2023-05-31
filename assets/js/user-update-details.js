@@ -23,37 +23,43 @@
 				input.classList.add("invalid");
 			}
 		};
-		firstName.addEventListener("input", () => {
-			let message;
-			lang === "el" ? (message = "Το όνομα πρέπει να περιέχει μόνο χαρακτήρες.") : (message = "First name must contain only characters.");
-			validateInput(firstName, onlyCharactersREGEX, firstNameError, message);
-			if (firstName.value.match(onlyCharactersREGEX) && firstName.value.length >= 3 && lastName.value.match(onlyCharactersREGEX) && lastName.value.length >= 3 && userEmail.validity.valid) {
-				submitContainer.innerHTML = `<button id="update-user-details-form-submit" class="input btn pointer" type="submit">${submitMessage}</button>`;
-			} else {
-				submitContainer.innerHTML = "";
-			}
-		});
-		lastName.addEventListener("input", () => {
-			let message;
-			lang === "el" ? (message = "Το επίθετο πρέπει να περιέχει μόνο χαρακτήρες.") : (message = "Last name must contain only characters.");
-			validateInput(lastName, onlyCharactersREGEX, lastNameError, message);
-			if (firstName.value.match(onlyCharactersREGEX) && firstName.value.length >= 3 && lastName.value.match(onlyCharactersREGEX) && lastName.value.length >= 3 && userEmail.validity.valid) {
-				submitContainer.innerHTML = `<button id="update-user-details-form-submit" class="input btn pointer" type="submit">${submitMessage}</button>`;
-			} else {
-				submitContainer.innerHTML = "";
-			}
-		});
+		if (firstName) {
+			firstName.addEventListener("input", () => {
+				let message;
+				lang === "el" ? (message = "Το όνομα πρέπει να περιέχει μόνο χαρακτήρες.") : (message = "First name must contain only characters.");
+				validateInput(firstName, onlyCharactersREGEX, firstNameError, message);
+				if (firstName.value.match(onlyCharactersREGEX) && firstName.value.length >= 3 && lastName.value.match(onlyCharactersREGEX) && lastName.value.length >= 3 && userEmail.validity.valid) {
+					submitContainer.innerHTML = `<button id="update-user-details-form-submit" class="input btn pointer" type="submit">${submitMessage}</button>`;
+				} else {
+					submitContainer.innerHTML = "";
+				}
+			});
+		}
+		if (lastName) {
+			lastName.addEventListener("input", () => {
+				let message;
+				lang === "el" ? (message = "Το επίθετο πρέπει να περιέχει μόνο χαρακτήρες.") : (message = "Last name must contain only characters.");
+				validateInput(lastName, onlyCharactersREGEX, lastNameError, message);
+				if (firstName.value.match(onlyCharactersREGEX) && firstName.value.length >= 3 && lastName.value.match(onlyCharactersREGEX) && lastName.value.length >= 3 && userEmail.validity.valid) {
+					submitContainer.innerHTML = `<button id="update-user-details-form-submit" class="input btn pointer" type="submit">${submitMessage}</button>`;
+				} else {
+					submitContainer.innerHTML = "";
+				}
+			});
+		}
 		/** Check if email is a valid email */
-		userEmail.addEventListener("input", () => {
-			let message;
-			lang === "el" ? (message = "Το email δεν είναι έγκυρο.") : (message = "Invalid email.");
-			validateInput(userEmail, emailREGEX, emailError, message);
-			if (firstName.value.match(onlyCharactersREGEX) && firstName.value.length >= 3 && lastName.value.match(onlyCharactersREGEX) && lastName.value.length >= 3 && userEmail.validity.valid) {
-				submitContainer.innerHTML = `<button id="update-user-details-form-submit" class="input btn pointer" type="submit">${submitMessage}</button>`;
-			} else {
-				submitContainer.innerHTML = "";
-			}
-		});
+		if (userEmail) {
+			userEmail.addEventListener("input", () => {
+				let message;
+				lang === "el" ? (message = "Το email δεν είναι έγκυρο.") : (message = "Invalid email.");
+				validateInput(userEmail, emailREGEX, emailError, message);
+				if (firstName.value.match(onlyCharactersREGEX) && firstName.value.length >= 3 && lastName.value.match(onlyCharactersREGEX) && lastName.value.length >= 3 && userEmail.validity.valid) {
+					submitContainer.innerHTML = `<button id="update-user-details-form-submit" class="input btn pointer" type="submit">${submitMessage}</button>`;
+				} else {
+					submitContainer.innerHTML = "";
+				}
+			});
+		}
 		/** Handle form submit */
 		var updateForm = document.querySelector("#update-user-details-form");
 		if (updateForm) {

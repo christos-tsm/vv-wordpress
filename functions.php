@@ -67,6 +67,7 @@ require get_stylesheet_directory() . '/inc/custom-post-types/freelancers.php';
 require get_stylesheet_directory() . '/inc/users/auth-register-ajax.php';
 require get_stylesheet_directory() . '/inc/users/auth-login-ajax.php';
 require get_stylesheet_directory() . '/inc/users/update-user-details.php';
+require get_stylesheet_directory() . '/inc/users/update-user-password.php';
 require get_stylesheet_directory() . '/inc/stores/delete-store.php';
 require get_stylesheet_directory() . '/inc/ajax/cpt-archive-ajax.php';
 require get_stylesheet_directory() . '/inc/stores/report-stores-controller.php';

@@ -40,15 +40,20 @@
         </div>
         <div class="site-footer__col site-footer__social">
             <h6 class="site-footer__header"><?php pll_e('Social Media'); ?></h6>
-            <?php if (have_rows('social_media', 'option')) : ?>
-                <div class="social-media">
-                    <?php while (have_rows('social_media', 'option')) : the_row(); ?>
-                        <?php $url = get_sub_field('url'); ?>
-                        <?php $icon = get_sub_field('icon'); ?>
-                        <a target="_blank" rel="noreferrer" aria-label="Social media link" href="<?= esc_url($url); ?>" class="icon icon--medium"><?= file_get_contents($icon['url']); ?></a>
-                    <?php endwhile; ?>
-                </div>
-            <?php endif; ?>
+            <div class="social-media">
+                <?php $facebook_url = get_field('facebook_url', 'option'); ?>
+                <?php $instagram_url = get_field('instagram_url', 'option'); ?>
+                <?php $tiktok_url = get_field('tiktok_url', 'option'); ?>
+                <a target="_blank" rel="noreferrer" aria-label="Social media link" href="<?= esc_url($facebook_url); ?>" class="icon icon--medium">
+                    <?= file_get_contents(get_stylesheet_directory() . '/assets/images/facebook.svg'); ?>
+                </a>
+                <a target="_blank" rel="noreferrer" aria-label="Social media link" href="<?= esc_url($instagram_url); ?>" class="icon icon--medium">
+                    <?= file_get_contents(get_stylesheet_directory() . '/assets/images/instagram.svg'); ?>
+                </a>
+                <a target="_blank" rel="noreferrer" aria-label="Social media link" href="<?= esc_url($tiktok_url); ?>" class="icon icon--medium">
+                    <?= file_get_contents(get_stylesheet_directory() . '/assets/images/tiktok.svg'); ?>
+                </a>
+            </div>
         </div>
     </div>
     <p class="copyrights">&copy; Volos Voyage 2023 - All rights reserved</p>

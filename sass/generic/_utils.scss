@@ -48,6 +48,19 @@
 		opacity: 0.2;
 		pointer-events: none;
 	}
+
+	&--verified {
+		svg {
+			path {
+				fill: $primary-color;
+				stroke: #fff;
+			}
+		}
+	}
+}
+
+input[type="checkbox"] {
+	accent-color: $primary-color;
 }
 
 .btn {
@@ -79,7 +92,11 @@
 }
 
 .site-main {
-	margin-top: 105px;
+	margin-top: 139px;
+
+	&--account {
+		margin-top: 95px;
+	}
 }
 
 .container {
@@ -160,6 +177,11 @@
 		font-weight: 400;
 	}
 
+	&--thankyou {
+		color: $primary-color;
+		text-align: left;
+	}
+
 	a {
 		color: $primary-color;
 		font-weight: 600;
@@ -184,6 +206,7 @@ address {
 .section-title {
 	font-size: 25px;
 	font-weight: 600;
+	line-height: 35px;
 
 	&__container {
 		display: flex;

@@ -36,6 +36,40 @@
 				},
 			});
 		}
+		/** Menu Burger */
+		const burgerBtn = document.querySelector('.site-header__burger');
+		if (burgerBtn) {
+			const navContainer = document.querySelector('.site-header__menu');
+			const openMenu = document.getElementById('open-menu');
+			const closeMenu = document.getElementById('close-menu');
+			burgerBtn.addEventListener('click', (e) => {
+				e.stopPropagation();
+				if (navContainer.classList.contains('site-header__menu--active')) {
+					navContainer.classList.remove('site-header__menu--active');
+					openMenu.classList.add('icon--active');
+					closeMenu.classList.remove('icon--active');
+				} else {
+					navContainer.classList.add('site-header__menu--active');
+					openMenu.classList.remove('icon--active');
+					closeMenu.classList.add('icon--active');
+				}
+			});
+			document.body.addEventListener('click', function (e) {
+				if (navContainer.classList.contains('site-header__menu--active')) {
+					navContainer.classList.remove('site-header__menu--active');
+					openMenu.classList.add('icon--active');
+					closeMenu.classList.remove('icon--active');
+				}
+			});
+		}
+		/** Header on scroll */
+		window.onscroll = () => {
+			if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+				document.querySelector('.site-header').classList.add('site-header--scrolled');
+			} else {
+				document.querySelector('.site-header').classList.remove('site-header--scrolled');
+			}
+		};
 		/** Handle google maps links */
 		let addressLinks = document.querySelectorAll(".address-link").length >= 1 ? document.querySelectorAll(".address-link") : document.querySelectorAll(".address-link");
 		addressLinks.forEach((link) => {

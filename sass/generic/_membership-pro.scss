@@ -1,0 +1,306 @@
+// General Plugin Styles
+.membership {
+    .pmpro_table {
+
+        td,
+        th {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #f5f5f5;
+            min-height: 55px;
+        }
+
+        a {
+            color: $primary-color;
+        }
+    }
+
+    .membership-title {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $border-color;
+        font-size: 20px;
+    }
+
+    #pmpro_account .pmpro_box {
+        padding: 0 0 20px;
+        margin: 0 0 20px;
+        border-top: none;
+
+        p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            font-size: 20px;
+            border-bottom: 1px solid $border-color;
+        }
+
+        .pmpro_account-membership-levelname {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &>.pmpro_actionlinks {
+            margin-top: 10px;
+        }
+
+        .pmpro_account-membership-levelfee {
+            text-transform: lowercase;
+        }
+    }
+}
+
+.pmpro_table .pmpro_account-membership-levelname .pmpro_actionlinks {
+    display: flex;
+    gap: 5px;
+}
+
+.pmpro_btn,
+.pmpro_btn:link,
+.pmpro_content_message a,
+.pmpro_content_message a:link,
+.pmpro_btn-select,
+.pmpro_btn-submit {
+    color: #fff !important;
+    background-color: $primary-color !important;
+    padding: 10px 15px;
+    border: none;
+}
+
+.pmpro_level_description_text {
+    strong {
+        color: $primary-color;
+    }
+}
+
+.pmpro_actionlinks {
+    a {
+        color: $primary-color;
+        display: flex;
+    }
+}
+
+// Levels page
+.membership__subscription-levels {
+    #pmpro_levels_table {
+        width: 100%;
+
+        td:nth-child(1) {
+            min-width: initial;
+        }
+    }
+}
+
+.level-description {
+    margin: 20px 0;
+}
+
+// Subscription Cancel Confirmation
+body.pmpro-cancel {
+    .pmpro_cancel_wrap {
+        min-height: calc(100vh - 522px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+}
+
+// Checkout Fields
+.pmpro_checkout-fields {
+    display: flex;
+    flex-wrap: wrap;
+
+    .pmpro_level_description_text {
+        flex-basis: 100%;
+    }
+}
+
+#pmpropp_payment_plans {
+    flex-direction: column;
+}
+
+form.pmpro_form #pmpro_billing_address_fields .pmpro_checkout-fields div {
+    flex-basis: 50%;
+}
+
+.pmpro_alert {
+    background-color: $primary-color;
+    color: #fff;
+    margin: 20px 0;
+
+    a {
+        color: #fff;
+        font-weight: 600;
+    }
+}
+
+.pmpro_checkout {
+
+    .pmpro_level_cost_text,
+    .pmpro_level_name_text {
+        margin: 0 0 20px;
+
+        strong {
+            color: $primary-color;
+        }
+    }
+}
+
+form.pmpro_form .pmpro_checkout-fields div,
+#loginform p {
+    margin: 0 0 20px;
+}
+
+form.pmpro_form .pmpro_checkout-fields>.pmpro_checkout-field {
+    position: relative;
+
+    &>label {
+        padding-left: 10px;
+    }
+
+    .pmpro_asterisk {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $red;
+    }
+}
+
+hr {
+    opacity: 0.2;
+}
+
+.pmpro_checkout h3 span.pmpro_checkout-h3-name {
+    margin: 0 10px 20px 0;
+}
+
+form.pmpro_form label,
+#loginform label {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.pmprorh_checkbox_label.pmpro_clickable {
+    font-weight: 400;
+    margin-left: 7px;
+}
+
+form.pmpro_form input[type=text],
+form.pmpro_form input[type=password],
+form.pmpro_form input[type=email],
+form.pmpro_form input[type=number],
+form.pmpro_form textarea,
+form.pmpro_form select,
+#loginform input[type=text],
+#loginform input[type=password] {
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+    font-family: 'Manrope', sans-serif;
+    transition: all ease-in-out 250ms;
+    outline: none;
+
+    &:focus,
+    &:hover {
+        border-color: $primary-color;
+    }
+}
+
+select {
+    cursor: pointer;
+
+    &#bcountry {
+        width: 100%;
+    }
+
+    &#ExpirationMonth {
+        margin-right: 10px;
+    }
+
+    &#ExpirationYear {
+        margin-left: 10px;
+    }
+
+    &#ExpirationMonth,
+    &#ExpirationYear {
+        padding: 10px;
+        min-height: 47px;
+    }
+}
+
+.pmpro_payment-expiration {
+    display: inline-block;
+}
+
+.pmpro_payment-cvv {
+    display: inline-block;
+    width: 500px;
+    margin: 0 0 0 40px !important;
+
+    .input {
+        width: 100%;
+        max-width: 95%;
+    }
+}
+
+
+// Confirmation & Invoices Page
+.pmpro_invoice_wrap,
+.pmpro_confirmation_wrap {
+    min-height: calc(100vh - 522px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    &>ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        li {
+            color: $primary-color;
+            font-weight: 600;
+
+            strong {
+                color: $text-dark;
+            }
+        }
+    }
+}
+
+// Invoices page table
+.pmpro_invoice_wrap {
+
+    table.pmpro_invoice {
+
+        td,
+        th {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #f5f5f5;
+        }
+
+        tr {
+            &>td:nth-child(2) {
+                a {
+                    color: $primary-color;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

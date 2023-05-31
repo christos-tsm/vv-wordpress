@@ -13,6 +13,9 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
 ?>
 <main class="site-main site-main--account">
     <section class="dashboard__container container container--medium">
+        <?php if ($edit_mode == 0) : ?>
+            <?php get_template_part('template-parts/account/user-details'); ?>
+        <?php endif;  ?>
         <div class="dashboard__content">
             <?php if (isset($post_id) && !empty($post_id) && $edit_mode === 1  && get_post_status($post_id) === 'publish') :  ?>
                 <?php get_template_part('template-parts/forms/add', $type); ?>
@@ -39,22 +42,20 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
                 );
                 $results = $wpdb->get_results($query);
                 ?>
-                <div class="dashboard__content">
-                    <?php if (!empty($results)) : ?>
-                        <div class="store-list__container">
-                            <div class="store-list">
-                                <?php foreach ($results as $result) : ?>
-                                    <?php $post = get_post($result->ID); ?>
-                                    <?php setup_postdata($post); ?>
-                                    <?php get_template_part('template-parts/admin/cards/store-card'); ?>
-                                <?php endforeach; ?>
-                                <?php wp_reset_postdata(); ?>
-                            </div>
+                <?php if (!empty($results)) : ?>
+                    <div class="store-list__container">
+                        <div class="store-list">
+                            <?php foreach ($results as $result) : ?>
+                                <?php $post = get_post($result->ID); ?>
+                                <?php setup_postdata($post); ?>
+                                <?php get_template_part('template-parts/admin/cards/store-card'); ?>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
                         </div>
-                    <?php else : ?>
-                        <p class="message message--error"><?php pll_e('Δεν βρέθηκαν καταχωρημένες επιχειρήσεις') ?></p>
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php else : ?>
+                    <p class="message message--error"><?php pll_e('Δεν βρέθηκαν καταχωρημένες επιχειρήσεις') ?></p>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
     </section>

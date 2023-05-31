@@ -7,7 +7,8 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function volos_voyage_setup() {
+function volos_voyage_setup()
+{
     /*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
@@ -38,6 +39,7 @@ function volos_voyage_setup() {
     register_nav_menus(
         array(
             'primary-menu' => esc_html__('Primary Menu', 'volos-voyage'),
+            'primary-menu-extend' => esc_html__('Primary Menu Extended', 'volos-voyage'),
             'footer-menu' => esc_html__('Footer Menu', 'volos-voyage'),
             'footer-useful-menu' => esc_html__('Footer Menu Useful', 'volos-voyage'),
             'dashboard-account-menu' => esc_html__('Dashboard Account Menu', 'volos-voyage'),

@@ -13,6 +13,9 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
 ?>
 <main class="site-main site-main--account">
     <section class="dashboard__container container container--medium">
+        <?php if ($edit_mode == 0) : ?>
+            <?php get_template_part('template-parts/account/user-details'); ?>
+        <?php endif;  ?>
         <div class="dashboard__content">
             <?php if (isset($post_id) && !empty($post_id) && $edit_mode === 1  && get_post_status($post_id) === 'publish') :  ?>
                 <?php get_template_part('template-parts/forms/add', $type); ?>

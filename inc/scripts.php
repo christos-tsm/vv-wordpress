@@ -39,21 +39,21 @@ function volos_voyage_scripts()
             'nonce'    => wp_create_nonce('fav_nonce'),
         ));
     }
-    if (is_page_template('page-templates/update-account.php')) {
+    if (is_page_template('page-templates/account.php')) {
         wp_enqueue_script('volos-voyage-update-form', get_template_directory_uri() . '/assets/js/user-update-details.js', array(), _S_VERSION, true);
         wp_localize_script('volos-voyage-update-form', 'wp_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
-    }
-    if (is_page_template('page-templates/business-profile.php') || is_page_template('page-templates/my-business-profiles-list.php')) {
-        wp_enqueue_script('volos-voyage-business-profile-form', get_template_directory_uri() . '/assets/js/business-profile-form.js', array(), _S_VERSION, true);
-        wp_localize_script('volos-voyage-business-profile-form', 'wp_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
+        wp_enqueue_script('volos-voyage-update-password-form', get_template_directory_uri() . '/assets/js/user-update-password.js', array(), _S_VERSION, true);
+        wp_localize_script('volos-voyage-update-password-form', 'wp_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
+        wp_enqueue_script('volos-voyage-auth-forms', get_template_directory_uri() . '/assets/js/auth-forms.js', array(), _S_VERSION, true);
+        // Add the nonce to your localized script variables
+        wp_localize_script('volos-voyage-auth-forms', 'wp_ajax', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('login_user_nonce'), // The nonce
+        ));
     }
     if (is_post_type_archive()) {
         wp_enqueue_script('volos-voyage-archive-filters', get_template_directory_uri() . '/assets/js/archive-filters.js', array(), _S_VERSION, true);
         wp_localize_script('volos-voyage-archive-filters', 'wp_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
-    }
-    if (is_page_template('page-templates/account.php')) {
-        wp_enqueue_script('volos-voyage-auth-forms', get_template_directory_uri() . '/assets/js/auth-forms.js', array(), _S_VERSION, true);
-        wp_localize_script('volos-voyage-auth-forms', 'wp_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
     }
     if (is_page_template('page-templates/add-store.php') || is_page_template('page-templates/my-stores-list.php')) {
         wp_enqueue_script('volos-voyage-add-store', get_template_directory_uri() . '/assets/js/add-store.js', array(), _S_VERSION, true);

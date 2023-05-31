@@ -157,3 +157,8 @@ function custom_post_type_draft_count($menu)
 
 // Remove p tags from cf7
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+// Skip PMPro Levels page
+// define('PMPRO_DEFAULT_LEVEL', "3");
+
+remove_filter('login_redirect', 'pmpro_login_redirect', 10, 3);
