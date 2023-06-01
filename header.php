@@ -15,7 +15,7 @@
 		/* Critical CSS for above-the-fold content */
 		body {
 			font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-			color: #363535;
+			color: #5a5a5a;
 		}
 
 		.archive-item__title-link {

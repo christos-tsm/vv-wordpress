@@ -10,11 +10,13 @@
 
 get_header();
 
-if ( is_singular('museums') ) :
+if (is_singular('museums')) :
 // template part for museums custom post type
-elseif ( is_singular('destinations') ) :
+elseif (is_singular('destinations')) :
 // template part for destinations custom post type
-elseif ( is_singular('sightseeing') ) :
+elseif (is_singular('post')) :
+	get_template_part('template-parts/single-cpt/content-post');
+elseif (is_singular('sightseeing')) :
 // template part for sightseeing custom post type
 else :
 	get_template_part('template-parts/single-cpt/content');

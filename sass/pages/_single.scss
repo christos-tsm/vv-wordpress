@@ -139,11 +139,15 @@
 			border-bottom: 1px solid #f5f5f5;
 		}
 	}
+
+	&__post {
+		.single-title__container {
+			padding: 20px 0;
+		}
+	}
 }
 
 .single-info {
-
-
 	&__card {
 		position: sticky;
 		top: 100px;

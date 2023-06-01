@@ -1,6 +1,9 @@
 <?php
 $description = get_field('description');
 $address = get_field('address');
+// Date & Time for events post type
+$date = get_field('date', get_the_ID());
+$time = get_field('time', get_the_ID());
 if ($description) :
     $words = explode(" ", $description);
     $trimmed_description = implode(" ", array_splice($words, 0, 15));
@@ -13,7 +16,7 @@ endif;
 <div class="loading-spinner__container">
     <span class="loader"></span>
 </div>
-<article class="archive-item archive-item--<?= get_post_type() ?> archive-item--<?= get_the_ID() ?>">
+<article class="archive-item archive-item--<?= get_post_type() ?> archive-item--<?= get_the_ID() ?> <?= get_post_type() ?>-card">
     <header class="archive-item__header">
         <?php if (has_post_thumbnail()) : ?>
             <a class="archive-item__thumbnail-link" href="<?php the_permalink() ?>">
@@ -26,9 +29,25 @@ endif;
             </a>
         <?php else : ?>
             <?php $logo = get_field('header_logo', 'option'); ?>
-            <a class="archive-item__logo-link" href="<?php the_permalink() ?>">
+            <a class="archive-item__logo-link" style="padding: 20px;" href="<?php the_permalink() ?>">
                 <img class="archive-item__logo" src="<?= esc_url($logo['url']) ?>" alt="<?php the_title() ?>">
             </a>
+        <?php endif; ?>
+        <?php if ($date && $time) : ?>
+            <h4 class="events-card__subtitle">
+                <span class="events-date-time">
+                    <span class="icon icon--x-small">
+                        <?= file_get_contents(get_stylesheet_directory() . '/assets/images/calendar.svg'); ?>
+                    </span>
+                    <?= esc_attr($date); ?>
+                </span>
+                <span class="events-date-time">
+                    <span class="icon icon--x-small">
+                        <?= file_get_contents(get_stylesheet_directory() . '/assets/images/clock.svg'); ?>
+                    </span>
+                    <?= esc_attr($time); ?>
+                </span>
+            </h4>
         <?php endif; ?>
         <h3 class="archive-item__title">
             <a class="archive-item__title-link" href="<?php the_permalink(); ?>">

@@ -72,6 +72,21 @@
 		border-bottom: 1px solid $border-color;
 	}
 
+	&__menu-container {
+		border-bottom: 1px solid $border-color;
+		margin-bottom: 40px;
+		padding-bottom: 10px;
+	}
+
+	#logout {
+		width: 100%;
+		gap: 10px;
+
+		.icon {
+			margin-left: -25px;
+		}
+	}
+
 	&__registration-date,
 	&__subtitle {
 		font-size: 14px;
@@ -83,8 +98,6 @@
 	&__menu {
 		display: flex;
 		flex-direction: column;
-		padding-bottom: 10px;
-		margin-bottom: 10px;
 
 		&-item {
 			a {
@@ -109,7 +122,7 @@
 	&__container {
 		margin-top: 20px;
 		padding-top: 20px;
-		border-top: 1px solid #f5f5f5;
+		border-top: 1px solid $border-color;
 
 		#update-user-password-form {
 			margin-top: 40px;

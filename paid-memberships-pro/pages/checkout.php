@@ -138,9 +138,7 @@ if (empty($default_gateway)) {
 		} // if ( $include_pricing_fields )
 		?>
 
-		<?php
-		do_action('pmpro_checkout_after_pricing_fields');
-		?>
+		<?php do_action('pmpro_checkout_after_pricing_fields'); ?>
 
 		<?php if (!$skip_account_fields && !$pmpro_review) { ?>
 
@@ -229,13 +227,9 @@ if (empty($default_gateway)) {
 			</div> <!-- end pmpro_account_loggedin -->
 		<?php } ?>
 
-		<?php
-		do_action('pmpro_checkout_after_user_fields');
-		?>
+		<?php do_action('pmpro_checkout_after_user_fields'); ?>
 
-		<?php
-		do_action('pmpro_checkout_boxes');
-		?>
+		<?php do_action('pmpro_checkout_boxes'); ?>
 
 		<?php if (pmpro_getGateway() == "paypal" && empty($pmpro_review) && true == apply_filters('pmpro_include_payment_option_for_paypal', true)) { ?>
 			<div id="pmpro_payment_method" class="<?php echo esc_attr(pmpro_get_element_class('pmpro_checkout', 'pmpro_payment_method')); ?>" <?php if (!$pmpro_requirebilling) { ?>style="display: none;" <?php } ?>>

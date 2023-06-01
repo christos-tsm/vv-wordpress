@@ -144,7 +144,7 @@ input[type="checkbox"] {
 
 .cta {
 	position: relative;
-	color: #363535;
+	color: #5a5a5a;
 	padding: 0 5px;
 }
 
@@ -268,6 +268,14 @@ address {
 	font-size: 18px;
 }
 
+.page-title {
+	font-size: 40px;
+}
+
+.page-header__container {
+	padding: 20px 0;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
 	background-color: #fff;
@@ -279,7 +287,7 @@ address {
 .swiper-button-prev:after,
 .swiper-button-next:after {
 	font-size: 15px;
-	color: #363535;
+	color: #5a5a5a;
 	margin-left: 3px;
 }
 
@@ -348,10 +356,10 @@ address {
 }
 
 .membership #pmpro_account .pmpro_box h3 {
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	font-size: 20px;
-	border-bottom: 1px solid #ddd;
+	margin-bottom: 40px;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 35px;
 }
 
 .membership #pmpro_account .pmpro_box .pmpro_account-membership-levelname {
@@ -593,7 +601,7 @@ select#ExpirationMonth, select#ExpirationYear {
 
 .pmpro_invoice_wrap > ul li strong,
 .pmpro_confirmation_wrap > ul li strong {
-	color: #363535;
+	color: #5a5a5a;
 }
 
 .pmpro_invoice_wrap table.pmpro_invoice td,
@@ -677,7 +685,7 @@ select#ExpirationMonth, select#ExpirationYear {
 }
 
 .site-header__icons a {
-	color: #363535;
+	color: #5a5a5a;
 	transition: all ease-in-out 250ms;
 }
 
@@ -787,7 +795,7 @@ select#ExpirationMonth, select#ExpirationYear {
 }
 
 .site-header__categories-item a {
-	color: #363535;
+	color: #5a5a5a;
 	font-size: 14px;
 }
 
@@ -893,7 +901,7 @@ select#ExpirationMonth, select#ExpirationYear {
 }
 
 .card__title a {
-	color: #363535;
+	color: #5a5a5a;
 	transition: all ease-in-out 250ms;
 	font-size: 16px;
 }
@@ -950,7 +958,7 @@ select#ExpirationMonth, select#ExpirationYear {
 	font-size: 14px;
 	font-weight: 600;
 	align-items: center;
-	color: #363535;
+	color: #5a5a5a;
 	padding: 20px;
 	border-radius: 20px;
 	box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -974,28 +982,28 @@ select#ExpirationMonth, select#ExpirationYear {
 	color: #9691a4;
 }
 
-.event-card__header {
+.events-card__header {
 	position: relative;
 }
 
-.event-card__header > a {
+.events-card__header > a {
 	overflow: hidden;
 	display: flex;
 }
 
-.event-card__thumbnail {
+.events-card__thumbnail {
 	width: 100%;
 	height: 250px;
 	object-fit: cover;
 	transition: all ease-in-out 250ms;
 }
 
-.event-card__title a {
+.events-card__title a {
 	font-size: 18px;
 	font-weight: 600;
 }
 
-.event-card__subtitle {
+.events-card__subtitle {
 	display: flex;
 	justify-content: space-between;
 	padding: 8px 0;
@@ -1005,13 +1013,13 @@ select#ExpirationMonth, select#ExpirationYear {
 	border-bottom: 1px solid #eee;
 }
 
-.event-card .event-date-time {
+.events-card .events-date-time {
 	display: flex;
 	align-items: center;
 	gap: 5px;
 }
 
-.event-card:hover .event-card__thumbnail {
+.events-card:hover .event-card__thumbnail {
 	transform: scale(1.05);
 }
 
@@ -1075,7 +1083,7 @@ select#ExpirationMonth, select#ExpirationYear {
 }
 
 .grid--restaurants__title a {
-	color: #363535;
+	color: #5a5a5a;
 	font-size: 16px;
 	font-weight: 600;
 }
@@ -1123,7 +1131,7 @@ select#ExpirationMonth, select#ExpirationYear {
 }
 
 .store-card__title a:not(.btn) {
-	color: #363535;
+	color: #5a5a5a;
 }
 
 .store-card__description {
@@ -1145,7 +1153,7 @@ select#ExpirationMonth, select#ExpirationYear {
 }
 
 .store-card__address a {
-	color: #363535;
+	color: #5a5a5a;
 }
 
 .store-card__address a:hover {
@@ -1261,7 +1269,7 @@ select#ExpirationMonth, select#ExpirationYear {
 .input:not(.btn) {
 	background-color: #fff;
 	border: 1px solid #e8e8e8;
-	color: #363535;
+	color: #5a5a5a;
 	width: 100%;
 	font-size: 14px;
 	padding: 0 15px;
@@ -1273,7 +1281,7 @@ select#ExpirationMonth, select#ExpirationYear {
 
 .input::placeholder {
 	opacity: 0.5;
-	color: #363535;
+	color: #5a5a5a;
 }
 
 .input:focus, .input:hover {
@@ -1383,7 +1391,7 @@ textarea.input {
 
 .acf-repeater .acf-row-handle.order {
 	background-color: #fff;
-	color: #363535;
+	color: #5a5a5a;
 }
 
 .acf-repeater .acf-row-handle .acf-icon.-minus {
@@ -1725,7 +1733,7 @@ input#file-upload-button {
 	display: flex;
 	padding: 20px;
 	border: 1px solid #ddd;
-	color: #363535;
+	color: #5a5a5a;
 	font-size: 14px;
 	line-height: 30px;
 	justify-content: center;
@@ -1772,6 +1780,21 @@ input#file-upload-button {
 	border-bottom: 1px solid #ddd;
 }
 
+.user-details__menu-container {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 40px;
+	padding-bottom: 10px;
+}
+
+.user-details #logout {
+	width: 100%;
+	gap: 10px;
+}
+
+.user-details #logout .icon {
+	margin-left: -25px;
+}
+
 .user-details__registration-date, .user-details__subtitle {
 	font-size: 14px;
 	color: #9691a4;
@@ -1782,8 +1805,6 @@ input#file-upload-button {
 .user-details__menu {
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 10px;
-	margin-bottom: 10px;
 }
 
 .user-details__menu-item a {
@@ -1802,7 +1823,7 @@ input#file-upload-button {
 .change-password__container {
 	margin-top: 20px;
 	padding-top: 20px;
-	border-top: 1px solid #f5f5f5;
+	border-top: 1px solid #ddd;
 }
 
 .change-password__container #update-user-password-form {
@@ -1812,6 +1833,11 @@ input#file-upload-button {
 
 .page-template-account .form {
 	gap: 20px;
+}
+
+.site-main--blog {
+	margin-top: 139px;
+	min-height: calc(100vh - 522px);
 }
 
 .store-categories__container {
@@ -1879,6 +1905,75 @@ select[name="cat"] {
 	width: 100%;
 }
 
+.generic__header {
+	position: relative;
+	display: flex;
+	margin-bottom: 40px;
+}
+
+.generic__header .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: white;
+	background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.3) 100%);
+}
+
+.generic__title {
+	position: absolute;
+	top: 50%;
+	left: 50px;
+	transform: translateY(-50%);
+	z-index: 2;
+}
+
+.generic__thumbnail {
+	height: 350px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.generic__content {
+	margin-bottom: 40px;
+}
+
+.generic__content h2,
+.generic__content h3,
+.generic__content h4,
+.generic__content h5,
+.generic__content h6 {
+	margin-bottom: 20px;
+}
+
+.generic__content a {
+	color: #ff576b;
+	font-weight: 600;
+}
+
+.generic__content li:not(:last-child),
+.generic__content hr,
+.generic__content p:not(:last-child) {
+	margin-bottom: 40px;
+}
+
+.generic__content li,
+.generic__content p,
+.generic__content a {
+	font-size: 16px;
+}
+
+.generic__content ul,
+.generic__content ol {
+	list-style-position: inside;
+}
+
+.generic__gallery {
+	margin-bottom: 60px;
+}
+
 .store-select__container {
 	display: flex;
 	flex-direction: column;
@@ -1893,7 +1988,7 @@ select[name="time"] {
 	margin: 139px auto 0;
 	display: flex;
 	padding: 40px 0;
-	min-height: 780px;
+	min-height: 785px;
 	gap: 50px;
 }
 
@@ -1943,7 +2038,6 @@ select[name="time"] {
 	gap: 25px;
 	height: -moz-min-content;
 	height: min-content;
-	min-height: 65vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -2000,7 +2094,7 @@ select[name="time"] {
 }
 
 .archive-item__title-link {
-	color: #363535;
+	color: #5a5a5a;
 	font-size: 20px;
 }
 
@@ -2060,7 +2154,7 @@ select[name="time"] {
 .loader {
 	width: 48px;
 	height: 48px;
-	border: 3px solid #363535;
+	border: 3px solid #5a5a5a;
 	border-radius: 50%;
 	display: inline-block;
 	position: relative;
@@ -2215,7 +2309,7 @@ select[name="time"] {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(54, 53, 53, 0.5);
+	background-color: rgba(90, 90, 90, 0.5);
 	color: #fff;
 	display: grid;
 	place-items: center;
@@ -2246,6 +2340,10 @@ select[name="time"] {
 	margin-bottom: 20px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #f5f5f5;
+}
+
+.single-content__post .single-title__container {
+	padding: 20px 0;
 }
 
 .single-info__card {
@@ -2316,7 +2414,7 @@ select[name="time"] {
 }
 
 .action-badges__single {
-	color: #363535;
+	color: #5a5a5a;
 	position: relative;
 }
 
@@ -2365,7 +2463,7 @@ select[name="time"] {
 	justify-content: center;
 	align-items: center;
 	z-index: 9999;
-	background-color: rgba(54, 53, 53, 0.5);
+	background-color: rgba(90, 90, 90, 0.5);
 	opacity: 0;
 	pointer-events: none;
 	transition: all ease-in-out 250ms;

@@ -38,10 +38,6 @@ if ($premium_posts->have_posts()) : ?>
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
     </section>
-<?php else : ?>
-    <section class="archive__premium-posts">
-        <h1>nope</h1>
-    </section>
 <?php endif;  ?>
 <section class="archive__content">
     <?php

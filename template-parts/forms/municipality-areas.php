@@ -16,7 +16,6 @@
     <option <?= get_field('municipality', $post_id) === 'milies' ? "selected" : "" ?> value="milies">Μηλιές</option>
     <option <?= get_field('municipality', $post_id) === 'tsagarada' ? "selected" : "" ?> value="tsagarada">Τσαγκαράδα</option>
     <option <?= get_field('municipality', $post_id) === 'zagora' ? "selected" : "" ?> value="zagora">Ζαγορά</option>
-    <option <?= get_field('municipality', $post_id) === 'choropi' ? "selected" : "" ?> value="choropi">Χορόπη</option>
     <option <?= get_field('municipality', $post_id) === 'alykes' ? "selected" : "" ?> value="alykes">Αλυκές</option>
     <option <?= get_field('municipality', $post_id) === 'platanidia' ? "selected" : "" ?> value="platanidia">Πλατανίδια</option>
     <option <?= get_field('municipality', $post_id) === 'koropi' ? "selected" : "" ?> value="koropi">Κορόπη</option>

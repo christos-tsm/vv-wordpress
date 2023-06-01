@@ -15,7 +15,6 @@
     <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'milies' ? 'selected' : '' ?> value="milies">Μηλιές</option>
     <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'tsagarada' ? 'selected' : '' ?> value="tsagarada">Τσαγκαράδα</option>
     <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'zagora' ? 'selected' : '' ?> value="zagora">Ζαγορά</option>
-    <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'choropi' ? 'selected' : '' ?> value="choropi">Χορόπη</option>
     <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'alykes' ? 'selected' : '' ?> value="alykes">Αλυκές</option>
     <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'platanidia' ? 'selected' : '' ?> value="platanidia">Πλατανίδια</option>
     <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'koropi' ? 'selected' : '' ?> value="koropi">Κορόπη</option>

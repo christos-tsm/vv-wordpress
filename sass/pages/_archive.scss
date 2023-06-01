@@ -2,7 +2,7 @@
 	margin: 139px auto 0;
 	display: flex;
 	padding: 40px 0;
-	min-height: 780px;
+	min-height: 785px;
 	gap: 50px;
 }
 
@@ -59,7 +59,6 @@
 		gap: 25px;
 		height: -moz-min-content;
 		height: min-content;
-		min-height: 65vh;
 
 		@media screen and (min-width: 768px) {
 			grid-template-columns: repeat(2, 1fr);
