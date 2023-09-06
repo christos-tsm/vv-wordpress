@@ -1,4 +1,4 @@
-<select name="municipality" id="municipality">
+<select name="municipality_header" id="municipality_header">
     <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'volos' ? 'selected' : '' ?> value="volos">Βόλος</option>
     <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'nea-anchialos' ? 'selected' : '' ?> value="nea-anchialos">Νέα Αγχίαλος</option>
     <option <?= isset($_GET['municipality']) && $_GET['municipality']  === 'agria' ? 'selected' : '' ?> value="agria">Αγριά</option>

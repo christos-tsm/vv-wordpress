@@ -59,6 +59,7 @@
 	}
 }
 
+input[type="radio"],
 input[type="checkbox"] {
 	accent-color: $primary-color;
 }
@@ -93,10 +94,6 @@ input[type="checkbox"] {
 
 .site-main {
 	margin-top: 139px;
-
-	&--account {
-		margin-top: 95px;
-	}
 }
 
 .container {

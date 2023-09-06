@@ -11,10 +11,10 @@ if ($post_id || $type || $edit_mode) {
 ?>
 <div class="store-form__header">
     <?php if ($post_id) : ?>
-        <h2 class="subsection-title"><?php pll_e('Επεξεργαστείτε τα στοιχεία της επιχείρησής σας'); ?></h2>
+        <h2 class="subsection-title"><?php _e('Επεξεργαστείτε τα στοιχεία της επιχείρησής σας'); ?></h2>
     <?php else : ?>
-        <h3 class="section-subtitle section-subtitle--dashboard"><?php pll_e('Βήμα 2ο') ?></h3>
-        <h2 class="subsection-title"><?php pll_e('Συμπληρώστε τα στοιχεία της επιχείρησής σας'); ?></h2>
+        <h3 class="section-subtitle section-subtitle--dashboard"><?php _e('Βήμα 2ο') ?></h3>
+        <h2 class="subsection-title"><?php _e('Συμπληρώστε τα στοιχεία της επιχείρησής σας'); ?></h2>
     <?php endif; ?>
 </div>
 <form id="custom-travel-agent-form" class="form form--fluid" method="post" enctype="multipart/form-data" action="<?php echo esc_url(get_permalink()); ?>">
@@ -25,16 +25,16 @@ if ($post_id || $type || $edit_mode) {
     <input type="hidden" name="uuid" value="<?= $current_user->ID ?>">
     <input type="hidden" name="post-type" value="travel-agents">
     <div class="form-row form-row--col">
-        <label for="title"><?php pll_e('Τίτλος'); ?></label>
+        <label for="title"><?php _e('Τίτλος'); ?></label>
         <input class="input" type="text" value="<?= $post_id && $edit_mode ? get_the_title($post_id) : "" ?>" name="title" id="title" required>
     </div>
     <div class="form-row form-row--col">
-        <label for="description"><?php pll_e('Περιγραφή'); ?></label>
+        <label for="description"><?php _e('Περιγραφή'); ?></label>
         <textarea class="input" name="description" id="description" cols="30" rows="10" required><?= $post_id && $edit_mode ? get_post_field('post_content', $post_id) : "" ?></textarea>
     </div>
     <div class="form-row form-row--col">
-        <label for="logo"><?php pll_e('Εικόνα προφίλ / Λογότυπο'); ?></label>
-        <label for="logo" class="label--file input pointer"><?php $post_id && has_post_thumbnail($post_id) ? pll_e('Αλλαγή εικόνας') :  pll_e('Προσθήκη') ?></label>
+        <label for="logo"><?php _e('Εικόνα προφίλ / Λογότυπο'); ?></label>
+        <label for="logo" class="label--file input pointer"><?php $post_id && has_post_thumbnail($post_id) ? _e('Αλλαγή εικόνας') :  _e('Προσθήκη') ?></label>
         <input class="input input--file" type="file" name="logo" id="logo" accept="image/*" />
         <div class="preview-logo__container">
             <?php if ($post_id && has_post_thumbnail($post_id)) : ?>
@@ -44,10 +44,10 @@ if ($post_id || $type || $edit_mode) {
     </div>
     <div class="form-row form-row--col">
         <div class="acf-label">
-            <label for="cover-photo"><?php pll_e('Εικόνα εξωφύλλου'); ?></label>
-            <p class="description"><?php pll_e('Προτεινόμενες διαστάσεις: 1260x360') ?></p>
+            <label for="cover-photo"><?php _e('Εικόνα εξωφύλλου'); ?></label>
+            <p class="description"><?php _e('Προτεινόμενες διαστάσεις: 1260x360') ?></p>
         </div>
-        <label for="cover-photo" class="label--file input pointer"><?php $post_id && get_field('cover_photo', $post_id) ? pll_e('Αλλαγή εικόνας') : pll_e('Προσθήκη') ?></label>
+        <label for="cover-photo" class="label--file input pointer"><?php $post_id && get_field('cover_photo', $post_id) ? _e('Αλλαγή εικόνας') : _e('Προσθήκη') ?></label>
         <input class="input input--file" type="file" name="cover-photo" id="cover-photo" accept="image/*" />
         <div class="preview-cover-photo__container">
             <?php if ($post_id && get_field('cover_photo', $post_id)) : ?>
@@ -58,22 +58,22 @@ if ($post_id || $type || $edit_mode) {
     </div>
     <div class="form-row">
         <div class="form-row form-row--col">
-            <label for="address"><?php pll_e('Διεύθυνση'); ?></label>
+            <label for="address"><?php _e('Διεύθυνση'); ?></label>
             <input class="input" type="text" name="address" id="address" value="<?= $post_id && $edit_mode ? get_field('address', $post_id) : "" ?>" required>
         </div>
     </div>
     <div class="form-row form-row--col">
         <div class="acf-label">
-            <label for="coordinates"><?php pll_e('Συντεταγμένες'); ?></label>
+            <label for="coordinates"><?php _e('Συντεταγμένες'); ?></label>
             <p class="description">
-                <?php pll_e('Στην διεύθυνση <a href="https://maps.google.com" target="_blank" rel="noopener">maps.google.com</a>, βάλτε την διεύθυνσή σας και πατήστε δεξί click στο location pin που σας εμφανίζει. Οι τιμές σε μορφή "23,502934, 23,5035525" είναι οι συντεταγμένες της επιχείρησής σας. Αριστερό κλικ σε αυτές για αντιγραφή και έπειτα κάντε επικόλληση εδώ.') ?>
+                <?php _e('Στην διεύθυνση <a href="https://maps.google.com" target="_blank" rel="noopener">maps.google.com</a>, βάλτε την διεύθυνσή σας και πατήστε δεξί click στο location pin που σας εμφανίζει. Οι τιμές σε μορφή "23,502934, 23,5035525" είναι οι συντεταγμένες της επιχείρησής σας. Αριστερό κλικ σε αυτές για αντιγραφή και έπειτα κάντε επικόλληση εδώ.') ?>
             </p>
         </div>
         <input class="input" type="text" name="coordinates" id="coordinates" value="<?= $post_id && $edit_mode ? get_field('coordinates', $post_id) : "" ?>" required>
     </div>
     <div class="form-row form-row--col">
-        <label for="gallery"><?php pll_e('Συλλογή φωτογραφιών'); ?></label>
-        <label for="gallery" class="label--file input pointer"><?php $post_id && $edit_mode && get_field('gallery', $post_id) ? pll_e('Αλλαγή φωτογραφιών') : pll_e('Προσθήκη') ?></label>
+        <label for="gallery"><?php _e('Συλλογή φωτογραφιών'); ?></label>
+        <label for="gallery" class="label--file input pointer"><?php $post_id && $edit_mode && get_field('gallery', $post_id) ? _e('Αλλαγή φωτογραφιών') : _e('Προσθήκη') ?></label>
         <input class="input input--file" type="file" name="gallery[]" id="gallery" multiple accept="image/*" max="5" />
         <div class="preview-gallery__container">
             <?php if ($post_id && $edit_mode && get_field('gallery', $post_id)) : ?>
@@ -86,7 +86,7 @@ if ($post_id || $type || $edit_mode) {
     </div>
     <div class="form-row">
         <div class="form-row form-row--col">
-            <label for="emails"><?php pll_e('Διευθύνσεις email') ?></label>
+            <label for="emails"><?php _e('Διευθύνσεις email') ?></label>
             <div id="emails-container">
                 <?php if ($post_id && $edit_mode && have_rows('emails', $post_id)) : ?>
                     <?php while (have_rows('emails', $post_id)) : the_row(); ?>
@@ -110,7 +110,7 @@ if ($post_id || $type || $edit_mode) {
             </span>
         </div>
         <div class="form-row form-row--col">
-            <label for="tels"><?php pll_e('Αριθμοί τηλεφώνου') ?></label>
+            <label for="tels"><?php _e('Αριθμοί τηλεφώνου') ?></label>
             <div id="tels-container">
                 <?php if ($post_id && $edit_mode && have_rows('tels', $post_id)) : ?>
                     <?php while (have_rows('tels', $post_id)) : the_row(); ?>
@@ -137,28 +137,28 @@ if ($post_id || $type || $edit_mode) {
     <div class="form-row form-row--col">
         <div class="social-media-row form-row">
             <div class="form-row form-row--col">
-                <label for="facebook_url"><?php pll_e('Διεύθυνση Facebook') ?> (URL)</label>
+                <label for="facebook_url"><?php _e('Διεύθυνση Facebook') ?> (URL)</label>
                 <input type="url" value="<?= $post_id && $edit_mode ? get_field('facebook_url', $post_id) : "" ?>" class="input" name="facebook_url" id="facebook_url">
             </div>
             <div class="form-row form-row--col">
-                <label for="instagram_url"><?php pll_e('Διεύθυνση Instagram') ?> (URL)</label>
+                <label for="instagram_url"><?php _e('Διεύθυνση Instagram') ?> (URL)</label>
                 <input type="url" value="<?= $post_id && $edit_mode ? get_field('instagram_url', $post_id) : "" ?>" class="input" name="instagram_url" id="instagram_url">
             </div>
             <div class="form-row form-row--col">
-                <label for="tiktok_url"><?php pll_e('Διεύθυνση TikTok') ?> (URL)</label>
+                <label for="tiktok_url"><?php _e('Διεύθυνση TikTok') ?> (URL)</label>
                 <input type="url" value="<?= $post_id && $edit_mode ? get_field('tiktok_url', $post_id) : "" ?>" class="input" name="tiktok_url" id="tiktok_url">
             </div>
             <div class="form-row form-row--col">
-                <label for="tripadvisor_url"><?php pll_e('Διεύθυνση Tripadvisor') ?> (URL)</label>
+                <label for="tripadvisor_url"><?php _e('Διεύθυνση Tripadvisor') ?> (URL)</label>
                 <input type="url" value="<?= $post_id && $edit_mode ? get_field('tripadvisor_url', $post_id) : "" ?>" class="input" name="tripadvisor_url" id="tripadvisor_url">
             </div>
         </div>
     </div>
     <div class="form-row form-row--col">
-        <label for="website"><?php pll_e('Ιστοσελίδα') ?> (URL)</label>
+        <label for="website"><?php _e('Ιστοσελίδα') ?> (URL)</label>
         <input class="input" type="url" name="website" id="website" value="<?= $post_id && $edit_mode ? get_field('website', $post_id) : "" ?>">
     </div>
     <input type="hidden" name="action" value="submit_custom_store_form">
     <?php wp_nonce_field('submit_custom_store_form', 'custom_store_form_nonce'); ?>
-    <input type="submit" class="btn input pointer" value="<?php pll_e('Καταχώρηση') ?>">
+    <input type="submit" class="btn input pointer" value="<?php _e('Καταχώρηση') ?>">
 </form>

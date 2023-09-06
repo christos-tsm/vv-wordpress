@@ -54,7 +54,7 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
                         </div>
                     </div>
                 <?php else : ?>
-                    <p class="message message--error"><?php pll_e('Δεν βρέθηκαν καταχωρημένες επιχειρήσεις') ?></p>
+                    <p class="message message--error"><?php _e('Δεν βρέθηκαν καταχωρημένες επιχειρήσεις') ?></p>
                 <?php endif; ?>
             <?php endif; ?>
         </div>

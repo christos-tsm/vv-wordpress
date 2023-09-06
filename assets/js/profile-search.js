@@ -12,7 +12,7 @@
 				placeholder: document.documentElement.lang === "el" ? "Βόλος" : "Volos",
 				searchtext: document.documentElement.lang === "el" ? "Βόλος" : "Volos",
 			};
-			NiceSelect.bind(document.getElementById("municipality"), municipalityOptions);
+			NiceSelect.bind(document.getElementById("municipality_header"), municipalityOptions);
 		}
 	});
 })();

@@ -26,7 +26,7 @@ $results = $wpdb->get_results($query);
     <section class="dashboard__container container container--medium">
         <?php get_template_part('template-parts/account/user-details'); ?>
         <div class="dashboard__content">
-            <h1 class="section-title section-title--dashboard"><?php pll_e('Καταχώρηση εκδήλωσης'); ?><span class="divider"></span></h1>
+            <h1 class="section-title section-title--dashboard"><?php _e('Καταχώρηση εκδήλωσης'); ?><span class="divider"></span></h1>
             <?php if (!get_transient('custom_hotel_form_success') && !get_transient('custom_hotel_form_error')) : ?>
                 <?php if (!empty($results)) : ?>
                     <div class="store-select__container">
@@ -43,7 +43,7 @@ $results = $wpdb->get_results($query);
                         <?php get_template_part('template-parts/forms/add-events'); ?>
                     </div>
                 <?php else : ?>
-                    <p class="message message--error"><?php pll_e('Για να καταχωρήσετε μία εκδήλωση, Θα πρέπει να έχετε καταχωρήσει πρώτα την επιχείρησή σας και να έχει λάβει έγκριση.')  ?> </p>
+                    <p class="message message--error"><?php _e('Για να καταχωρήσετε μία εκδήλωση, Θα πρέπει να έχετε καταχωρήσει πρώτα την επιχείρησή σας και να έχει λάβει έγκριση.')  ?> </p>
                 <?php endif; ?>
             <?php endif; ?>
             <?php

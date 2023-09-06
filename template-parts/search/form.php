@@ -1,5 +1,5 @@
 <?php
-$search_results_page = pll_get_post(1040);
+$search_results_page = get_post(1040);
 $profile_category = isset($_GET['profile_category']) ? $_GET['profile_category'] : '';
 $profile_categories = get_terms(array(
     'taxonomy' => 'freelancer-categories',
@@ -16,7 +16,7 @@ $profile_categories = get_terms(array(
                 <?php endforeach;  ?>
             </select>
             <?php get_template_part('template-parts/forms/municipality-areas-header') ?>
-            <button class="input btn pointer" type="submit"><?php pll_e('Αναζήτηση'); ?></button>
+            <button class="input btn pointer" type="submit"><?php _e('Αναζήτηση'); ?></button>
         </div>
     </form>
 <?php endif;  ?>

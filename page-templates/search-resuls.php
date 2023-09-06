@@ -35,7 +35,7 @@ $query = new WP_Query(array(
                         <?php get_template_part('template-parts/admin/cards/store-card'); ?>
                     <?php endwhile; ?>
                 <?php else : ?>
-                    <p class="message message--error"><?php pll_e('Δεν βρέθηκαν καταχωρημένες επιχειρήσεις') ?></p>
+                    <p class="message message--error"><?php _e('Δεν βρέθηκαν καταχωρημένες επιχειρήσεις') ?></p>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
             </div>

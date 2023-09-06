@@ -16,12 +16,12 @@
     <div class="site-footer__content container container--medium">
         <div class="site-footer__col">
             <?php $footer_logo = get_field('footer_logo', 'option'); ?>
-            <a class="site-footer__logo" aria-label="Link to homepage" class="icon" href="<?= pll_home_url(); ?>">
+            <a class="site-footer__logo" aria-label="Link to homepage" class="icon" href="<?= home_url(); ?>">
                 <img src="<?= esc_url($footer_logo['url']) ?>" alt="<?php the_title(); ?>">
             </a>
         </div>
         <div class="site-footer__col site-footer__menu">
-            <h6 class="site-footer__header"><?php pll_e('Μενού'); ?></h6>
+            <h6 class="site-footer__header"><?php _e('Μενού'); ?></h6>
             <?php
             wp_nav_menu(array(
                 'theme_location' => "footer-menu",
@@ -30,7 +30,7 @@
             ?>
         </div>
         <div class="site-footer__col site-footer__menu">
-            <h6 class="site-footer__header"><?php pll_e('Χρήσιμα'); ?></h6>
+            <h6 class="site-footer__header"><?php _e('Χρήσιμα'); ?></h6>
             <?php
             wp_nav_menu(array(
                 'theme_location' => "footer-useful-menu",
@@ -39,7 +39,7 @@
             ?>
         </div>
         <div class="site-footer__col site-footer__social">
-            <h6 class="site-footer__header"><?php pll_e('Social Media'); ?></h6>
+            <h6 class="site-footer__header"><?php _e('Social Media'); ?></h6>
             <div class="social-media">
                 <?php $facebook_url = get_field('facebook_url', 'option'); ?>
                 <?php $instagram_url = get_field('instagram_url', 'option'); ?>

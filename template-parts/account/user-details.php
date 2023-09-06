@@ -31,11 +31,11 @@ $registered_at = date_i18n('F j, Y', strtotime($user_info->user_registered));
             "add_li_class" => "user-details__menu-item"
         ));
         ?>
-        <a href="<?php echo wp_logout_url(home_url()); ?>" class="input btn pointer" id="logout" aria-label="Logout" title="<?php pll_e('Αποσύνδεση'); ?>">
+        <a href="<?php echo wp_logout_url(home_url()); ?>" class="input btn pointer" id="logout" aria-label="Logout" title="<?php _e('Αποσύνδεση'); ?>">
             <span class="icon icon--small">
                 <?= file_get_contents(get_stylesheet_directory() . '/assets/images/logout.svg'); ?>
             </span>
-            <?php pll_e('Αποσύνδεση'); ?>
+            <?php _e('Αποσύνδεση'); ?>
         </a>
     </div>
 </div>

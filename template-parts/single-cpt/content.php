@@ -36,7 +36,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                     <div class="action-badges__container">
                         <a id="report-store" href="#!" class="icon icon--small action-badges__single action-badges__report" aria-label="Report <?= the_title(); ?>">
                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/flag.svg'); ?>
-                            <span class="tooltip"><?php pll_e('Αναφορά'); ?></span>
+                            <span class="tooltip"><?php _e('Αναφορά'); ?></span>
                         </a>
                         <a data-action="<?= in_array(get_the_ID(), $user_favourites_array[0]) ? 'remove_from_favorites' : 'add_to_favorites' ?>" id="add-store-to-favourites" data-post-id="<?= get_the_ID(); ?>" href="#!" class="icon icon--small action-badges__single action-badges__favourites <?= in_array(get_the_ID(), $user_favourites_array[0]) ? 'favourited' : '' ?>" aria-label="Add <?= the_title(); ?> to favorites">
                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/heart.svg'); ?>
@@ -70,7 +70,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
         </header>
         <section class="single-content__content container container--medium">
             <div class="section-title__container">
-                <h2 class="section-title"><?php pll_e('Σχετικά με εμάς'); ?> </h2>
+                <h2 class="section-title"><?php _e('Σχετικά με εμάς'); ?> </h2>
             </div>
             <div class="single-content">
                 <?php the_content();  ?>
@@ -94,7 +94,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
             <div class="single-info__card">
                 <?php if (have_rows('emails') || have_rows('tels')) : ?>
                     <div class="single-info__card-section">
-                        <h2 class="section-subtitle"><?php pll_e('Επικοινωνία') ?></h2>
+                        <h2 class="section-subtitle"><?php _e('Επικοινωνία') ?></h2>
                         <ul class="single-info__ul">
                             <?php if (have_rows('emails')) : ?>
                                 <?php while (have_rows('emails')) : the_row(); ?>
@@ -122,7 +122,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                                 <li class="single-info__ul-item">
                                     <a class="single-info__ul-link" href="<?= esc_url($website) ?>" target="_blank" rel="noopener">
                                         <span class="icon icon--small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/globe.svg') ?></span>
-                                        <?php pll_e('Ιστοσελίδα') ?>
+                                        <?php _e('Ιστοσελίδα') ?>
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -131,7 +131,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                 <?php endif; ?>
                 <?php if ($facebook_url || $instagram_url || $tiktok_url || $tripadvisor_url || $booking_url) : ?>
                     <div class="single-info__card-section">
-                        <h2 class="section-subtitle"><?php pll_e('Social Media') ?></h2>
+                        <h2 class="section-subtitle"><?php _e('Social Media') ?></h2>
                         <ul class="single-info__ul single-social-media__ul">
                             <?php if ($facebook_url) : ?>
                                 <li class="single-info__ul-item">
@@ -139,7 +139,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                                         <span class="icon icon--small">
                                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
                                         </span>
-                                        <?php pll_e('Facebook'); ?>
+                                        <?php _e('Facebook'); ?>
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -149,7 +149,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                                         <span class="icon icon--small">
                                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
                                         </span>
-                                        <?php pll_e('Instagram'); ?>
+                                        <?php _e('Instagram'); ?>
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -159,7 +159,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                                         <span class="icon icon--small">
                                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
                                         </span>
-                                        <?php pll_e('Tiktok'); ?>
+                                        <?php _e('Tiktok'); ?>
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -169,7 +169,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                                         <span class="icon icon--small">
                                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
                                         </span>
-                                        <?php pll_e('Trip Advisor'); ?>
+                                        <?php _e('Trip Advisor'); ?>
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -179,7 +179,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                                         <span class="icon icon--small">
                                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/at.svg'); ?>
                                         </span>
-                                        <?php pll_e('Booking'); ?>
+                                        <?php _e('Booking'); ?>
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -188,7 +188,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                 <?php endif; ?>
                 <?php if ($address && !empty($address)) : ?>
                     <div class="single-info__card-section">
-                        <h2 class="section-subtitle"><?php pll_e('Διεύθυνση') ?></h2>
+                        <h2 class="section-subtitle"><?php _e('Διεύθυνση') ?></h2>
                         <ul class="single-info__ul">
                             <li class="single-info__ul-item">
                                 <a class="single-info__ul-link icon icon--medium address-link" target="_blank" rel="noopener noreferrer" href="#!">
@@ -203,14 +203,14 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                 <?php endif; ?>
                 <?php if ($distance && !empty($distance) || $avg_prce && !empty($avg_prce)) : ?>
                     <div class="single-info__card-section">
-                        <h2 class="section-subtitle"><?php pll_e('Πληροφορίες') ?></h2>
+                        <h2 class="section-subtitle"><?php _e('Πληροφορίες') ?></h2>
                         <ul class="single-info__ul">
                             <?php if ($distance && !empty($distance)) : ?>
                                 <li class="single-info__ul-item">
                                     <span class="icon icon--small">
                                         <?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg'); ?>
                                     </span>
-                                    <?= esc_attr($distance) . ' ' . pll__('από το κέντρο του Βόλου'); ?>
+                                    <?= esc_attr($distance) . ' ' . __('από το κέντρο του Βόλου'); ?>
                                 </li>
                             <?php endif; ?>
                             <?php if ($avg_prce && !empty($avg_prce)) : ?>
@@ -226,7 +226,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                 <?php endif; ?>
             </div>
             <div class="single-info__map">
-                <h2 class="section-subtitle"><?php pll_e('Τοποθεσία') ?></h2>
+                <h2 class="section-subtitle"><?php _e('Τοποθεσία') ?></h2>
                 <div id="map" data-coordinates="<?= esc_attr($coordinates); ?>" data-icon="<?= get_stylesheet_directory_uri() . '/assets/images/map-pin.svg' ?>"></div>
             </div>
         </footer>

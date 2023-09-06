@@ -14,10 +14,10 @@
     </div>
 
     <div class="slide-destination__content">
-        <h3 class="slide-destination__title"><?php the_title(); ?> <a class="btn btn--small input" href="<?php the_permalink(); ?>"><?php pll_e('Δείτε περισσότερα') ?></a></h3>
+        <h3 class="slide-destination__title"><?php the_title(); ?> <a class="btn btn--small input" href="<?php the_permalink(); ?>"><?php _e('Δείτε περισσότερα') ?></a></h3>
         <h4 class="slide-destination__subtitle">
             <span class="icon icon--small"><?= file_get_contents(get_stylesheet_directory() . '/assets/images/location-pin.svg'); ?></span>
-            <?= esc_attr($distance_from_volos) . ' ' . pll__('μακριά άπο τον Βόλο'); ?>
+            <?= esc_attr($distance_from_volos) . ' ' . __('μακριά άπο τον Βόλο'); ?>
         </h4>
         <div class="slide-destination__text">
             <?php the_content(); ?>

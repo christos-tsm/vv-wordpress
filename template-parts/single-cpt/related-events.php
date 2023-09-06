@@ -19,7 +19,7 @@ $events_query = new WP_Query($args);
 <?php if ($events_query->have_posts()) : ?>
     <section class="related-events__container container container--medium">
         <div class="section-title__container">
-            <h2 class="section-title"><?php pll_e('Προσεχείς εκδηλώσεις'); ?> </h2>
+            <h2 class="section-title"><?php _e('Προσεχείς εκδηλώσεις'); ?> </h2>
         </div>
         <div class="related-events">
             <?php while ($events_query->have_posts()) : $events_query->the_post(); ?>

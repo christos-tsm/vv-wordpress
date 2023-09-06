@@ -65,12 +65,18 @@ add_action('init', 'volos_voyage_create_guest_role');
 function volos_voyage_guest_user_redirect_to_dashboard()
 {
     $user = wp_get_current_user();
-    if (in_array('guest', (array) $user->roles) && is_admin() && !(defined('DOING_AJAX') && DOING_AJAX)) {
-        wp_redirect(pll_home_url());
+    if (
+        in_array('guest', (array) $user->roles) &&
+        !in_array('administrator', (array) $user->roles) &&
+        is_admin() &&
+        !(defined('DOING_AJAX') && DOING_AJAX)
+    ) {
+        wp_redirect(home_url());
         exit;
     }
 }
 add_action('admin_init', 'volos_voyage_guest_user_redirect_to_dashboard');
+
 // Show who uploaded the custom post types in the backend
 add_filter('manage_edit-profiles_columns', 'volos_voyage_add_user_display_name_column');
 add_filter('manage_edit-hotels_columns', 'volos_voyage_add_user_display_name_column');
@@ -121,7 +127,7 @@ function volos_voyage_restrict_child_pages()
             }
         }
         if ($is_child_page) {
-            wp_redirect(pll_home_url()); // Redirect to the login page
+            wp_redirect(home_url()); // Redirect to the login page
             exit;
         }
     }
@@ -161,4 +167,4 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 // Skip PMPro Levels page
 // define('PMPRO_DEFAULT_LEVEL', "3");
 
-remove_filter('login_redirect', 'pmpro_login_redirect', 10, 3);
+// remove_filter('login_redirect', 'pmpro_login_redirect', 10, 3);

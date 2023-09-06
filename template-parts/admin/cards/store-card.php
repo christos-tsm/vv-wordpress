@@ -15,7 +15,7 @@ if (strlen($business_description) > 350) {
 <article class="store-card store-card__<?= get_the_ID() ?>" data-post-type="<?= esc_attr($post_type); ?>">
     <?php $post_status = get_post_status(get_the_ID()); ?>
     <?php if ($post_status === 'draft') : ?>
-        <span class="badge badge--draft"><?php pll_e('Εκκρεμεί έγκριση') ?></span>
+        <span class="badge badge--draft"><?php _e('Εκκρεμεί έγκριση') ?></span>
     <?php endif; ?>
     <?php if ($thumbnail) : ?>
         <a class="store-card__thumbnail-link" aria-label="Link for <?php the_title(); ?> page" href="<?php the_permalink(); ?>">
@@ -32,20 +32,20 @@ if (strlen($business_description) > 350) {
             <a href="<?php the_permalink(); ?>"><?= $business_title; ?></a>
             <?php if ($current_user_id === $profile_user_id) : ?>
                 <div class="store-card__actions">
-                    <?php $update_store_page = pll_get_post(854); ?>
-                    <?php $update_event_page = pll_get_post(1075); ?>
+                    <?php $update_store_page = get_post(854); ?>
+                    <?php $update_event_page = get_post(1075); ?>
                     <form method="POST" id="delete-store-form" action="<?= esc_url(admin_url('admin-post.php')); ?>">
                         <input type="hidden" name="action" value="delete_store">
                         <input type="hidden" name="user_id" value="<?= get_field('user_id') ?>">
                         <input type="hidden" name="delete_store_nonce" value="<?= wp_create_nonce('delete_store_nonce'); ?>">
                         <input type="hidden" name="store_id" value="<?= esc_attr(get_the_ID()); ?>">
-                        <button class="btn input pointer btn--delete btn--delete-store" type="submit"><?php pll_e('Διαγραφή'); ?></button>
+                        <button class="btn input pointer btn--delete btn--delete-store" type="submit"><?php _e('Διαγραφή'); ?></button>
                     </form>
                     <?php if ($post_status === 'publish') : ?>
                         <?php if ($post_type === 'events') : ?>
-                            <a href="<?php the_permalink($update_event_page) ?>?event_id=<?= get_the_ID(); ?>&type=<?= $post_type ?>&edit_mode=1" class="btn btn--small input"><?php pll_e('Επεξεργασία') ?></a>
+                            <a href="<?php the_permalink($update_event_page) ?>?event_id=<?= get_the_ID(); ?>&type=<?= $post_type ?>&edit_mode=1" class="btn btn--small input"><?php _e('Επεξεργασία') ?></a>
                         <?php else : ?>
-                            <a href="<?php the_permalink($update_store_page) ?>?store_id=<?= get_the_ID(); ?>&type=<?= $post_type ?>&edit_mode=1" class="btn btn--small input"><?php pll_e('Επεξεργασία') ?></a>
+                            <a href="<?php the_permalink($update_store_page) ?>?store_id=<?= get_the_ID(); ?>&type=<?= $post_type ?>&edit_mode=1" class="btn btn--small input"><?php _e('Επεξεργασία') ?></a>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>

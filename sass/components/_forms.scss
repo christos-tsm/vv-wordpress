@@ -32,6 +32,9 @@
 	}
 }
 
+.rcp_form input[type="text"],
+.rcp_form input[type="password"],
+.rcp_form input[type="email"],
 .input {
 	border: none;
 	box-shadow: none;
@@ -62,7 +65,7 @@
 
 	&:focus,
 	&:hover {
-		border-color: $primary-color;
+		border-color: $primary-color !important;
 	}
 
 	&--search {
@@ -241,9 +244,7 @@ textarea.input {
 	ul {
 		column-count: 2;
 
-		input[type="checkbox"] {
-			accent-color: $primary-color;
-		}
+
 	}
 }
 

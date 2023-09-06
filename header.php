@@ -61,7 +61,7 @@
 		</div>
 		<?php $header_logo = get_field('header_logo', 'option'); ?>
 		<div class="site-header__content container container--medium">
-			<a class="site-header__logo" href="<?= pll_home_url() ?>" aria-label="Homepage Link">
+			<a class="site-header__logo" href="<?= home_url() ?>" aria-label="Homepage Link">
 				<img src="<?= esc_url($header_logo['url']) ?>" alt="<?= bloginfo('name') . ' - Τα πάντα για τον Βόλο' ?>">
 			</a>
 			<div class="site-header__search">
@@ -70,14 +70,14 @@
 			<div class="site-header__icons">
 				<?php get_template_part('template-parts/utils/languages'); ?>
 				<?php if (is_user_logged_in()) : ?>
-					<a href="<?php echo wp_logout_url(home_url()); ?>" class="site-header__icons-logout" id="logout" aria-label="Logout" title="<?php pll_e('Αποσύνδεση'); ?>">
+					<a href="<?php echo wp_logout_url(home_url()); ?>" class="site-header__icons-logout" id="logout" aria-label="Logout" title="<?php _e('Αποσύνδεση'); ?>">
 						<span class="icon icon--small">
 							<?= file_get_contents(get_stylesheet_directory() . '/assets/images/logout.svg'); ?>
 						</span>
 					</a>
 				<?php endif; ?>
-				<?php $account_page = pll_get_post(48); ?>
-				<a href="<?php the_permalink($account_page); ?>" class="site-header__icons-account <?= is_page_template('page-templates/account.php') ? 'site-header__icons-account--active' : ''; ?>" aria-label="Link to account page" title="<?php pll_e('Λογαριασμός'); ?>">
+				<?php $account_page = get_post(48); ?>
+				<a href="<?php the_permalink($account_page); ?>" class="site-header__icons-account <?= is_page_template('page-templates/account.php') ? 'site-header__icons-account--active' : ''; ?>" aria-label="Link to account page" title="<?php _e('Λογαριασμός'); ?>">
 					<span class="icon icon--small">
 						<?= file_get_contents(get_stylesheet_directory() . '/assets/images/user.svg'); ?>
 					</span>

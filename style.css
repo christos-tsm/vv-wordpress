@@ -89,6 +89,7 @@ p {
 	stroke: #fff;
 }
 
+input[type="radio"],
 input[type="checkbox"] {
 	accent-color: #ff576b;
 }
@@ -123,10 +124,6 @@ input[type="checkbox"] {
 
 .site-main {
 	margin-top: 139px;
-}
-
-.site-main--account {
-	margin-top: 95px;
 }
 
 .container {
@@ -325,297 +322,6 @@ address {
 	align-items: center;
 }
 
-.membership .pmpro_table td,
-.membership .pmpro_table th {
-	text-align: left;
-	padding: 10px;
-	border: 1px solid #f5f5f5;
-	min-height: 55px;
-}
-
-.membership .pmpro_table a {
-	color: #ff576b;
-}
-
-.membership .membership-title {
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #ddd;
-	font-size: 20px;
-}
-
-.membership #pmpro_account .pmpro_box {
-	padding: 0 0 20px;
-	margin: 0 0 20px;
-	border-top: none;
-}
-
-.membership #pmpro_account .pmpro_box p {
-	font-size: 14px;
-	margin: 0;
-}
-
-.membership #pmpro_account .pmpro_box h3 {
-	margin-bottom: 40px;
-	font-size: 25px;
-	font-weight: 600;
-	line-height: 35px;
-}
-
-.membership #pmpro_account .pmpro_box .pmpro_account-membership-levelname {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.membership #pmpro_account .pmpro_box > .pmpro_actionlinks {
-	margin-top: 10px;
-}
-
-.membership #pmpro_account .pmpro_box .pmpro_account-membership-levelfee {
-	text-transform: lowercase;
-}
-
-.pmpro_table .pmpro_account-membership-levelname .pmpro_actionlinks {
-	display: flex;
-	gap: 5px;
-}
-
-.pmpro_btn,
-.pmpro_btn:link,
-.pmpro_content_message a,
-.pmpro_content_message a:link,
-.pmpro_btn-select,
-.pmpro_btn-submit {
-	color: #fff !important;
-	background-color: #ff576b !important;
-	padding: 10px 15px;
-	border: none;
-}
-
-.pmpro_level_description_text strong {
-	color: #ff576b;
-}
-
-.pmpro_actionlinks a {
-	color: #ff576b;
-	display: flex;
-}
-
-.membership__subscription-levels #pmpro_levels_table {
-	width: 100%;
-}
-
-.membership__subscription-levels #pmpro_levels_table td:nth-child(1) {
-	min-width: initial;
-}
-
-.level-description {
-	margin: 20px 0;
-}
-
-body.pmpro-cancel .pmpro_cancel_wrap {
-	min-height: calc(100vh - 522px);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 40px;
-}
-
-.pmpro_checkout-fields {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.pmpro_checkout-fields .pmpro_level_description_text {
-	flex-basis: 100%;
-}
-
-#pmpropp_payment_plans {
-	flex-direction: column;
-}
-
-form.pmpro_form #pmpro_billing_address_fields .pmpro_checkout-fields div {
-	flex-basis: 50%;
-}
-
-.pmpro_alert {
-	background-color: #ff576b;
-	color: #fff;
-	margin: 20px 0;
-}
-
-.pmpro_alert a {
-	color: #fff;
-	font-weight: 600;
-}
-
-.pmpro_checkout .pmpro_level_cost_text,
-.pmpro_checkout .pmpro_level_name_text {
-	margin: 0 0 20px;
-}
-
-.pmpro_checkout .pmpro_level_cost_text strong,
-.pmpro_checkout .pmpro_level_name_text strong {
-	color: #ff576b;
-}
-
-form.pmpro_form .pmpro_checkout-fields div,
-#loginform p {
-	margin: 0 0 20px;
-}
-
-form.pmpro_form .pmpro_checkout-fields > .pmpro_checkout-field {
-	position: relative;
-}
-
-form.pmpro_form .pmpro_checkout-fields > .pmpro_checkout-field > label {
-	padding-left: 10px;
-}
-
-form.pmpro_form .pmpro_checkout-fields > .pmpro_checkout-field .pmpro_asterisk {
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: #c92525;
-}
-
-hr {
-	opacity: 0.2;
-}
-
-.pmpro_checkout h3 span.pmpro_checkout-h3-name {
-	margin: 0 10px 20px 0;
-}
-
-form.pmpro_form label,
-#loginform label {
-	font-size: 16px;
-	margin: 0 0 10px;
-}
-
-.pmprorh_checkbox_label.pmpro_clickable {
-	font-weight: 400;
-	margin-left: 7px;
-}
-
-form.pmpro_form input[type=text],
-form.pmpro_form input[type=password],
-form.pmpro_form input[type=email],
-form.pmpro_form input[type=number],
-form.pmpro_form textarea,
-form.pmpro_form select,
-#loginform input[type=text],
-#loginform input[type=password] {
-	border: 1px solid #e8e8e8;
-	border-radius: 5px;
-	font-size: 14px;
-	font-weight: 400;
-	padding: 10px;
-	font-family: 'Manrope', sans-serif;
-	transition: all ease-in-out 250ms;
-	outline: none;
-}
-
-form.pmpro_form input[type=text]:focus, form.pmpro_form input[type=text]:hover,
-form.pmpro_form input[type=password]:focus,
-form.pmpro_form input[type=password]:hover,
-form.pmpro_form input[type=email]:focus,
-form.pmpro_form input[type=email]:hover,
-form.pmpro_form input[type=number]:focus,
-form.pmpro_form input[type=number]:hover,
-form.pmpro_form textarea:focus,
-form.pmpro_form textarea:hover,
-form.pmpro_form select:focus,
-form.pmpro_form select:hover,
-#loginform input[type=text]:focus,
-#loginform input[type=text]:hover,
-#loginform input[type=password]:focus,
-#loginform input[type=password]:hover {
-	border-color: #ff576b;
-}
-
-select {
-	cursor: pointer;
-}
-
-select#bcountry {
-	width: 100%;
-}
-
-select#ExpirationMonth {
-	margin-right: 10px;
-}
-
-select#ExpirationYear {
-	margin-left: 10px;
-}
-
-select#ExpirationMonth, select#ExpirationYear {
-	padding: 10px;
-	min-height: 47px;
-}
-
-.pmpro_payment-expiration {
-	display: inline-block;
-}
-
-.pmpro_payment-cvv {
-	display: inline-block;
-	width: 500px;
-	margin: 0 0 0 40px !important;
-}
-
-.pmpro_payment-cvv .input {
-	width: 100%;
-	max-width: 95%;
-}
-
-.pmpro_invoice_wrap,
-.pmpro_confirmation_wrap {
-	min-height: calc(100vh - 522px);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 35px;
-}
-
-.pmpro_invoice_wrap .section-title,
-.pmpro_confirmation_wrap .section-title {
-	font-size: 20px;
-}
-
-.pmpro_invoice_wrap > ul,
-.pmpro_confirmation_wrap > ul {
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-}
-
-.pmpro_invoice_wrap > ul li,
-.pmpro_confirmation_wrap > ul li {
-	color: #ff576b;
-	font-weight: 600;
-}
-
-.pmpro_invoice_wrap > ul li strong,
-.pmpro_confirmation_wrap > ul li strong {
-	color: #5a5a5a;
-}
-
-.pmpro_invoice_wrap table.pmpro_invoice td,
-.pmpro_invoice_wrap table.pmpro_invoice th {
-	text-align: left;
-	padding: 10px;
-	border: 1px solid #f5f5f5;
-}
-
-.pmpro_invoice_wrap table.pmpro_invoice tr > td:nth-child(2) a {
-	color: #ff576b;
-	font-weight: 600;
-}
-
 /** Components */
 .site-header {
 	position: fixed;
@@ -721,7 +427,7 @@ select#ExpirationMonth, select#ExpirationYear {
 	position: relative;
 }
 
-.site-header__burger .burger__container > .icon {
+.site-header__burger .burger__container>.icon {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -732,7 +438,7 @@ select#ExpirationMonth, select#ExpirationYear {
 	transition: all ease-in-out 250ms;
 }
 
-.site-header__burger .burger__container > .icon--active {
+.site-header__burger .burger__container>.icon--active {
 	opacity: 1;
 	pointer-events: all;
 }
@@ -808,12 +514,13 @@ select#ExpirationMonth, select#ExpirationYear {
 	font-weight: 600;
 }
 
-.site-header__search .form-row > select {
+.site-header__search .form-row>select {
 	display: none;
 }
 
 .site-header__search .nice-select {
 	line-height: initial;
+	font-weight: 600;
 	min-width: 300px;
 }
 
@@ -881,7 +588,7 @@ select#ExpirationMonth, select#ExpirationYear {
 	position: relative;
 }
 
-.card__header > a {
+.card__header>a {
 	display: flex;
 	overflow: hidden;
 	border-radius: 10px;
@@ -986,7 +693,7 @@ select#ExpirationMonth, select#ExpirationYear {
 	position: relative;
 }
 
-.events-card__header > a {
+.events-card__header>a {
 	overflow: hidden;
 	display: flex;
 }
@@ -1056,7 +763,7 @@ select#ExpirationMonth, select#ExpirationYear {
 	position: relative;
 }
 
-.grid--restaurants__logo > a {
+.grid--restaurants__logo>a {
 	display: flex;
 }
 
@@ -1255,6 +962,9 @@ select#ExpirationMonth, select#ExpirationYear {
 	align-items: flex-start;
 }
 
+.rcp_form input[type="text"],
+.rcp_form input[type="password"],
+.rcp_form input[type="email"],
 .input {
 	border: none;
 	box-shadow: none;
@@ -1266,6 +976,9 @@ select#ExpirationMonth, select#ExpirationYear {
 	transition: border-color ease-in-out 250ms, color ease-in-out 250ms, background-color ease-in-out 250ms;
 }
 
+.rcp_form input[type="text"]:not(.btn),
+.rcp_form input[type="password"]:not(.btn),
+.rcp_form input[type="email"]:not(.btn),
 .input:not(.btn) {
 	background-color: #fff;
 	border: 1px solid #e8e8e8;
@@ -1279,28 +992,59 @@ select#ExpirationMonth, select#ExpirationYear {
 	line-height: 25px;
 }
 
+.rcp_form input[type="text"]::placeholder,
+.rcp_form input[type="password"]::placeholder,
+.rcp_form input[type="email"]::placeholder,
 .input::placeholder {
 	opacity: 0.5;
 	color: #5a5a5a;
 }
 
-.input:focus, .input:hover {
-	border-color: #ff576b;
+.rcp_form input[type="text"]:focus,
+.rcp_form input[type="text"]:hover,
+.rcp_form input[type="password"]:focus,
+.rcp_form input[type="password"]:hover,
+.rcp_form input[type="email"]:focus,
+.rcp_form input[type="email"]:hover,
+.input:focus,
+.input:hover {
+	border-color: #ff576b !important;
 }
 
 @media screen and (min-width: 1280px) {
+
+	.rcp_form input[type="text"]--search,
+	.rcp_form input[type="password"]--search,
+	.rcp_form input[type="email"]--search,
 	.input--search {
 		min-width: 300px;
 	}
 }
 
+.rcp_form input[type="text"]--checkbox,
+.rcp_form input[type="password"]--checkbox,
+.rcp_form input[type="email"]--checkbox,
 .input--checkbox {
 	accent-color: #ff576b;
 	margin-top: 4px;
 }
 
+.rcp_form input[type="text"]--reveal,
+.rcp_form input[type="password"]--reveal,
+.rcp_form input[type="email"]--reveal,
 .input--reveal {
 	opacity: 1 !important;
+}
+
+.rcp_form input[type="text"]--file,
+.rcp_form input[type="password"]--file,
+.rcp_form input[type="email"]--file,
+.input--file {
+	visibility: hidden;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	position: absolute;
 }
 
 .input--file {
@@ -1338,7 +1082,7 @@ textarea.input {
 }
 
 /** ACF Form */
-.acf-fields > .acf-field {
+.acf-fields>.acf-field {
 	min-height: fit-content !important;
 	padding: 15px 0 !important;
 	border-top: none !important;
@@ -1474,10 +1218,6 @@ textarea.input {
 	column-count: 2;
 }
 
-.acf-field-taxonomy ul input[type="checkbox"] {
-	accent-color: #ff576b;
-}
-
 .updated {
 	display: flex;
 	justify-content: center;
@@ -1505,7 +1245,7 @@ input#file-upload-button {
 	gap: 5px;
 }
 
-.gallery-preview__container > img {
+.gallery-preview__container>img {
 	width: 100%;
 	max-height: 350px;
 	object-fit: contain;
@@ -1517,7 +1257,8 @@ input#file-upload-button {
 	align-items: center;
 }
 
-.nice-select:focus, .nice-select:hover {
+.nice-select:focus,
+.nice-select:hover {
 	border-color: #ff576b;
 }
 
@@ -1547,7 +1288,8 @@ input#file-upload-button {
 	border-color: #ff576b;
 }
 
-.flatpickr-day.selected, .flatpickr-day:hover {
+.flatpickr-day.selected,
+.flatpickr-day:hover {
 	border-color: #ff576b;
 	background-color: #ff576b;
 	color: #fff;
@@ -1681,6 +1423,13 @@ input#file-upload-button {
 	margin-top: 0;
 }
 
+@media screen and (max-width: 1920px) {
+	.site-main--auth {
+		margin-top: 139px;
+		margin-bottom: 139px;
+	}
+}
+
 .tabs {
 	display: flex;
 	justify-content: center;
@@ -1795,7 +1544,8 @@ input#file-upload-button {
 	margin-left: -25px;
 }
 
-.user-details__registration-date, .user-details__subtitle {
+.user-details__registration-date,
+.user-details__subtitle {
 	font-size: 14px;
 	color: #9691a4;
 	font-weight: 400;
@@ -1833,6 +1583,138 @@ input#file-upload-button {
 
 .page-template-account .form {
 	gap: 20px;
+}
+
+.membership h3 {
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 35px;
+	margin-bottom: 20px;
+}
+
+.membership #rcp-account-overview td,
+.membership #rcp-account-overview th,
+.membership #rcp-payment-history td,
+.membership #rcp-payment-history th {
+	padding: 12px;
+	border: 1px solid #f5f5f5;
+	min-height: 80px;
+}
+
+.membership .rcp-auto-renew-toggle {
+	margin-top: 20px;
+}
+
+.membership .rcp-membership-auto-renew-notice {
+	font-size: 12px;
+	font-weight: 600;
+	color: #ff576b;
+	display: inline-flex;
+	margin-left: 10px;
+}
+
+.membership .rcp-table a button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 15px;
+	background-color: #ff576b;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 12px;
+	transition: background-color ease-in-out 250ms;
+	border: none;
+	box-shadow: none;
+	outline: none;
+	font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	padding: 10px 15px;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.membership .rcp-table a button:hover {
+	background-color: #ff1a35;
+}
+
+.membership .rcp-table .rcp-enable-auto-renew,
+.membership .rcp-table .rcp-disable-auto-renew button,
+.membership .rcp-table .rcp_sub_details_cancel button {
+	background-color: #fff;
+	border: 1px solid #ff576b;
+	color: #ff576b;
+	display: inline-flex;
+	padding: 10px 15px;
+	font-weight: 600;
+	border-radius: 5px;
+	font-size: 12px;
+}
+
+.membership .rcp-table .rcp-enable-auto-renew:hover,
+.membership .rcp-table .rcp-disable-auto-renew button:hover,
+.membership .rcp-table .rcp_sub_details_cancel button:hover {
+	color: #fff;
+	background-color: #ff576b;
+}
+
+.membership #rcp-payment-history td {
+	vertical-align: middle;
+}
+
+p.rcp_success {
+	color: #fff !important;
+	background: #ff576b !important;
+	border: 1px solid #ff576b !important;
+	text-align: center;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.rcp-button,
+.rcp-gateway-saved-card-delete a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 15px;
+	background-color: #ff576b;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 12px;
+	transition: background-color ease-in-out 250ms;
+	border: none;
+	box-shadow: none;
+	outline: none;
+	font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	padding: 10px 15px;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+.rcp-button:hover,
+.rcp-gateway-saved-card-delete a:hover {
+	background-color: #ff1a35;
+}
+
+.rcp-gateway-saved-payment-methods label {
+	cursor: inherit !important;
+}
+
+.rcp-gateway-saved-card-current {
+	padding: 10px 15px;
+	color: #ff576b;
+}
+
+#rcp-table-wrapper h3 {
+	display: none;
+}
+
+#rcp-account-overview {
+	margin-bottom: 40px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #ddd;
+}
+
+#rcp_card_wrap>#rcp-card-element {
+	padding: 15px;
 }
 
 .site-main--blog {
@@ -2180,6 +2062,7 @@ select[name="time"] {
 	0% {
 		transform: rotate(0deg);
 	}
+
 	100% {
 		transform: rotate(360deg);
 	}
@@ -2287,7 +2170,7 @@ select[name="time"] {
 	margin-bottom: 40px;
 }
 
-.single-content > p:not(:last-child) {
+.single-content>p:not(:last-child) {
 	margin-bottom: 20px;
 }
 

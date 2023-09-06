@@ -51,7 +51,7 @@ isset($_GET['edit_mode']) && !empty($_GET['edit_mode']) ? $edit_mode = intval($_
                             </div>
                         </div>
                     <?php else : ?>
-                        <p class="message message--error"><?php pll_e('Δεν βρέθηκαν καταχωρημένες εκδηλώσεις') ?></p>
+                        <p class="message message--error"><?php _e('Δεν βρέθηκαν καταχωρημένες εκδηλώσεις') ?></p>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

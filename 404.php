@@ -13,10 +13,10 @@ get_header();
 <main class="site-main site-main--404">
 	<section class="error-404 not-found">
 		<span class="texture">404</span>
-		<h1 class="page-title"><?php pll_e('Η σελίδα δεν βρέθηκε.', 'volos-voyage'); ?></h1>
-		<a class="cta cta--primary" href="<?= pll_home_url(); ?>">
+		<h1 class="page-title"><?php _e('Η σελίδα δεν βρέθηκε.', 'volos-voyage'); ?></h1>
+		<a class="cta cta--primary" href="<?= home_url(); ?>">
 			<span>
-				<?php pll_e('Επιστροφή στην αρχική') ?>
+				<?php _e('Επιστροφή στην αρχική') ?>
 			</span>
 		</a>
 	</section>

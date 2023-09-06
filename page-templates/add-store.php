@@ -15,20 +15,20 @@ if (isset($_GET['store']) && !empty($_GET['store'])) {
     <section class="dashboard__container container container--medium">
         <?php get_template_part('template-parts/account/user-details'); ?>
         <div class="dashboard__content">
-            <h1 class="section-title section-title--dashboard"><?php pll_e('Καταχώρηση επιχείρησης'); ?><span class="divider"></span></h1>
+            <h1 class="section-title section-title--dashboard"><?php _e('Καταχώρηση επιχείρησης'); ?><span class="divider"></span></h1>
             <?php if (!get_transient('custom_hotel_form_success') && !get_transient('custom_hotel_form_error')) : ?>
                 <div class="store-categories__container">
-                    <h3 class="section-subtitle section-subtitle--dashboard"><?php pll_e('Βήμα 1ο') ?></h3>
-                    <h2 class="subsection-title"><?php pll_e('Επιλέξτε κατηγορία επιχείρησης'); ?></h2>
+                    <h3 class="section-subtitle section-subtitle--dashboard"><?php _e('Βήμα 1ο') ?></h3>
+                    <h2 class="subsection-title"><?php _e('Επιλέξτε κατηγορία επιχείρησης'); ?></h2>
                     <select name="shop-category" id="shop-category">
-                        <option value="bars" <?= isset($_GET['store']) && $_GET['store'] === 'bars' ? 'selected' : '' ?>><?php pll_e('Μπαρ'); ?></option>
-                        <option value="coffee-houses" <?= isset($_GET['store']) && $_GET['store'] === 'coffee-houses' ? 'selected' : '' ?>><?php pll_e('Καφετέρια'); ?></option>
-                        <option value="hotels" <?= isset($_GET['store']) && $_GET['store'] === 'hotels' ? 'selected' : '' ?>><?php pll_e('Ξενοδοχείο'); ?></option>
-                        <option value="night-clubs" <?= isset($_GET['store']) && $_GET['store'] === 'night-clubs' ? 'selected' : '' ?>><?php pll_e('Night Club'); ?></option>
-                        <option value="restaurants" <?= isset($_GET['store']) && $_GET['store'] === 'restaurants' ? 'selected' : '' ?>><?php pll_e('Εστιατόριο'); ?></option>
-                        <option value="freelancers" <?= isset($_GET['store']) && $_GET['store'] === 'freelancers' ? 'selected' : '' ?>><?php pll_e('Ελεύθερος επαγγελματίας'); ?></option>
-                        <option value="travel-agents" <?= isset($_GET['store']) && $_GET['store'] === 'travel-agents' ? 'selected' : '' ?>><?php pll_e('Ταξιδιωτικό γραφείο'); ?></option>
-                        <option value="shops" <?= isset($_GET['store']) && $_GET['store'] === 'shops' ? 'selected' : '' ?>><?php pll_e('Καταστήματα λιανικού εμπορίου'); ?></option>
+                        <option value="bars" <?= isset($_GET['store']) && $_GET['store'] === 'bars' ? 'selected' : '' ?>><?php _e('Μπαρ'); ?></option>
+                        <option value="coffee-houses" <?= isset($_GET['store']) && $_GET['store'] === 'coffee-houses' ? 'selected' : '' ?>><?php _e('Καφετέρια'); ?></option>
+                        <option value="hotels" <?= isset($_GET['store']) && $_GET['store'] === 'hotels' ? 'selected' : '' ?>><?php _e('Ξενοδοχείο'); ?></option>
+                        <option value="night-clubs" <?= isset($_GET['store']) && $_GET['store'] === 'night-clubs' ? 'selected' : '' ?>><?php _e('Night Club'); ?></option>
+                        <option value="restaurants" <?= isset($_GET['store']) && $_GET['store'] === 'restaurants' ? 'selected' : '' ?>><?php _e('Εστιατόριο'); ?></option>
+                        <option value="freelancers" <?= isset($_GET['store']) && $_GET['store'] === 'freelancers' ? 'selected' : '' ?>><?php _e('Ελεύθερος επαγγελματίας'); ?></option>
+                        <option value="travel-agents" <?= isset($_GET['store']) && $_GET['store'] === 'travel-agents' ? 'selected' : '' ?>><?php _e('Ταξιδιωτικό γραφείο'); ?></option>
+                        <option value="shops" <?= isset($_GET['store']) && $_GET['store'] === 'shops' ? 'selected' : '' ?>><?php _e('Καταστήματα λιανικού εμπορίου'); ?></option>
                     </select>
                 </div>
             <?php endif; ?>
