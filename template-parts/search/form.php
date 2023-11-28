@@ -3,7 +3,7 @@ $search_results_page = get_post(1040);
 $profile_category = isset($_GET['profile_category']) ? $_GET['profile_category'] : '';
 $profile_categories = get_terms(array(
     'taxonomy' => 'freelancer-categories',
-    'hide_empty' => true,
+    'hide_empty' => true
 ));
 ?>
 <?php if (!empty($profile_categories) && !is_wp_error($profile_categories)) : ?>

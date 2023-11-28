@@ -39,8 +39,14 @@
 
 		.section-title {
 			display: flex;
+			gap: 5px;
 			justify-content: space-between;
 			align-items: center;
+
+			& > a {
+				font-size: 25px;
+				color: $primary-color;
+			}
 
 			.single-category {
 				margin-left: auto;
@@ -83,7 +89,7 @@
 .single-content {
 	margin-bottom: 40px;
 
-	&>p:not(:last-child) {
+	& > p:not(:last-child) {
 		margin-bottom: 20px;
 	}
 
@@ -254,8 +260,6 @@
 		}
 	}
 
-
-
 	&__report {
 		.tooltip {
 			bottom: -45px;
@@ -299,7 +303,6 @@
 	.message {
 		text-align: left;
 	}
-
 }
 
 #close-report-form {

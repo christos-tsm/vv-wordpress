@@ -16,6 +16,7 @@ $categories = get_post_taxonomies(get_the_ID());
 $current_user = wp_get_current_user();
 $current_user_id = get_current_user_id();
 $user_favourites_array = get_user_meta($current_user_id, 'favorites');
+$is_favorited = !empty($user_favourites_array) && in_array(get_the_ID(), $user_favourites_array[0]);
 ?>
 <main class="site-main site-main--single">
     <article id="single-<?= get_the_ID(); ?>" class="single-content single-content__<?= esc_attr($post_type); ?>">
@@ -38,7 +39,7 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/flag.svg'); ?>
                             <span class="tooltip"><?php _e('Αναφορά'); ?></span>
                         </a>
-                        <a data-action="<?= in_array(get_the_ID(), $user_favourites_array[0]) ? 'remove_from_favorites' : 'add_to_favorites' ?>" id="add-store-to-favourites" data-post-id="<?= get_the_ID(); ?>" href="#!" class="icon icon--small action-badges__single action-badges__favourites <?= in_array(get_the_ID(), $user_favourites_array[0]) ? 'favourited' : '' ?>" aria-label="Add <?= the_title(); ?> to favorites">
+                        <a data-action="<?= $is_favorited ? 'remove_from_favorites' : 'add_to_favorites' ?>" id="add-store-to-favourites" data-post-id="<?= get_the_ID(); ?>" href="#!" class="icon icon--small action-badges__single action-badges__favourites <?= $is_favorited ? 'favourited' : '' ?>" aria-label="Add <?= the_title(); ?> to favorites">
                             <?= file_get_contents(get_stylesheet_directory() . '/assets/images/heart.svg'); ?>
                         </a>
                     </div>
@@ -47,6 +48,10 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
             <div class="single-title__container container container--medium">
                 <h1 class="section-title section-title--single">
                     <?php the_title(); ?>
+                    <?php if ($post_type === 'events' && get_field('store_id')) : ?>
+                        <?= __('από', 'volos-voyage'); ?>
+                        <a href="<?= the_permalink(intval(get_field('store_id'))) ?>"><?= get_the_title(intval(get_field('store_id'))); ?></a>
+                    <?php endif; ?>
                     <?php foreach ($categories as $category) : ?>
                         <?php if (strpos($category, '-categories') !== false) : ?>
                             <?php $terms = get_the_terms(get_the_ID(), $category); ?>
@@ -70,7 +75,11 @@ $user_favourites_array = get_user_meta($current_user_id, 'favorites');
         </header>
         <section class="single-content__content container container--medium">
             <div class="section-title__container">
-                <h2 class="section-title"><?php _e('Σχετικά με εμάς'); ?> </h2>
+                <?php if ($post_type === 'events') : ?>
+                    <h2 class="section-title"><?php _e('Σχετικά με την εκδήλωση') ?></h2>
+                <?php else : ?>
+                    <h2 class="section-title"><?php _e('Σχετικά με εμάς'); ?> </h2>
+                <?php endif; ?>
             </div>
             <div class="single-content">
                 <?php the_content();  ?>

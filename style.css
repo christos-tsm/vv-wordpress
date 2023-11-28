@@ -427,7 +427,7 @@ address {
 	position: relative;
 }
 
-.site-header__burger .burger__container>.icon {
+.site-header__burger .burger__container > .icon {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -438,7 +438,7 @@ address {
 	transition: all ease-in-out 250ms;
 }
 
-.site-header__burger .burger__container>.icon--active {
+.site-header__burger .burger__container > .icon--active {
 	opacity: 1;
 	pointer-events: all;
 }
@@ -514,13 +514,12 @@ address {
 	font-weight: 600;
 }
 
-.site-header__search .form-row>select {
+.site-header__search .form-row > select {
 	display: none;
 }
 
 .site-header__search .nice-select {
 	line-height: initial;
-	font-weight: 600;
 	min-width: 300px;
 }
 
@@ -588,7 +587,7 @@ address {
 	position: relative;
 }
 
-.card__header>a {
+.card__header > a {
 	display: flex;
 	overflow: hidden;
 	border-radius: 10px;
@@ -693,7 +692,7 @@ address {
 	position: relative;
 }
 
-.events-card__header>a {
+.events-card__header > a {
 	overflow: hidden;
 	display: flex;
 }
@@ -763,7 +762,7 @@ address {
 	position: relative;
 }
 
-.grid--restaurants__logo>a {
+.grid--restaurants__logo > a {
 	display: flex;
 }
 
@@ -1000,8 +999,7 @@ address {
 	color: #5a5a5a;
 }
 
-.rcp_form input[type="text"]:focus,
-.rcp_form input[type="text"]:hover,
+.rcp_form input[type="text"]:focus, .rcp_form input[type="text"]:hover,
 .rcp_form input[type="password"]:focus,
 .rcp_form input[type="password"]:hover,
 .rcp_form input[type="email"]:focus,
@@ -1012,7 +1010,6 @@ address {
 }
 
 @media screen and (min-width: 1280px) {
-
 	.rcp_form input[type="text"]--search,
 	.rcp_form input[type="password"]--search,
 	.rcp_form input[type="email"]--search,
@@ -1039,14 +1036,6 @@ address {
 .rcp_form input[type="text"]--file,
 .rcp_form input[type="password"]--file,
 .rcp_form input[type="email"]--file,
-.input--file {
-	visibility: hidden;
-	opacity: 0;
-	width: 0px;
-	height: 0px;
-	position: absolute;
-}
-
 .input--file {
 	visibility: hidden;
 	opacity: 0;
@@ -1082,7 +1071,7 @@ textarea.input {
 }
 
 /** ACF Form */
-.acf-fields>.acf-field {
+.acf-fields > .acf-field {
 	min-height: fit-content !important;
 	padding: 15px 0 !important;
 	border-top: none !important;
@@ -1245,7 +1234,7 @@ input#file-upload-button {
 	gap: 5px;
 }
 
-.gallery-preview__container>img {
+.gallery-preview__container > img {
 	width: 100%;
 	max-height: 350px;
 	object-fit: contain;
@@ -1257,8 +1246,7 @@ input#file-upload-button {
 	align-items: center;
 }
 
-.nice-select:focus,
-.nice-select:hover {
+.nice-select:focus, .nice-select:hover {
 	border-color: #ff576b;
 }
 
@@ -1288,8 +1276,7 @@ input#file-upload-button {
 	border-color: #ff576b;
 }
 
-.flatpickr-day.selected,
-.flatpickr-day:hover {
+.flatpickr-day.selected, .flatpickr-day:hover {
 	border-color: #ff576b;
 	background-color: #ff576b;
 	color: #fff;
@@ -1423,13 +1410,6 @@ input#file-upload-button {
 	margin-top: 0;
 }
 
-@media screen and (max-width: 1920px) {
-	.site-main--auth {
-		margin-top: 139px;
-		margin-bottom: 139px;
-	}
-}
-
 .tabs {
 	display: flex;
 	justify-content: center;
@@ -1544,8 +1524,7 @@ input#file-upload-button {
 	margin-left: -25px;
 }
 
-.user-details__registration-date,
-.user-details__subtitle {
+.user-details__registration-date, .user-details__subtitle {
 	font-size: 14px;
 	color: #9691a4;
 	font-weight: 400;
@@ -1713,7 +1692,7 @@ p.rcp_success {
 	border-bottom: 1px solid #ddd;
 }
 
-#rcp_card_wrap>#rcp-card-element {
+#rcp_card_wrap > #rcp-card-element {
 	padding: 15px;
 }
 
@@ -2062,7 +2041,6 @@ select[name="time"] {
 	0% {
 		transform: rotate(0deg);
 	}
-
 	100% {
 		transform: rotate(360deg);
 	}
@@ -2127,8 +2105,14 @@ select[name="time"] {
 
 .single-title__container .section-title {
 	display: flex;
+	gap: 5px;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.single-title__container .section-title > a {
+	font-size: 25px;
+	color: #ff576b;
 }
 
 .single-title__container .section-title .single-category {
@@ -2170,7 +2154,7 @@ select[name="time"] {
 	margin-bottom: 40px;
 }
 
-.single-content>p:not(:last-child) {
+.single-content > p:not(:last-child) {
 	margin-bottom: 20px;
 }
 

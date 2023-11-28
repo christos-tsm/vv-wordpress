@@ -17,7 +17,7 @@ $meta_query = array(
     array(
         'key'     => 'municipality',
         'value'   => $municipality,
-        'compare' => '=',
+        'compare' => 'LIKE',
     ),
 );
 $query = new WP_Query(array(

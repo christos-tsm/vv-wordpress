@@ -53,6 +53,7 @@ if (!empty($premium_users_array) && $premium_posts->have_posts()) : ?>
         <?php wp_reset_postdata(); ?>
     </section>
 <?php endif;  ?>
+
 <section class="archive__content">
     <?php
     while ($other_posts->have_posts()) : $other_posts->the_post();
